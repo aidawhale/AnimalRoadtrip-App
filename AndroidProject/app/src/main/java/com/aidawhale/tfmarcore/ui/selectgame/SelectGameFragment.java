@@ -5,9 +5,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
@@ -23,13 +25,40 @@ public class SelectGameFragment extends Fragment {
         selectGameViewModel =
                 ViewModelProviders.of(this).get(SelectGameViewModel.class);
         View root = inflater.inflate(R.layout.fragment_selectgame, container, false);
-        final TextView textView = root.findViewById(R.id.text_selectgame);
-        selectGameViewModel.getText().observe(this, new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+
         return root;
     }
-}
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+
+        CardView cv1 = getView().findViewById(R.id.first_game_cardview);
+        CardView cv2 = getView().findViewById(R.id.second_game_cardview);
+        CardView cv3 = getView().findViewById(R.id.third_game_cardview);
+
+        cv1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getContext(), "Starting first game...", Toast.LENGTH_SHORT).show();
+                // Init game with corresponding UnityActivity
+            }
+        });
+
+        cv2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getContext(), "Starting second game...", Toast.LENGTH_SHORT).show();
+                // Init game with corresponding UnityActivity
+            }
+        });
+
+        cv3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getContext(), "Starting third game...", Toast.LENGTH_SHORT).show();
+                // Init game with corresponding UnityActivity
+            }
+        });
+    }
+
+    }
