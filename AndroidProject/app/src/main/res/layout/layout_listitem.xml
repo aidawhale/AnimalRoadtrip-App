@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="15dp"
+    android:id="@+id/parent_layout">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/user_color"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@color/colorAccent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lore ipsum"
+        android:id="@+id/user_name"
+        android:layout_toRightOf="@id/user_color"
+        android:textColor="#000"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="30dp"
+        android:textSize="16dp"/>
+
+</RelativeLayout>
