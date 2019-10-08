@@ -6,4 +6,6 @@
     <string name="third_game_name">Game numero tres</string>
     <string name="second_game_name">Game numero dos</string>
     <string name="first_game_name">Game numero uno</string>
+    <string name="barcode_mockup">BarCode mockup</string>
+    <string name="access_without_qr">Access without QR</string>
 </resources>
