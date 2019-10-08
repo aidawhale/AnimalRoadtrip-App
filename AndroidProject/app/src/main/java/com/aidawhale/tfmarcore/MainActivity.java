@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         // Load data to create the list
         mNames.add("Aida");
         mUserColors.add("Red"); /// doesn't work
-        mNames.add("Anxo");
+        mNames.add("Aida 2");
         mUserColors.add("Blue"); /// doesn't work
 
         // Add last item
