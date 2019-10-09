@@ -1,5 +1,6 @@
 package com.aidawhale.tfmarcore;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
@@ -9,6 +10,10 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.Toast;
+
+import com.google.zxing.integration.android.IntentIntegrator;
+import com.google.zxing.integration.android.IntentResult;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         btn.setOnClickListener(new Button.OnClickListener(){
             @Override
             public void onClick(View view) {
+                Toast.makeText(MainActivity.this, "Login without QR", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(context, UserMenuActivity.class);
                 context.startActivity(intent);
             }
@@ -37,13 +43,26 @@ public class MainActivity extends AppCompatActivity {
         imgBtn.setOnClickListener(new Button.OnClickListener(){
             @Override
             public void onClick(View view) {
-                // Provisional behaviour
-                Intent intent = new Intent(context, UserMenuActivity.class);
-                context.startActivity(intent);
-
-                // TODO: open camara and scan QR
-                // ...
+                // Zxing: open camara and scan QR
+                new IntentIntegrator(MainActivity.this).initiateScan();
             }
         });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
+        if(result != null)
+            if (result.getContents() != null){
+                Toast.makeText(MainActivity.this, "Code " + result.getContents(), Toast.LENGTH_SHORT).show();
+
+                // Load next activity
+                Intent intent = new Intent(context, UserMenuActivity.class);
+                context.startActivity(intent);
+            }else{
+                // Error while scanning code
+                Toast.makeText(MainActivity.this, "Error while scanning code. Please, try again.", Toast.LENGTH_SHORT).show();
+            }
     }
 }
