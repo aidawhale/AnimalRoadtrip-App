@@ -44,7 +44,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 // Zxing: open camara and scan QR
-                new IntentIntegrator(MainActivity.this).initiateScan();
+//                new IntentIntegrator(MainActivity.this).initiateScan();
+                IntentIntegrator integrator = new IntentIntegrator(MainActivity.this);
+                integrator.setOrientationLocked(false);
+                integrator.initiateScan();
             }
         });
     }
