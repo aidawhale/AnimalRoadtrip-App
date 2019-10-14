@@ -13,10 +13,12 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.aidawhale.tfmarcore.R;
+import com.aidawhale.tfmarcore.UserMenuActivity;
 
 public class DashboardFragment extends Fragment {
 
     private DashboardViewModel dashboardViewModel;
+    private String userID = "dumb";
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -31,5 +33,19 @@ public class DashboardFragment extends Fragment {
             }
         });
         return root;
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        userID = UserMenuActivity.getUserID();
+
+        TextView text_userID = getView().findViewById(R.id.text_userID);
+        if(userID != null) {
+            text_userID.setText("Login " + userID);
+        } else {
+            text_userID.setText("Login without QR");
+        }
     }
 }

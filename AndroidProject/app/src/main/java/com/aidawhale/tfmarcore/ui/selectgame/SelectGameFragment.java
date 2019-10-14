@@ -11,14 +11,15 @@ import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.aidawhale.tfmarcore.R;
+import com.aidawhale.tfmarcore.UserMenuActivity;
 
 public class SelectGameFragment extends Fragment {
 
     private SelectGameViewModel selectGameViewModel;
+    private String userID = "dumb";
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -59,6 +60,15 @@ public class SelectGameFragment extends Fragment {
                 // Init game with corresponding UnityActivity
             }
         });
+
+        userID = UserMenuActivity.getUserID();
+
+        TextView gridHeader = getView().findViewById(R.id.grid_header);
+        if(userID != null) {
+            gridHeader.setText("Login " + userID);
+        } else {
+            gridHeader.setText("Login without QR");
+        }
     }
 
-    }
+}

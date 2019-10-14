@@ -32,7 +32,6 @@ public class MainActivity extends AppCompatActivity {
         btn.setOnClickListener(new Button.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Toast.makeText(MainActivity.this, "Login without QR", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(context, UserMenuActivity.class);
                 context.startActivity(intent);
             }
@@ -44,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 // Zxing: open camara and scan QR
-//                new IntentIntegrator(MainActivity.this).initiateScan();
                 IntentIntegrator integrator = new IntentIntegrator(MainActivity.this);
                 integrator.setOrientationLocked(false);
                 integrator.initiateScan();
@@ -58,10 +56,9 @@ public class MainActivity extends AppCompatActivity {
         IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
         if(result != null)
             if (result.getContents() != null){
-                Toast.makeText(MainActivity.this, "Code " + result.getContents(), Toast.LENGTH_SHORT).show();
-
                 // Load next activity
                 Intent intent = new Intent(context, UserMenuActivity.class);
+                intent.putExtra("USER_ID", result.getContents());
                 context.startActivity(intent);
             }else{
                 // Error while scanning code
