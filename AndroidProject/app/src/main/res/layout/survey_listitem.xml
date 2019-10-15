@@ -39,6 +39,7 @@
         android:weightSum="10">
 
         <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/survey_verysad_face"
             android:layout_width="0dp"
             android:layout_height="60dp"
             android:layout_weight="2"
@@ -48,6 +49,7 @@
             android:src="@drawable/ic_cara_muy_triste"/>
 
         <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/survey_sad_face"
             android:layout_width="0dp"
             android:layout_height="60dp"
             android:layout_weight="2"
@@ -57,6 +59,7 @@
             android:src="@drawable/ic_cara_triste"/>
 
         <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/survey_base_face"
             android:layout_width="0dp"
             android:layout_height="60dp"
             android:layout_weight="2"
@@ -66,6 +69,7 @@
             android:src="@drawable/ic_cara_base"/>
 
         <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/survey_happy_face"
             android:layout_width="0dp"
             android:layout_height="60dp"
             android:layout_weight="2"
@@ -75,6 +79,7 @@
             android:src="@drawable/ic_cara_feliz"/>
 
         <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/survey_veryhappy_face"
             android:layout_width="0dp"
             android:layout_height="60dp"
             android:layout_weight="2"

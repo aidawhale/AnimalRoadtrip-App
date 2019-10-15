@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -17,8 +18,8 @@ public class SurveyRecyclerViewAdapter extends RecyclerView.Adapter<SurveyRecycl
     private static final String TAG = "SurveyRecyclerViewAdapt";
 
     private Context context;
-    private ArrayList<Integer> questionTitles = new ArrayList<>();
-    private ArrayList<Integer> questions = new ArrayList<>();
+    private ArrayList<Integer> questionTitles;
+    private ArrayList<Integer> questions;
 
     public SurveyRecyclerViewAdapter(Context context, ArrayList<Integer> questionTitles, ArrayList<Integer> questions) {
         this.context = context;
@@ -35,12 +36,61 @@ public class SurveyRecyclerViewAdapter extends RecyclerView.Adapter<SurveyRecycl
     }
 
     @Override
-    public void onBindViewHolder(@NonNull SurveyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final SurveyViewHolder holder, final int position) {
         // Load info on each list item
         holder.questionTitle.setText(questionTitles.get(position));
         holder.question.setText(questions.get(position));
+        SurveyActivity.values.put(questionTitles.get(position), null);
 
-        /// If onClickListeners are needed, they would be set here...
+        // Set onClickListener for each face
+        holder.verysad_face.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SurveyActivity.values.put(questionTitles.get(position), "0");
+                resetFaceColor(holder);
+                holder.verysad_face.setColorFilter(context.getColor(R.color.colorPrimaryDark));
+            }
+        });
+        holder.sad_face.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SurveyActivity.values.put(questionTitles.get(position), "1");
+                resetFaceColor(holder);
+                holder.sad_face.setColorFilter(context.getColor(R.color.colorPrimaryDark));
+            }
+        });
+        holder.base_face.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SurveyActivity.values.put(questionTitles.get(position), "2");
+                resetFaceColor(holder);
+                holder.base_face.setColorFilter(context.getColor(R.color.colorPrimaryDark));
+            }
+        });
+        holder.happy_face.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SurveyActivity.values.put(questionTitles.get(position), "3");
+                resetFaceColor(holder);
+                holder.happy_face.setColorFilter(context.getColor(R.color.colorPrimaryDark));
+            }
+        });
+        holder.veryhappy_face.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SurveyActivity.values.put(questionTitles.get(position), "4");
+                resetFaceColor(holder);
+                holder.veryhappy_face.setColorFilter(context.getColor(R.color.colorPrimaryDark));
+            }
+        });
+    }
+
+    private void resetFaceColor(SurveyViewHolder holder) {
+        holder.verysad_face.setColorFilter(context.getColor(R.color.colorGray));
+        holder.sad_face.setColorFilter(context.getColor(R.color.colorGray));
+        holder.base_face.setColorFilter(context.getColor(R.color.colorGray));
+        holder.happy_face.setColorFilter(context.getColor(R.color.colorGray));
+        holder.veryhappy_face.setColorFilter(context.getColor(R.color.colorGray));
     }
 
     @Override
@@ -53,6 +103,11 @@ public class SurveyRecyclerViewAdapter extends RecyclerView.Adapter<SurveyRecycl
         LinearLayout parentLayout;
         TextView questionTitle;
         TextView question;
+        ImageView verysad_face;
+        ImageView sad_face;
+        ImageView base_face;
+        ImageView happy_face;
+        ImageView veryhappy_face;
 
         public SurveyViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -60,6 +115,12 @@ public class SurveyRecyclerViewAdapter extends RecyclerView.Adapter<SurveyRecycl
             parentLayout = itemView.findViewById(R.id.survey_item_parent_layout);
             questionTitle = itemView.findViewById(R.id.survey_item_question_title);
             question = itemView.findViewById(R.id.survey_item_question);
+
+            verysad_face = itemView.findViewById(R.id.survey_verysad_face);
+            sad_face = itemView.findViewById(R.id.survey_sad_face);
+            base_face = itemView.findViewById(R.id.survey_base_face);
+            happy_face = itemView.findViewById(R.id.survey_happy_face);
+            veryhappy_face = itemView.findViewById(R.id.survey_veryhappy_face);
         }
     }
 }

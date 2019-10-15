@@ -7,12 +7,16 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class SurveyActivity extends AppCompatActivity {
+
+    public static HashMap<Integer, String> values = new HashMap<>(); // stores user answers
 
     private ArrayList<Integer> questionTitles = new ArrayList<>();
     private ArrayList<Integer> questions = new ArrayList<>();
@@ -39,9 +43,17 @@ public class SurveyActivity extends AppCompatActivity {
                     userID = extras.getString("USER_ID");
                 }
 
-                // TODO: check if all answers are checked
+                // Check if all answers are completed
+                for (Integer v : values.keySet()) {
+                    if (values.get(v) == null) {
+                        Toast.makeText(SurveyActivity.this, "Question without answer: " + getBaseContext().getString(v), Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                }
 
-                // TODO: send info
+                // TODO: send info to DB
+
+                Toast.makeText(SurveyActivity.this, values.toString(), Toast.LENGTH_SHORT).show();
 
                 // Load next activity
                 Intent intent = new Intent(getApplicationContext(), UserMenuActivity.class);
