@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:maxWidth="400dp"
+    android:id="@+id/survey_item_parent_layout">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/survey_item_question_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/happiness"
+        android:textSize="26sp"
+        android:textColor="#000"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/survey_item_question"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/happiness_question"
+        android:textSize="24sp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="8dp"/>
+
+    <LinearLayout
+        android:id="@+id/survey_item_faces"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:layout_marginBottom="8dp"
+        android:orientation="horizontal"
+        android:weightSum="10">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="2"
+            android:clickable="true"
+            android:focusable="true"
+            android:tint="@color/colorGray"
+            android:src="@drawable/ic_cara_muy_triste"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="2"
+            android:clickable="true"
+            android:focusable="true"
+            android:tint="@color/colorGray"
+            android:src="@drawable/ic_cara_triste"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="2"
+            android:clickable="true"
+            android:focusable="true"
+            android:tint="@color/colorGray"
+            android:src="@drawable/ic_cara_base"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="2"
+            android:clickable="true"
+            android:focusable="true"
+            android:tint="@color/colorGray"
+            android:src="@drawable/ic_cara_feliz"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="2"
+            android:clickable="true"
+            android:focusable="true"
+            android:tint="@color/colorGray"
+            android:src="@drawable/ic_cara_muy_feliz"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@color/colorSuperLightGray" />
+</LinearLayout>

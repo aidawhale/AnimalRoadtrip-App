@@ -28,7 +28,7 @@ public class UserMenuActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
 
-        // Get info sent from MainActivity
+        // Get info sent from SurveyActivity
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             userID = extras.getString("USER_ID");

@@ -8,4 +8,11 @@
     <string name="first_game_name">Game numero uno</string>
     <string name="barcode_mockup">BarCode mockup</string>
     <string name="access_without_qr">Access without QR</string>
+    <string name="error_scanning_code">Error while scanning code. Please, try again.</string>
+    <string name="happiness">Happiness</string>
+    <string name="happiness_question">Happiness question</string>
+    <string name="food">Food</string>
+    <string name="food_question">Food question</string>
+    <string name="pain">Pain</string>
+    <string name="pain_question">Pain question</string>
 </resources>

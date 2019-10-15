@@ -54,15 +54,26 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
-        if(result != null)
-            if (result.getContents() != null){
-                // Load next activity
+        boolean surveyDone = false;
+
+        if(result != null && result.getContents() != null) {
+
+            // TODO: check if user has already made the survey
+
+            if (surveyDone) {
+                // Load next activity: UserMenuActivity-SelectGameFragment
                 Intent intent = new Intent(context, UserMenuActivity.class);
                 intent.putExtra("USER_ID", result.getContents());
                 context.startActivity(intent);
-            }else{
-                // Error while scanning code
-                Toast.makeText(MainActivity.this, "Error while scanning code. Please, try again.", Toast.LENGTH_SHORT).show();
+            } else {
+                // Load next activity: SurveyActivity
+                Intent intent = new Intent(context, SurveyActivity.class);
+                intent.putExtra("USER_ID", result.getContents());
+                context.startActivity(intent);
             }
+        }else{
+            // Error while scanning code
+            Toast.makeText(MainActivity.this, R.string.error_scanning_code, Toast.LENGTH_SHORT).show();
+        }
     }
 }

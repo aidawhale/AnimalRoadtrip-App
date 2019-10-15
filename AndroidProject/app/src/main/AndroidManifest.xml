@@ -11,6 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".SurveyActivity"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,11 +21,11 @@
         </activity>
         <activity
             android:name=".UserMenuActivity"
-            android:label="@string/title_activity_user_menu"></activity>
+            android:label="@string/title_activity_user_menu" />
         <activity
             android:name="com.journeyapps.barcodescanner.CaptureActivity"
             android:screenOrientation="portrait"
-            tools:replace="android:screenOrientation"/>
+            tools:replace="android:screenOrientation" />
     </application>
 
 </manifest>
