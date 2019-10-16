@@ -1,28 +1,28 @@
 <resources>
     <string name="app_name">TFM ARcore</string>
-    <string name="title_activity_user_menu">User name</string>
-    <string name="title_selectgame">Select game</string>
-    <string name="title_dashboard">Dashboard</string>
+    <string name="title_activity_user_menu">Nombre de usuario</string>
+    <string name="title_selectgame">Juegos</string>
+    <string name="title_dashboard">Tablero</string>
     <string name="third_game_name">Game numero tres</string>
     <string name="second_game_name">Game numero dos</string>
     <string name="first_game_name">Game numero uno</string>
     <string name="barcode_mockup">BarCode mockup</string>
-    <string name="access_without_qr">Access without QR</string>
-    <string name="error_scanning_code">Error while scanning code. Please, try again.</string>
-    <string name="happiness">Happiness</string>
+    <string name="access_without_qr">Entrar sin QR</string>
+    <string name="error_scanning_code">Error al escanear el código. Por favor, inténtelo de nuevo.</string>
+    <string name="happiness">Felicidad</string>
     <string name="happiness_question">Happiness question</string>
-    <string name="food">Food</string>
+    <string name="food">Comida</string>
     <string name="food_question">Food question</string>
-    <string name="pain">Pain</string>
+    <string name="pain">Dolor</string>
     <string name="pain_question">Pain question</string>
-    <string name="app_info">App info</string>
+    <string name="app_info">Información de la app</string>
     <string name="app_info_text">App info text</string>
     <string name="ok">OK!</string>
-    <string name="select_language">Select language</string>
-    <string name="choose_language">Choose language...</string>
+    <string name="select_language">Selecciona un idioma</string>
+    <string name="choose_language">Elige idioma...</string>
 
     <string-array name="i8n_languages">
-        <item>Choose language...</item>
+        <item>Elige idioma...</item>
         <item>Galego</item>
         <item>Castellano</item>
         <item>English</item>
