@@ -119,8 +119,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 if (spinner.getSelectedItemPosition() != 0) { // Ignore first entry
-                    Toast.makeText(context, "Change language to " + spinner.getSelectedItem().toString(), Toast.LENGTH_SHORT).show();
-
                     String language_code;
 
                     switch (spinner.getSelectedItem().toString()) {

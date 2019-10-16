@@ -4,14 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/ic_cloud"
+    android:backgroundTint="#0DC49000"
     tools:context=".MainActivity">
-
 
     <ImageButton
         android:id="@+id/imageButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="#EEE0B8"
         android:contentDescription="@string/barcode_mockup"
+        android:elevation="8dp"
+        android:padding="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.246"
@@ -23,10 +27,12 @@
         android:id="@+id/button"
         android:layout_width="191dp"
         android:layout_height="69dp"
-        android:layout_marginStart="32dp"
+        android:backgroundTint="#EEE0B8"
+        android:elevation="8dp"
         android:text="@string/access_without_qr"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageButton"
         app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
