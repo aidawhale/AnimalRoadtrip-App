@@ -1,5 +1,6 @@
 package com.aidawhale.tfmarcore.ui.selectgame;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +14,7 @@ import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.aidawhale.tfmarcore.MarcopoloActivity;
 import com.aidawhale.tfmarcore.R;
 import com.aidawhale.tfmarcore.UserMenuActivity;
 
@@ -40,8 +42,9 @@ public class SelectGameFragment extends Fragment {
         cv1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getContext(), "Starting first game...", Toast.LENGTH_SHORT).show();
-                // Init game with corresponding UnityActivity
+                // Init game with corresponding MarcopoloActivity
+                Intent intent = new Intent(getContext(), MarcopoloActivity.class);
+                getContext().startActivity(intent);
             }
         });
 

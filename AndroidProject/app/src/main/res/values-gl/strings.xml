@@ -5,7 +5,7 @@
     <string name="title_dashboard">Taboleiro</string>
     <string name="third_game_name">Game numero tres</string>
     <string name="second_game_name">Game numero dos</string>
-    <string name="first_game_name">Game numero uno</string>
+    <string name="first_game_name">Marco Polo</string>
     <string name="barcode_mockup">BarCode mockup</string>
     <string name="access_without_qr">Entrar sen QR</string>
     <string name="error_scanning_code">Erro ó escanear o código. Por favor, inténtao de novo.</string>
@@ -20,6 +20,15 @@
     <string name="ok">OK!</string>
     <string name="select_language">Selecciona un idioma</string>
     <string name="choose_language">Elixe idioma...</string>
+    <string name="easy">Fácil</string>
+    <string name="medium">Medio</string>
+    <string name="hard">Difícil</string>
+    <string name="title_selectdificulty">Seleccionar dificultade</string>
+    <string name="timer">Tempo</string>
+    <string name="stop">Parar!</string>
+    <string name="start">Empezar</string>
+    <string name="marcopolo_info">Xogo: Marco Polo</string>
+    <string name="marcopolo_info_text">Descrición xogo Marco Polo</string>
 
     <string-array name="i8n_languages">
         <item>Elixe idioma...</item>
@@ -27,4 +36,6 @@
         <item>Castellano</item>
         <item>English</item>
     </string-array>
+    <string name="marcopolo_info_attribuition">Son do paxaro de \"Bird Whistling, Single, Robin, A.wav\" by InspectorJ (www.jshaw.co.uk) of Freesound.org</string>
+    <string name="marcopolo">Marco Polo</string>
 </resources>
