@@ -31,6 +31,10 @@
     <string name="marcopolo_info_text">Descripción juego Marco Polo</string>
     <string name="marcopolo_info_attribuition">" Sonido del pájaro de \"Bird Whistling, Single, Robin, A.wav\" by InspectorJ (www.jshaw.co.uk) of Freesound.org"</string>
     <string name="marcopolo">Marco Polo</string>
+    <string name="privacy_title" >Recopilación de datos</string>
+    <string name="privacy_question" >¿Aceptas los términos de uso?</string>
+    <string name="accept" >Aceptar</string>
+    <string name="reject" >Rechazar</string>
 
     <string-array name="i8n_languages">
         <item>Elige idioma...</item>
@@ -38,4 +42,5 @@
         <item>Castellano</item>
         <item>English</item>
     </string-array>
+    <string name="privacy_info_text">Los datos que se recogen serán empleados únicamente para fines médicos.  Este permiso y los datos pueden ser consultados, modificados y/o borrados desde la página web si entras con el mismo número del código de barras con el que se accede a esta aplicación.  La única información que se recoge es el tiempo de uso de cada juego y el conteo de pasos durante ese tiempo, además del cuestionario diaro sobre el estado de ánimo.</string>
 </resources>

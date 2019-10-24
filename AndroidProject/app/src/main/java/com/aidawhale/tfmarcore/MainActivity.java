@@ -167,7 +167,9 @@ public class MainActivity extends AppCompatActivity {
 
         if(result != null && result.getContents() != null) {
 
-            // TODO: check if user has already made the survey (get info from DB)
+            // TODO: check if user is registered on DB, if not, add user
+
+            // TODO: check if user has authorised data collection && has already made the survey
 
             if (surveyDone) {
                 // Load next activity: UserMenuActivity-SelectGameFragment

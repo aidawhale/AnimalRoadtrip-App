@@ -1,9 +1,11 @@
 package com.aidawhale.tfmarcore;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -21,6 +23,8 @@ public class SurveyActivity extends AppCompatActivity {
     private ArrayList<Integer> questionTitles = new ArrayList<>();
     private ArrayList<Integer> questions = new ArrayList<>();
 
+    private boolean saveUserData = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +33,9 @@ public class SurveyActivity extends AppCompatActivity {
         // Generate survey_listitems and add them to the RecyclerView
         loadQuestions();
         initSurveyRecyclerView();
+
+        // If first time using the app, ask for permission to collect and save data usage
+        showPrivacyDialog();
 
         // FAB Button for sending survey data
         FloatingActionButton fabBtn = findViewById(R.id.fab_send_survey);
@@ -81,5 +88,37 @@ public class SurveyActivity extends AppCompatActivity {
         SurveyRecyclerViewAdapter adapter = new SurveyRecyclerViewAdapter(getApplicationContext(), questionTitles, questions);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+    }
+
+    private void showPrivacyDialog() {
+        // Show dialog with privacy info and question
+        AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+
+        dialog.setTitle(R.string.privacy_title);
+        dialog.setMessage(getResources().getString(R.string.privacy_info_text) +
+                "\n\n" + getResources().getString(R.string.privacy_question));
+        dialog.setPositiveButton(R.string.accept, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                updateUserDataConsent();
+            }
+        });
+        dialog.setNegativeButton(R.string.reject, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                // Load next activity
+                Intent intent = new Intent(getApplicationContext(), UserMenuActivity.class);
+                startActivity(intent);
+                finish();  // Don't add this activity to back stack
+            }
+        });
+        dialog.setCancelable(false);
+        dialog.show();
+    }
+
+    private void updateUserDataConsent() {
+
+        Toast.makeText(this, "Updating user data consent...", Toast.LENGTH_SHORT).show();
+
     }
 }

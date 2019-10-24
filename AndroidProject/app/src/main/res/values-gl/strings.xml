@@ -38,4 +38,9 @@
     </string-array>
     <string name="marcopolo_info_attribuition">Son do paxaro de \"Bird Whistling, Single, Robin, A.wav\" by InspectorJ (www.jshaw.co.uk) of Freesound.org</string>
     <string name="marcopolo">Marco Polo</string>
+    <string name="privacy_title" >Recopilación de datos</string>
+    <string name="privacy_info_text" >Os datos que se recollen serán empregados unicamente para fins médicos. \nEste permiso e os datos poden ser consultados, modificados e/ou borrados dende a páxina web se entras co mesmo número do código de barras co que se accede a esta aplicación. \nA única información que se recolle é o tempo de uso de cada xogo e o conteo de pasos durante ese tempo, ademais do cuestionario diaro sobre o estado de ánimo.</string>
+    <string name="privacy_question" >Aceptas os termos de uso?</string>
+    <string name="accept" >Aceptar</string>
+    <string name="reject" >Rexeitar</string>
 </resources>

@@ -31,6 +31,10 @@
     <string name="marcopolo_info_text">Marco Polo game description</string>
     <string name="marcopolo_info_attribuition">Bird sound from \"Bird Whistling, Single, Robin, A.wav\" by InspectorJ (www.jshaw.co.uk) of Freesound.org</string>
     <string name="marcopolo">Marco Polo</string>
+    <string name="privacy_title" >Data collection</string>
+    <string name="privacy_info_text" >Usage data will be collected for medical purposes only. \nThis permision and data can be consulted, modified and/or deleted through the web logging in with the barcode number that is being used to log in on this app. \nThe only data that will be stored is the time expended on each game and the step count during that time, as well as the daily mood survey.</string>
+    <string name="privacy_question" >Do you accept the terms and conditions?</string>
+    <string name="accept" >Accept</string>
 
     <string-array name="i8n_languages">
         <item>Choose language...</item>
@@ -38,4 +42,5 @@
         <item>Castellano</item>
         <item>English</item>
     </string-array>
+    <string name="reject">Reject</string>
 </resources>
