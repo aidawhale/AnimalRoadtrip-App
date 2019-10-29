@@ -43,4 +43,6 @@
     <string name="privacy_question" >Aceptas os termos de uso?</string>
     <string name="accept" >Aceptar</string>
     <string name="reject" >Rexeitar</string>
+    <string name="select_game">Elixe un xogo</string>
+    <string name="question_no_answer">Pregunta sen resposta:</string>
 </resources>

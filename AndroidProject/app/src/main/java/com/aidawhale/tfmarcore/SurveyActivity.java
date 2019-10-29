@@ -11,9 +11,16 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import com.aidawhale.tfmarcore.room.AppRoomDatabase;
+import com.aidawhale.tfmarcore.room.Survey;
+import com.aidawhale.tfmarcore.room.SurveyDao;
+import com.aidawhale.tfmarcore.room.User;
+import com.aidawhale.tfmarcore.room.UserDao;
+import com.aidawhale.tfmarcore.utils.DateConverter;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 
 public class SurveyActivity extends AppCompatActivity {
@@ -23,7 +30,7 @@ public class SurveyActivity extends AppCompatActivity {
     private ArrayList<Integer> questionTitles = new ArrayList<>();
     private ArrayList<Integer> questions = new ArrayList<>();
 
-    private boolean saveUserData = false;
+    private String userID = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,8 +41,24 @@ public class SurveyActivity extends AppCompatActivity {
         loadQuestions();
         initSurveyRecyclerView();
 
+        // Get info sent from MainActivity
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            userID = extras.getString("USER_ID");
+        }
+
+        // Check database and get user info
+        AppRoomDatabase db = AppRoomDatabase.getDatabase(getApplicationContext());
+        UserDao userDao = db.userDao();
+        User user = userDao.getUserById(userID);
+
         // If first time using the app, ask for permission to collect and save data usage
-        showPrivacyDialog();
+        if(user == null) { // First login
+            // Add user to DB
+            User newUser = new User(userID);
+            userDao.insert(newUser);
+            showPrivacyDialog();
+        }
 
         // FAB Button for sending survey data
         FloatingActionButton fabBtn = findViewById(R.id.fab_send_survey);
@@ -43,24 +66,37 @@ public class SurveyActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                // Get info sent from MainActivity
-                String userID = null;
-                Bundle extras = getIntent().getExtras();
-                if (extras != null) {
-                    userID = extras.getString("USER_ID");
-                }
+                int happiness = 0, food = 0, pain = 0;
 
                 // Check if all answers are completed
                 for (Integer v : values.keySet()) {
                     if (values.get(v) == null) {
-                        Toast.makeText(SurveyActivity.this, "Question without answer: " + getBaseContext().getString(v), Toast.LENGTH_SHORT).show();
+                        String s = getString(R.string.question_no_answer) + " " + getBaseContext().getString(v);
+                        Toast.makeText(SurveyActivity.this, s, Toast.LENGTH_SHORT).show();
                         return;
+                    }
+
+                    switch (v) {
+                        case R.string.happiness:
+                            happiness = Integer.parseInt(values.get(v));
+                            break;
+                        case R.string.food:
+                            food = Integer.parseInt(values.get(v));
+                            break;
+                        case R.string.pain:
+                            pain = Integer.parseInt(values.get(v));
+                            break;
+                        default:
+                            Toast.makeText(SurveyActivity.this, "There was a problem saving survey, please try again :(", Toast.LENGTH_SHORT).show();
                     }
                 }
 
-                // TODO: send info to DB
-
-                Toast.makeText(SurveyActivity.this, values.toString(), Toast.LENGTH_SHORT).show();
+                // Send info to DB
+                AppRoomDatabase db = AppRoomDatabase.getDatabase(getApplicationContext());
+                SurveyDao surveyDao = db.surveyDao();
+                String date = DateConverter.complexDateToSimpleDate(new Date());
+                Survey survey = new Survey(date, userID, happiness, food, pain);
+                surveyDao.insert(survey);
 
                 // Load next activity
                 Intent intent = new Intent(getApplicationContext(), UserMenuActivity.class);
@@ -117,8 +153,9 @@ public class SurveyActivity extends AppCompatActivity {
     }
 
     private void updateUserDataConsent() {
+        AppRoomDatabase db = AppRoomDatabase.getDatabase(getApplicationContext());
+        UserDao userDao = db.userDao();
 
-        Toast.makeText(this, "Updating user data consent...", Toast.LENGTH_SHORT).show();
-
+        userDao.updateStoragePermission(userID, true);
     }
 }

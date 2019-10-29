@@ -24,9 +24,16 @@ import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.aidawhale.tfmarcore.room.AppRoomDatabase;
+import com.aidawhale.tfmarcore.room.Survey;
+import com.aidawhale.tfmarcore.room.SurveyDao;
+import com.aidawhale.tfmarcore.room.User;
+import com.aidawhale.tfmarcore.room.UserDao;
+import com.aidawhale.tfmarcore.utils.DateConverter;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
+import java.util.Date;
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
@@ -167,22 +174,50 @@ public class MainActivity extends AppCompatActivity {
 
         if(result != null && result.getContents() != null) {
 
-            // TODO: check if user is registered on DB, if not, add user
+            String userid = result.getContents();
 
-            // TODO: check if user has authorised data collection && has already made the survey
+            // Check database and get user info
+            AppRoomDatabase db = AppRoomDatabase.getDatabase(context);
+            SurveyDao surveyDao = db.surveyDao();
+            UserDao userDao = db.userDao();
+            User user = userDao.getUserById(userid);
 
-            if (surveyDone) {
-                // Load next activity: UserMenuActivity-SelectGameFragment
-                Intent intent = new Intent(context, UserMenuActivity.class);
-                intent.putExtra("USER_ID", result.getContents());
-                context.startActivity(intent);
-            } else {
+            if(user == null) { // First login
                 // Load next activity: SurveyActivity
                 Intent intent = new Intent(context, SurveyActivity.class);
-                intent.putExtra("USER_ID", result.getContents());
+                intent.putExtra("USER_ID", userid);
                 context.startActivity(intent);
+
+            } else { // User was already on the DB
+
+                if(userDao.getStoragePermission(userid)) { // Allowed data collection
+                    // Check already made daily survey
+                    String date = DateConverter.complexDateToSimpleDate(new Date());
+
+                    Survey survey = surveyDao.getDailySurveyByUser(userid, date);
+
+                    if(survey == null) { // Do daily survey
+                        // Load next activity: SurveyActivity
+                        Intent intent = new Intent(context, SurveyActivity.class);
+                        intent.putExtra("USER_ID", userid);
+                        context.startActivity(intent);
+
+                    } else { // Daily survey done
+                        // Load next activity: UserMenuActivity-SelectGameFragment
+                        Intent intent = new Intent(context, UserMenuActivity.class);
+                        intent.putExtra("USER_ID", userid);
+                        context.startActivity(intent);
+                    }
+
+                } else { // Refused to collect data
+                    // Load next activity: UserMenuActivity-SelectGameFragment without sending userid
+                    Intent intent = new Intent(context, UserMenuActivity.class);
+                    context.startActivity(intent);
+                }
+
             }
-        }else{
+
+        } else {
             // Error while scanning code
             Toast.makeText(MainActivity.this, R.string.error_scanning_code, Toast.LENGTH_SHORT).show();
         }

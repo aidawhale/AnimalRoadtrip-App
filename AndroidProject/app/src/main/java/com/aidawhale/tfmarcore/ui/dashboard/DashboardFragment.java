@@ -14,6 +14,12 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.aidawhale.tfmarcore.R;
 import com.aidawhale.tfmarcore.UserMenuActivity;
+import com.aidawhale.tfmarcore.room.AppRoomDatabase;
+import com.aidawhale.tfmarcore.room.Survey;
+import com.aidawhale.tfmarcore.room.SurveyDao;
+import com.aidawhale.tfmarcore.utils.DateConverter;
+
+import java.util.Date;
 
 public class DashboardFragment extends Fragment {
 
@@ -43,9 +49,16 @@ public class DashboardFragment extends Fragment {
 
         TextView text_userID = getView().findViewById(R.id.text_userID);
         if(userID != null) {
-            text_userID.setText("Login " + userID);
+            AppRoomDatabase db = AppRoomDatabase.getDatabase(getContext());
+            SurveyDao surveyDao = db.surveyDao();
+            Survey survey = surveyDao.getDailySurveyByUser(userID, DateConverter.complexDateToSimpleDate(new Date()));
+
+            String s = "Login " + userID + "\n\n user " + survey.user + "\n date " + survey.date;
+
+            text_userID.setText(s);
+
         } else {
-            text_userID.setText("Login without QR");
+            text_userID.setText("No data available.");
         }
     }
 }

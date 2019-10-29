@@ -70,7 +70,7 @@ public class SelectGameFragment extends Fragment {
         if(userID != null) {
             gridHeader.setText("Login " + userID);
         } else {
-            gridHeader.setText("Login without QR");
+            gridHeader.setText(R.string.select_game);
         }
     }
 

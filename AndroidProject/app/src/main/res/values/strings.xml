@@ -43,4 +43,6 @@
         <item>English</item>
     </string-array>
     <string name="reject">Reject</string>
+    <string name="select_game">Select game</string>
+    <string name="question_no_answer">Question without answer:</string>
 </resources>
