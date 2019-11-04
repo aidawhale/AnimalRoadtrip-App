@@ -1,5 +1,6 @@
 package com.aidawhale.tfmarcore.room;
 
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.Query;
@@ -16,6 +17,6 @@ public interface GameDao {
     List<Integer> getAllGames();
 
     @Query("SELECT * FROM game WHERE user LIKE :userid")
-    List<Game> getGamesByUser(String userid);
+    LiveData<List<Game>> getUserGames(String userid);
 
 }

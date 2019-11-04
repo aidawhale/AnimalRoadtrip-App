@@ -2,6 +2,7 @@ package com.aidawhale.tfmarcore;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -13,9 +14,9 @@ import android.widget.Toast;
 
 import com.aidawhale.tfmarcore.room.AppRoomDatabase;
 import com.aidawhale.tfmarcore.room.Survey;
-import com.aidawhale.tfmarcore.room.SurveyDao;
 import com.aidawhale.tfmarcore.room.User;
 import com.aidawhale.tfmarcore.room.UserDao;
+import com.aidawhale.tfmarcore.room.ViewModels.SurveyActivityViewModel;
 import com.aidawhale.tfmarcore.utils.DateConverter;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -30,12 +31,18 @@ public class SurveyActivity extends AppCompatActivity {
     private ArrayList<Integer> questionTitles = new ArrayList<>();
     private ArrayList<Integer> questions = new ArrayList<>();
 
+    private SurveyActivityViewModel surveyViewModel;
+
     private String userID = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_survey);
+
+        // Get a new or existing ViewModel from the ViewModelProvider.
+        surveyViewModel = new ViewModelProvider(this).get(SurveyActivityViewModel.class);
+
 
         // Generate survey_listitems and add them to the RecyclerView
         loadQuestions();
@@ -50,13 +57,10 @@ public class SurveyActivity extends AppCompatActivity {
         // Check database and get user info
         AppRoomDatabase db = AppRoomDatabase.getDatabase(getApplicationContext());
         UserDao userDao = db.userDao();
-        User user = userDao.getUserById(userID);
+        User user = userDao.getDirectUserById(userID);
 
-        // If first time using the app, ask for permission to collect and save data usage
         if(user == null) { // First login
-            // Add user to DB
-            User newUser = new User(userID);
-            userDao.insert(newUser);
+            // Ask for permission to collect and save data usage
             showPrivacyDialog();
         }
 
@@ -92,11 +96,9 @@ public class SurveyActivity extends AppCompatActivity {
                 }
 
                 // Send info to DB
-                AppRoomDatabase db = AppRoomDatabase.getDatabase(getApplicationContext());
-                SurveyDao surveyDao = db.surveyDao();
                 String date = DateConverter.complexDateToSimpleDate(new Date());
                 Survey survey = new Survey(date, userID, happiness, food, pain);
-                surveyDao.insert(survey);
+                surveyViewModel.insert(survey);
 
                 // Load next activity
                 Intent intent = new Intent(getApplicationContext(), UserMenuActivity.class);
@@ -136,12 +138,13 @@ public class SurveyActivity extends AppCompatActivity {
         dialog.setPositiveButton(R.string.accept, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                updateUserDataConsent();
+                addUser(true);
             }
         });
         dialog.setNegativeButton(R.string.reject, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
+                addUser(false);
                 // Load next activity
                 Intent intent = new Intent(getApplicationContext(), UserMenuActivity.class);
                 startActivity(intent);
@@ -152,10 +155,10 @@ public class SurveyActivity extends AppCompatActivity {
         dialog.show();
     }
 
-    private void updateUserDataConsent() {
-        AppRoomDatabase db = AppRoomDatabase.getDatabase(getApplicationContext());
-        UserDao userDao = db.userDao();
+    private void addUser(boolean permission) {
+        User newUser = new User(userID);
+        newUser.storagePermission = permission;
 
-        userDao.updateStoragePermission(userID, true);
+        surveyViewModel.insert(newUser);
     }
 }

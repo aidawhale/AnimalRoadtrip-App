@@ -170,7 +170,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
-        boolean surveyDone = false;
 
         if(result != null && result.getContents() != null) {
 
@@ -180,7 +179,7 @@ public class MainActivity extends AppCompatActivity {
             AppRoomDatabase db = AppRoomDatabase.getDatabase(context);
             SurveyDao surveyDao = db.surveyDao();
             UserDao userDao = db.userDao();
-            User user = userDao.getUserById(userid);
+            User user = userDao.getDirectUserById(userid);
 
             if(user == null) { // First login
                 // Load next activity: SurveyActivity
@@ -190,11 +189,11 @@ public class MainActivity extends AppCompatActivity {
 
             } else { // User was already on the DB
 
-                if(userDao.getStoragePermission(userid)) { // Allowed data collection
+                if(user.storagePermission) { // Allowed data collection
                     // Check already made daily survey
                     String date = DateConverter.complexDateToSimpleDate(new Date());
 
-                    Survey survey = surveyDao.getDailySurveyByUser(userid, date);
+                    Survey survey = surveyDao.getDirectDailySurveyByUser(userid, date);
 
                     if(survey == null) { // Do daily survey
                         // Load next activity: SurveyActivity

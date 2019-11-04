@@ -31,7 +31,9 @@ public abstract class AppRoomDatabase extends androidx.room.RoomDatabase {
                     INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
                             AppRoomDatabase.class, DB_NAME)
                             .addCallback(sRoomDatabaseCallback)
-                            .allowMainThreadQueries() // TODO: in production, delete this statement, its only for testing purposes
+                            // Allow main thread queries only for simple transactions as gets,
+                            // inserts, deletes, etc must be done using ViewModels
+                            .allowMainThreadQueries()
                             .build();
                 }
             }
