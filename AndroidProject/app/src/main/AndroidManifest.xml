@@ -13,7 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".MarcopoloActivity" />
+        <activity android:name=".MarcopoloActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
         <activity android:name=".SurveyActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
