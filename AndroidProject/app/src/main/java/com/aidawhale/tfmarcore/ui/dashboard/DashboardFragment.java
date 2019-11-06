@@ -81,10 +81,18 @@ public class DashboardFragment extends Fragment {
     }
 
     private void updateDashboardSurveyData(List<Survey> surveys) {
+        if(surveys.size() == 0) {
+            return;
+        }
+
         // TODO: update survey data
     }
 
     private void updateDashboardGameStatistics(List<Game> games) {
+        if(games.size() == 0) {
+            return;
+        }
+
         // TODO: update game data
     }
 }
