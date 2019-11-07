@@ -16,7 +16,9 @@
         <activity android:name=".MarcopoloActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait"/>
-        <activity android:name=".SurveyActivity" />
+        <activity android:name=".SurveyActivity"
+            android:screenOrientation="portrait"
+            tools:replace="android:screenOrientation" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

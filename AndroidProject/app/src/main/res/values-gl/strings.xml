@@ -10,11 +10,11 @@
     <string name="access_without_qr">Entrar sen QR</string>
     <string name="error_scanning_code">Erro ó escanear o código. Por favor, inténtao de novo.</string>
     <string name="happiness">Felicidade</string>
-    <string name="happiness_question">Happiness question</string>
+    <string name="happiness_question">Como te atopas?</string>
     <string name="food">Comida</string>
-    <string name="food_question">Food question</string>
+    <string name="food_question">Comeches ben?</string>
     <string name="pain">Dor</string>
-    <string name="pain_question">Pain question</string>
+    <string name="pain_question">Dóeche algo?</string>
     <string name="app_info">Información da app</string>
     <string name="app_info_text">App info text</string>
     <string name="ok">OK!</string>
@@ -46,10 +46,10 @@
     <string name="select_game">Elixe un xogo</string>
     <string name="question_no_answer">Pregunta sen resposta:</string>
     <string name="daily_statistics">Estatísticas diarias</string>
-    <string name="global_statistics">Global statistics</string>
+    <string name="global_statistics">Estatísticas globais</string>
     <string name="step_count_per_game">Pasos por partida</string>
     <string name="time_per_game">Tempo por xogo</string>
-    <string name="survey_scores">Sentimentos xerais</string>
+    <string name="survey_scores">Enquisas diarias</string>
     <string name="daily_survey">Enquisa diaria</string>
     <string name="daily_steps">Pasos diarios</string>
 </resources>
