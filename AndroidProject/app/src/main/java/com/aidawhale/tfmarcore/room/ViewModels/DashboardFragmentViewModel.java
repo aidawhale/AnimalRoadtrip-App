@@ -17,11 +17,18 @@ public class DashboardFragmentViewModel extends AndroidViewModel {
 
     /* Dashboard fragment needs info from:
      *
+     *   - User:
+     *       insert()
+     *
      *   - Survey:
+     *       insert()
      *       getUserSurveys()
+     *       getDailySurveyByUser()
      *
      *   - Game:
+     *       insert()
      *       getUserGames()
+     *       getDailyStepCount()
      *
      * */
 
@@ -43,6 +50,14 @@ public class DashboardFragmentViewModel extends AndroidViewModel {
 
     public LiveData<List<Game>> getUserGames(String userid) {
         return repository.getUserGames(userid);
+    }
+
+    public LiveData<Survey> getDailySurveyByUser(String userid, String date) {
+        return repository.getDailySurveyByUser(userid, date);
+    }
+
+    public LiveData<Integer> getDailyStepCount(String userid, String date) {
+        return repository.getDailyStepCount(userid, date);
     }
 
     public void insert(User user) {

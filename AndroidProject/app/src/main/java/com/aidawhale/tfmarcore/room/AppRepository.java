@@ -37,6 +37,10 @@ public class AppRepository {
         return surveyDao.getDailySurveyByUser(userid, date);
     }
 
+    public LiveData<Integer> getDailyStepCount(String userid, String date) {
+        return gameDao.getDailyStepCount(userid, date);
+    }
+
     // Inserts
     public void insert (User user) {
         new InsertUserAsyncTask(userDao).execute(user);

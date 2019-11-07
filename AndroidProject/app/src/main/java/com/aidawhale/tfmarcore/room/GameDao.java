@@ -19,4 +19,7 @@ public interface GameDao {
     @Query("SELECT * FROM game WHERE user LIKE :userid")
     LiveData<List<Game>> getUserGames(String userid);
 
+    @Query("SELECT SUM(steps) FROM game WHERE user LIKE :userid and date LIKE :date")
+    LiveData<Integer> getDailyStepCount(String userid, String date);
+
 }

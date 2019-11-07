@@ -10,7 +10,8 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:layout_marginTop="8dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -29,16 +30,16 @@
         android:columnCount="3"
         android:rowCount="1"
         android:alignmentMode="alignMargins"
-        android:columnOrderPreserved="false"
-        android:padding="8dp"
-        android:layout_marginBottom="45dp">
+        android:columnOrderPreserved="false">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/first_game_cardview"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_columnWeight="1"
-            android:layout_margin="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginBottom="16dp"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?android:attr/selectableItemBackground"
@@ -68,7 +69,9 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_columnWeight="1"
-            android:layout_margin="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginBottom="16dp"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?android:attr/selectableItemBackground"
@@ -98,7 +101,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_columnWeight="1"
-            android:layout_margin="8dp"
+            android:layout_margin="16dp"
             app:cardElevation="8dp"
             app:cardCornerRadius="8dp"
             android:clickable="true"

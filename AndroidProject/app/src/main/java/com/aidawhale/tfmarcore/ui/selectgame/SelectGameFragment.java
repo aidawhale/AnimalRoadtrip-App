@@ -159,7 +159,9 @@ public class SelectGameFragment extends Fragment implements SensorEventListener 
     public void onDestroy() {
         super.onDestroy();
 
-        sensorManager.unregisterListener(this);
+        if(sensorManager != null) {
+            sensorManager.unregisterListener(this);
+        }
     }
 
     @Override

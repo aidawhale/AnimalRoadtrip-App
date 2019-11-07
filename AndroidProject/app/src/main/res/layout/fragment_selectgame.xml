@@ -16,25 +16,26 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:text="@string/title_selectgame"
-            android:textSize="24sp"></TextView>
+            android:textSize="24sp"
+            android:layout_marginTop="16dp"/>
     </RelativeLayout>
 
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:columnCount="1"
-        android:rowCount="4"
+        android:rowCount="3"
         android:alignmentMode="alignMargins"
-        android:columnOrderPreserved="false"
-        android:padding="14dp"
-        android:layout_marginBottom="45dp">
+        android:columnOrderPreserved="false">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/first_game_cardview"
             android:layout_width="match_parent"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:layout_margin="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?android:attr/selectableItemBackground"
@@ -64,7 +65,9 @@
             android:layout_width="match_parent"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:layout_margin="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?android:attr/selectableItemBackground"
@@ -94,7 +97,7 @@
             android:layout_width="match_parent"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:layout_margin="8dp"
+            android:layout_margin="16dp"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?android:attr/selectableItemBackground"

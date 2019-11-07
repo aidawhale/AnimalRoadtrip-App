@@ -45,4 +45,11 @@
     <string name="privacy_info_text">Los datos que se recogen serán empleados únicamente para fines médicos.  Este permiso y los datos pueden ser consultados, modificados y/o borrados desde la página web si entras con el mismo número del código de barras con el que se accede a esta aplicación.  La única información que se recoge es el tiempo de uso de cada juego y el conteo de pasos durante ese tiempo, además del cuestionario diaro sobre el estado de ánimo.</string>
     <string name="select_game">Elige un juego</string>
     <string name="question_no_answer">Pregunta sin respuesta:</string>
+    <string name="daily_statistics">Estadísticas diarias</string>
+    <string name="global_statistics">Global statistics</string>
+    <string name="step_count_per_game">Pasos por partida</string>
+    <string name="time_per_game">Tiempo por juego</string>
+    <string name="survey_scores">Sentimientos generales</string>
+    <string name="daily_survey">Encuesta diaria</string>
+    <string name="daily_steps">Pasos diarios</string>
 </resources>

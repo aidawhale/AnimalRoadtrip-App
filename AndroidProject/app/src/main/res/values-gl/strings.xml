@@ -45,4 +45,11 @@
     <string name="reject" >Rexeitar</string>
     <string name="select_game">Elixe un xogo</string>
     <string name="question_no_answer">Pregunta sen resposta:</string>
+    <string name="daily_statistics">Estatísticas diarias</string>
+    <string name="global_statistics">Global statistics</string>
+    <string name="step_count_per_game">Pasos por partida</string>
+    <string name="time_per_game">Tempo por xogo</string>
+    <string name="survey_scores">Sentimentos xerais</string>
+    <string name="daily_survey">Enquisa diaria</string>
+    <string name="daily_steps">Pasos diarios</string>
 </resources>

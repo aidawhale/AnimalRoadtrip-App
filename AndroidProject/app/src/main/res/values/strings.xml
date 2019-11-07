@@ -45,4 +45,11 @@
     <string name="reject">Reject</string>
     <string name="select_game">Select game</string>
     <string name="question_no_answer">Question without answer:</string>
+    <string name="daily_statistics">Daily statistics</string>
+    <string name="daily_steps">Daily steps</string>
+    <string name="global_statistics">Global statistics</string>
+    <string name="step_count_per_game">Step count per game</string>
+    <string name="time_per_game">Time spent playing each game</string>
+    <string name="survey_scores">Global survey feelings</string>
+    <string name="daily_survey">Daily survey</string>
 </resources>

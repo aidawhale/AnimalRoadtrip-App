@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -17,7 +18,9 @@ import com.aidawhale.tfmarcore.UserMenuActivity;
 import com.aidawhale.tfmarcore.room.Game;
 import com.aidawhale.tfmarcore.room.Survey;
 import com.aidawhale.tfmarcore.room.ViewModels.DashboardFragmentViewModel;
+import com.aidawhale.tfmarcore.utils.DateConverter;
 
+import java.util.Date;
 import java.util.List;
 
 public class DashboardFragment extends Fragment {
@@ -27,6 +30,11 @@ public class DashboardFragment extends Fragment {
 
     private DashboardFragmentViewModel dashboardFragmentViewModel;
 
+    private ImageView image_happyFace;
+    private ImageView image_foodFace;
+    private ImageView image_painFace;
+    private TextView tv_dailyStepsNumber;
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
@@ -35,13 +43,6 @@ public class DashboardFragment extends Fragment {
         dashboardFragmentViewModel = new ViewModelProvider(this).get(DashboardFragmentViewModel.class);
 
         View root = inflater.inflate(R.layout.fragment_dashboard, container, false);
-        final TextView textView = root.findViewById(R.id.text_dashboard);
-        dashboardViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
 
         return root;
     }
@@ -52,15 +53,44 @@ public class DashboardFragment extends Fragment {
 
         userID = UserMenuActivity.getUserID();
 
-        TextView text_userID = getView().findViewById(R.id.text_userID);
-
         if(userID == null) {
-            text_userID.setText("No data available.");
             return;
         }
 
-        String s = "Login " + userID;
-        text_userID.setText(s);
+        image_happyFace = getView().findViewById(R.id.image_happiness_face);
+        image_foodFace = getView().findViewById(R.id.image_food_face);
+        image_painFace = getView().findViewById(R.id.image_pain_face);
+        tv_dailyStepsNumber = getView().findViewById(R.id.text_daily_steps_number);
+
+
+        String date = DateConverter.complexDateToSimpleDate(new Date());
+        dashboardFragmentViewModel.getDailySurveyByUser(userID, date).observe(getViewLifecycleOwner(), new Observer<Survey>() {
+            @Override
+            public void onChanged(Survey survey) {
+                if(survey == null) {
+                    return;
+                }
+
+                if(image_happyFace != null) {
+                    image_happyFace.setImageResource(getFaceFromNumber(survey.happiness));
+                }
+                if(image_foodFace != null) {
+                    image_foodFace.setImageResource(getFaceFromNumber(survey.food));
+                }
+                if(image_painFace != null) {
+                    image_painFace.setImageResource(getFaceFromNumber(survey.pain));
+                }
+            }
+        });
+
+        dashboardFragmentViewModel.getDailyStepCount(userID, date).observe(getViewLifecycleOwner(), new Observer<Integer>() {
+            @Override
+            public void onChanged(Integer integer) {
+                if(tv_dailyStepsNumber != null && integer != null ) {
+                    tv_dailyStepsNumber.setText(String.valueOf(integer));
+                }
+            }
+        });
 
         dashboardFragmentViewModel.getUserSurveys(userID).observe(getViewLifecycleOwner(), new Observer<List<Survey>>() {
             @Override
@@ -75,9 +105,22 @@ public class DashboardFragment extends Fragment {
                 updateDashboardGameStatistics(games);
             }
         });
+    }
 
-
-
+    private int getFaceFromNumber(int faceNumber) {
+        switch (faceNumber) {
+            case 0:
+                return R.drawable.ic_cara_muy_triste;
+            case 1:
+                return R.drawable.ic_cara_triste;
+            case 2:
+                return R.drawable.ic_cara_base;
+            case 3:
+                return R.drawable.ic_cara_feliz;
+            case 4:
+                return R.drawable.ic_cara_muy_feliz;
+        }
+        return R.drawable.ic_do_not_disturb;
     }
 
     private void updateDashboardSurveyData(List<Survey> surveys) {
