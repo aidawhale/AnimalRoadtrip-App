@@ -1,14 +1,11 @@
 package com.aidawhale.tfmarcore.ui.dashboard;
 
-import android.app.Application;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
@@ -17,10 +14,8 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.aidawhale.tfmarcore.MainActivity;
 import com.aidawhale.tfmarcore.R;
 import com.aidawhale.tfmarcore.UserMenuActivity;
-import com.aidawhale.tfmarcore.room.Game;
 import com.aidawhale.tfmarcore.room.Survey;
 import com.aidawhale.tfmarcore.room.ViewModels.DashboardFragmentViewModel;
 import com.aidawhale.tfmarcore.utils.DateConverter;
@@ -275,7 +270,11 @@ public class DashboardFragment extends Fragment {
         xAxis.setValueFormatter(new ValueFormatter() {
             @Override
             public String getFormattedValue(float value) {
-                return dates.get((int) value);
+                if(value >= 0 && value < dates.size()) {
+                    return dates.get((int) value);
+                } else {
+                    return "";
+                }
             }
         });
         surveyLineChart.invalidate(); // refresh chart
