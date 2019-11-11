@@ -5,7 +5,7 @@ android {
     buildToolsVersion "29.0.2"
     defaultConfig {
         applicationId "com.aidawhale.tfmarcore"
-        minSdkVersion 24
+        minSdkVersion 26
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -41,4 +41,6 @@ dependencies {
     androidTestImplementation "androidx.room:room-testing:2.2.1"
     implementation "androidx.lifecycle:lifecycle-extensions:2.2.0-rc01"
     annotationProcessor "androidx.lifecycle:lifecycle-compiler:2.2.0-rc01"
+
+    implementation "com.github.PhilJay:MPAndroidChart:v3.1.0"
 }

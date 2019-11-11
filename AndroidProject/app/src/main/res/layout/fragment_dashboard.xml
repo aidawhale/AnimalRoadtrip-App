@@ -161,8 +161,8 @@
             android:id="@+id/text_daily_chart_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
             android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="32dp"
             android:text="@string/step_count_per_game"
             android:textSize="18sp"
@@ -170,14 +170,11 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text_daily_steps" />
 
-        <ImageView
-            android:id="@+id/daily_chart"
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/chart_daily_steps_per_game"
             android:layout_width="match_parent"
-            android:layout_height="180dp"
-            android:layout_marginLeft="32dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginRight="32dp"
-            android:src="#CCC"
+            android:layout_height="200dp"
+            android:layout_margin="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text_daily_chart_title" />
@@ -192,8 +189,8 @@
             android:background="@color/colorSuperLightGray"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@id/daily_chart"
-            app:layout_constraintTop_toBottomOf="@id/daily_chart" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/chart_daily_steps_per_game" />
 
     <!-- GLOBAL STATISTICS -->
         <TextView
@@ -221,20 +218,18 @@
             android:layout_marginTop="8dp"
             android:layout_marginStart="32dp"
             android:layout_marginEnd="32dp"
-            android:text="@string/time_per_game"
+            android:text="@string/steps_and_time_per_day"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text_global_statistics" />
 
-        <ImageView
-            android:id="@+id/global_game_chart"
+        <!-- Time: BarChart + Steps: LineChart -->
+        <com.github.mikephil.charting.charts.CombinedChart
+            android:id="@+id/chart_steps_and_time_per_day"
             android:layout_width="match_parent"
-            android:layout_height="180dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="32dp"
-            android:src="#CCC"
+            android:layout_height="200dp"
+            android:layout_margin="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text_global_game_chart_title" />
@@ -250,17 +245,13 @@
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/global_game_chart" />
+            app:layout_constraintTop_toBottomOf="@+id/chart_steps_and_time_per_day" />
 
-        <ImageView
-            android:id="@+id/global_survey_chart"
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/chart_survey"
             android:layout_width="match_parent"
-            android:layout_height="180dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="32dp"
-            android:layout_marginBottom="16dp"
-            android:src="#CCC"
+            android:layout_height="200dp"
+            android:layout_margin="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

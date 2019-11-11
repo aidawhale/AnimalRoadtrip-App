@@ -3,8 +3,8 @@
     <string name="title_activity_user_menu">Nome de usuario</string>
     <string name="title_selectgame">Xogos</string>
     <string name="title_dashboard">Taboleiro</string>
-    <string name="third_game_name">Game numero tres</string>
-    <string name="second_game_name">Game numero dos</string>
+    <string name="third_game_name">Mapa do tesouro</string>
+    <string name="second_game_name">Aventura na selva</string>
     <string name="first_game_name">Marco Polo</string>
     <string name="barcode_mockup">BarCode mockup</string>
     <string name="access_without_qr">Entrar sen QR</string>
@@ -48,8 +48,10 @@
     <string name="daily_statistics">Estatísticas diarias</string>
     <string name="global_statistics">Estatísticas globais</string>
     <string name="step_count_per_game">Pasos por partida</string>
-    <string name="time_per_game">Tempo por xogo</string>
+    <string name="steps_and_time_per_day">Pasos e tempo xogado por día</string>
     <string name="survey_scores">Enquisas diarias</string>
     <string name="daily_survey">Enquisa diaria</string>
     <string name="daily_steps">Pasos diarios</string>
+    <string name="minutes">Minutos</string>
+    <string name="steps">Pasos</string>
 </resources>

@@ -5,6 +5,9 @@ import android.os.AsyncTask;
 
 import androidx.lifecycle.LiveData;
 
+import com.aidawhale.tfmarcore.utils.GameInfoPerDay;
+import com.aidawhale.tfmarcore.utils.UserStepsPerGame;
+
 import java.util.List;
 
 public class AppRepository {
@@ -39,6 +42,14 @@ public class AppRepository {
 
     public LiveData<Integer> getDailyStepCount(String userid, String date) {
         return gameDao.getDailyStepCount(userid, date);
+    }
+
+    public LiveData<List<UserStepsPerGame>> getDailyUserStepsPerGameType(String userid, String date) {
+        return gameDao.getDailyUserStepsPerGameType(userid, date);
+    }
+
+    public LiveData<List<GameInfoPerDay>> getUserStepsAndTimePerDay(String userid) {
+        return gameDao.getUserStepsAndTimePerDay(userid);
     }
 
     // Inserts

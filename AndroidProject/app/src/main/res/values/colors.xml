@@ -10,4 +10,11 @@
     <color name="coloDarkGray">#494949</color>
     <color name="colorLightGray">#a4a4a4</color>
     <color name="colorSuperLightGray">#C0C0C0</color>
+
+    <color name="colorBlack">#000000</color>
+    <color name="colorBlue">#9CE2FF</color>
+    <color name="colorGreen">#8BC34A</color>
+    <color name="colorYellow">#FFC107</color>
+    <color name="colorOrange">#FF7A32</color>
+    <color name="colorPurple">#724AB9</color>
 </resources>

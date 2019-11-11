@@ -10,6 +10,8 @@ import com.aidawhale.tfmarcore.room.AppRepository;
 import com.aidawhale.tfmarcore.room.Game;
 import com.aidawhale.tfmarcore.room.Survey;
 import com.aidawhale.tfmarcore.room.User;
+import com.aidawhale.tfmarcore.utils.GameInfoPerDay;
+import com.aidawhale.tfmarcore.utils.UserStepsPerGame;
 
 import java.util.List;
 
@@ -58,6 +60,14 @@ public class DashboardFragmentViewModel extends AndroidViewModel {
 
     public LiveData<Integer> getDailyStepCount(String userid, String date) {
         return repository.getDailyStepCount(userid, date);
+    }
+
+    public LiveData<List<UserStepsPerGame>> getDailyUserStepsPerGameType(String userid, String date) {
+        return repository.getDailyUserStepsPerGameType(userid, date);
+    }
+
+    public LiveData<List<GameInfoPerDay>> getUserStepsAndTimePerDay(String userID) {
+        return repository.getUserStepsAndTimePerDay(userID);
     }
 
     public void insert(User user) {

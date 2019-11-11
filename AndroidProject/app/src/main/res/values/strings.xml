@@ -3,8 +3,8 @@
     <string name="title_activity_user_menu">User name</string>
     <string name="title_selectgame">Select game</string>
     <string name="title_dashboard">Dashboard</string>
-    <string name="third_game_name">Game numero tres</string>
-    <string name="second_game_name">Game numero dos</string>
+    <string name="third_game_name">Treasure map</string>
+    <string name="second_game_name">Jungle adventure</string>
     <string name="first_game_name">Marco Polo</string>
     <string name="barcode_mockup">BarCode mockup</string>
     <string name="access_without_qr">Access without QR</string>
@@ -49,7 +49,9 @@
     <string name="daily_steps">Daily steps</string>
     <string name="global_statistics">Global statistics</string>
     <string name="step_count_per_game">Step count per game</string>
-    <string name="time_per_game">Time spent playing each game</string>
+    <string name="steps_and_time_per_day">Steps and time spent playing each day</string>
     <string name="survey_scores">Daily survey global results</string>
     <string name="daily_survey">Daily survey</string>
+    <string name="minutes">Minutes</string>
+    <string name="steps">Steps</string>
 </resources>
