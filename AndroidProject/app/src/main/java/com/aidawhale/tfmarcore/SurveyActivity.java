@@ -18,6 +18,7 @@ import com.aidawhale.tfmarcore.room.User;
 import com.aidawhale.tfmarcore.room.UserDao;
 import com.aidawhale.tfmarcore.room.ViewModels.SurveyActivityViewModel;
 import com.aidawhale.tfmarcore.utils.DateConverter;
+import com.aidawhale.tfmarcore.utils.LanguageSettings;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
@@ -39,6 +40,8 @@ public class SurveyActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_survey);
+
+        LanguageSettings.updateLocale(getApplicationContext());
 
         // Get a new or existing ViewModel from the ViewModelProvider.
         surveyViewModel = new ViewModelProvider(this).get(SurveyActivityViewModel.class);

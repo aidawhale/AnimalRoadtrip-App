@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
@@ -20,6 +21,7 @@ import com.aidawhale.tfmarcore.room.Survey;
 import com.aidawhale.tfmarcore.room.ViewModels.DashboardFragmentViewModel;
 import com.aidawhale.tfmarcore.utils.DateConverter;
 import com.aidawhale.tfmarcore.utils.GameInfoPerDay;
+import com.aidawhale.tfmarcore.utils.LanguageSettings;
 import com.aidawhale.tfmarcore.utils.UserStepsPerGame;
 import com.github.mikephil.charting.charts.CombinedChart;
 import com.github.mikephil.charting.charts.LineChart;
@@ -68,6 +70,9 @@ public class DashboardFragment extends Fragment {
         dashboardViewModel = new ViewModelProvider(this).get(DashboardViewModel.class);
 
         dashboardFragmentViewModel = new ViewModelProvider(this).get(DashboardFragmentViewModel.class);
+
+        LanguageSettings.updateLocale(getContext());
+        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle(R.string.title_dashboard);
 
         View root = inflater.inflate(R.layout.fragment_dashboard, container, false);
 

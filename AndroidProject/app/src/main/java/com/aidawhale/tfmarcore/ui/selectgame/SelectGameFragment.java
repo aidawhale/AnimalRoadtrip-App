@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
@@ -26,6 +27,8 @@ import com.aidawhale.tfmarcore.UserMenuActivity;
 import com.aidawhale.tfmarcore.room.Game;
 import com.aidawhale.tfmarcore.room.ViewModels.SelectGameFragmentViewModel;
 import com.aidawhale.tfmarcore.utils.DateConverter;
+import com.aidawhale.tfmarcore.utils.LanguageSettings;
+import com.google.android.material.bottomnavigation.BottomNavigationItemView;
 
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
@@ -48,6 +51,10 @@ public class SelectGameFragment extends Fragment implements SensorEventListener 
                              ViewGroup container, Bundle savedInstanceState) {
         sgViewModel =
                 ViewModelProviders.of(this).get(SelectGameViewModel.class);
+
+        LanguageSettings.updateLocale(getContext());
+        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle(R.string.title_selectgame);
+
         View root = inflater.inflate(R.layout.fragment_selectgame, container, false);
 
         // Get a new or existing ViewModel from the ViewModelProvider.

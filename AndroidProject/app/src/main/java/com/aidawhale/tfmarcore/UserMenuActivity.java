@@ -2,6 +2,7 @@ package com.aidawhale.tfmarcore;
 
 import android.os.Bundle;
 
+import com.aidawhale.tfmarcore.utils.LanguageSettings;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,6 +18,9 @@ public class UserMenuActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        LanguageSettings.updateLocale(getApplicationContext());
+
         setContentView(R.layout.activity_user_menu);
         BottomNavigationView navView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each

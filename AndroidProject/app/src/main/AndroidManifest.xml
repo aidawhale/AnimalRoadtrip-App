@@ -13,9 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".MarcopoloActivity"
-            android:configChanges="orientation"
-            android:screenOrientation="portrait"/>
+        <activity android:name=".MarcopoloActivity" />
         <activity android:name=".SurveyActivity"
             android:screenOrientation="portrait"
             tools:replace="android:screenOrientation" />

@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import android.content.DialogInterface;
+import android.content.pm.ActivityInfo;
 import android.content.res.ColorStateList;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -16,6 +17,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Chronometer;
+
+import com.aidawhale.tfmarcore.utils.LanguageSettings;
 
 public class MarcopoloActivity extends AppCompatActivity {
 
@@ -36,6 +39,10 @@ public class MarcopoloActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        LanguageSettings.updateLocale(getApplicationContext());
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LOCKED);
+
         setContentView(R.layout.activity_marcopolo);
 
         getSupportActionBar().setTitle(R.string.marcopolo);
