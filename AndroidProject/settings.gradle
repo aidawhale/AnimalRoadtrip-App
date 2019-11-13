@@ -1,2 +1,6 @@
 include ':app'
 rootProject.name='TFMARcore'
+
+
+include ':unityLibrary'
+project(':unityLibrary').projectDir = new File('..\\UnityProject\\TFMarcore\\androidBuild\\unityLibrary')

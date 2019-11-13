@@ -1,0 +1,175 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.unity3d.player.test" >
+4
+5    <uses-sdk
+5-->D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger7791969940995641805.xml:5:5-74
+6        android:minSdkVersion="26"
+6-->D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger7791969940995641805.xml:5:15-41
+7        android:targetSdkVersion="28" />
+7-->D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger7791969940995641805.xml:5:42-71
+8
+9    <instrumentation
+9-->D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger7791969940995641805.xml:11:5-15:73
+10        android:name="android.test.InstrumentationTestRunner"
+10-->D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger7791969940995641805.xml:11:22-75
+11        android:functionalTest="false"
+11-->D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger7791969940995641805.xml:14:22-52
+12        android:handleProfiling="false"
+12-->D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger7791969940995641805.xml:13:22-53
+13        android:label="Tests for com.unity3d.player.test"
+13-->D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger7791969940995641805.xml:15:22-71
+14        android:targetPackage="com.unity3d.player.test" />
+14-->D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger7791969940995641805.xml:12:22-69
+15
+16    <uses-feature android:glEsVersion="0x00030000" />
+16-->[__tested_artifact__::unityLibrary] D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:13:5-54
+16-->[__tested_artifact__::unityLibrary] D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:13:19-51
+17
+18    <uses-permission android:name="android.permission.CAMERA" />
+18-->[__tested_artifact__::unityLibrary] D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:15:5-65
+18-->[__tested_artifact__::unityLibrary] D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:15:22-62
+19    <uses-permission android:name="android.permission.INTERNET" />
+19-->[__tested_artifact__::unityLibrary] D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:16:5-67
+19-->[__tested_artifact__::unityLibrary] D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:16:22-64
+20    <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE" />
+20-->[__tested_artifact__::unityLibrary] D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:17:5-86
+20-->[__tested_artifact__::unityLibrary] D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:17:22-83
+21
+22    <uses-feature
+22-->[__tested_artifact__::unityLibrary] D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:19:5-21:36
+23        android:name="android.hardware.touchscreen"
+23-->[__tested_artifact__::unityLibrary] D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:20:9-52
+24        android:required="false" />
+24-->[__tested_artifact__::unityLibrary] D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:21:9-33
+25    <uses-feature
+25-->[__tested_artifact__::unityLibrary] D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:22:5-24:36
+26        android:name="android.hardware.touchscreen.multitouch"
+26-->[__tested_artifact__::unityLibrary] D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:23:9-63
+27        android:required="false" />
+27-->[__tested_artifact__::unityLibrary] D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:9-33
+28    <uses-feature
+28-->[__tested_artifact__::unityLibrary] D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:25:5-27:36
+29        android:name="android.hardware.touchscreen.multitouch.distinct"
+29-->[__tested_artifact__::unityLibrary] D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:26:9-72
+30        android:required="false" />
+30-->[__tested_artifact__::unityLibrary] D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:27:9-33
+31    <uses-feature
+31-->[:google_ar_required:] C:\Users\Aida\.gradle\caches\transforms-2\files-2.1\b5720b91a02080e88a25f7fa521ec8ac\google_ar_required\AndroidManifest.xml:9:5-11:35
+32        android:name="android.hardware.camera.ar"
+32-->[:google_ar_required:] C:\Users\Aida\.gradle\caches\transforms-2\files-2.1\b5720b91a02080e88a25f7fa521ec8ac\google_ar_required\AndroidManifest.xml:10:9-50
+33        android:required="true" />
+33-->[:google_ar_required:] C:\Users\Aida\.gradle\caches\transforms-2\files-2.1\b5720b91a02080e88a25f7fa521ec8ac\google_ar_required\AndroidManifest.xml:11:9-32
+34
+35    <application android:debuggable="true" >
+35-->D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger7791969940995641805.xml:7:5-9:19
+35-->D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger7791969940995641805.xml:7:18-43
+36        <uses-library android:name="android.test.runner" />
+36-->D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger7791969940995641805.xml:8:9-60
+36-->D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger7791969940995641805.xml:8:23-57
+37
+38        <activity
+38-->[__tested_artifact__::unityLibrary] D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:30:9-49:20
+39            android:name="com.unity3d.player.UnityPlayerActivity"
+39-->[__tested_artifact__::unityLibrary] D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:31:13-66
+40            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale|layoutDirection|density"
+40-->[__tested_artifact__::unityLibrary] D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:32:13-194
+41            android:hardwareAccelerated="false"
+41-->[__tested_artifact__::unityLibrary] D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:33:13-48
+42            android:launchMode="singleTask"
+42-->[__tested_artifact__::unityLibrary] D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:34:13-44
+43            android:screenOrientation="fullSensor"
+43-->[__tested_artifact__::unityLibrary] D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:35:13-51
+44            android:theme="@style/UnityThemeSelector" >
+44-->[__tested_artifact__::unityLibrary] D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:36:13-54
+45            <intent-filter>
+45-->[__tested_artifact__::unityLibrary] D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:37:13-41:29
+46                <action android:name="android.intent.action.MAIN" />
+46-->[__tested_artifact__::unityLibrary] D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:38:17-69
+46-->[__tested_artifact__::unityLibrary] D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:38:25-66
+47
+48                <category android:name="android.intent.category.LAUNCHER" />
+48-->[__tested_artifact__::unityLibrary] D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:40:17-77
+48-->[__tested_artifact__::unityLibrary] D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:40:27-74
+49            </intent-filter>
+50
+51            <meta-data
+51-->[__tested_artifact__::unityLibrary] D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:43:13-45:40
+52                android:name="unityplayer.UnityActivity"
+52-->[__tested_artifact__::unityLibrary] D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:44:17-57
+53                android:value="true" />
+53-->[__tested_artifact__::unityLibrary] D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:45:17-37
+54            <meta-data
+54-->[__tested_artifact__::unityLibrary] D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:46:13-48:40
+55                android:name="android.notch_support"
+55-->[__tested_artifact__::unityLibrary] D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:47:17-53
+56                android:value="true" />
+56-->[__tested_artifact__::unityLibrary] D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:48:17-37
+57        </activity>
+58
+59        <meta-data
+59-->[__tested_artifact__::unityLibrary] D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:51:9-53:36
+60            android:name="unity.tango-enable"
+60-->[__tested_artifact__::unityLibrary] D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:52:13-46
+61            android:value="True" />
+61-->[__tested_artifact__::unityLibrary] D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:53:13-33
+62        <meta-data
+62-->[__tested_artifact__::unityLibrary] D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:54:9-56:36
+63            android:name="unityplayer.SkipPermissionsDialog"
+63-->[__tested_artifact__::unityLibrary] D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:55:13-61
+64            android:value="true" />
+64-->[__tested_artifact__::unityLibrary] D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:56:13-33
+65        <meta-data
+65-->[__tested_artifact__::unityLibrary] D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:57:9-59:33
+66            android:name="unity.splash-mode"
+66-->[__tested_artifact__::unityLibrary] D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:58:13-45
+67            android:value="0" />
+67-->[__tested_artifact__::unityLibrary] D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:59:13-30
+68        <meta-data
+68-->[__tested_artifact__::unityLibrary] D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:60:9-62:36
+69            android:name="unity.splash-enable"
+69-->[__tested_artifact__::unityLibrary] D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:61:13-47
+70            android:value="True" />
+70-->[__tested_artifact__::unityLibrary] D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:62:13-33
+71        <meta-data
+71-->[__tested_artifact__::unityLibrary] D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:63:9-65:50
+72            android:name="notch.config"
+72-->[__tested_artifact__::unityLibrary] D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:64:13-40
+73            android:value="portrait|landscape" />
+73-->[__tested_artifact__::unityLibrary] D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:65:13-47
+74        <meta-data
+74-->[__tested_artifact__::unityLibrary] D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:66:9-68:68
+75            android:name="unity.build-id"
+75-->[__tested_artifact__::unityLibrary] D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:67:13-42
+76            android:value="d7256b79-d8cf-4480-be67-104c33de43d9" /> <!-- The minimal version code of ARCore APK required for an app using this SDK. -->
+76-->[__tested_artifact__::unityLibrary] D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:68:13-65
+77        <meta-data
+77-->[:arcore_client:] C:\Users\Aida\.gradle\caches\transforms-2\files-2.1\e9652d3ce7057dc8ebffea36f40a3827\arcore_client\AndroidManifest.xml:33:9-35:41
+78            android:name="com.google.ar.core.min_apk_version"
+78-->[:arcore_client:] C:\Users\Aida\.gradle\caches\transforms-2\files-2.1\e9652d3ce7057dc8ebffea36f40a3827\arcore_client\AndroidManifest.xml:34:13-62
+79            android:value="190919000" /> <!-- This activity is critical for installing ARCore when it is not already present. -->
+79-->[:arcore_client:] C:\Users\Aida\.gradle\caches\transforms-2\files-2.1\e9652d3ce7057dc8ebffea36f40a3827\arcore_client\AndroidManifest.xml:35:13-38
+80        <activity
+80-->[:arcore_client:] C:\Users\Aida\.gradle\caches\transforms-2\files-2.1\e9652d3ce7057dc8ebffea36f40a3827\arcore_client\AndroidManifest.xml:37:9-43:80
+81            android:name="com.google.ar.core.InstallActivity"
+81-->[:arcore_client:] C:\Users\Aida\.gradle\caches\transforms-2\files-2.1\e9652d3ce7057dc8ebffea36f40a3827\arcore_client\AndroidManifest.xml:38:13-62
+82            android:configChanges="keyboardHidden|orientation|screenSize"
+82-->[:arcore_client:] C:\Users\Aida\.gradle\caches\transforms-2\files-2.1\e9652d3ce7057dc8ebffea36f40a3827\arcore_client\AndroidManifest.xml:39:13-74
+83            android:excludeFromRecents="true"
+83-->[:arcore_client:] C:\Users\Aida\.gradle\caches\transforms-2\files-2.1\e9652d3ce7057dc8ebffea36f40a3827\arcore_client\AndroidManifest.xml:40:13-46
+84            android:exported="false"
+84-->[:arcore_client:] C:\Users\Aida\.gradle\caches\transforms-2\files-2.1\e9652d3ce7057dc8ebffea36f40a3827\arcore_client\AndroidManifest.xml:41:13-37
+85            android:launchMode="singleTop"
+85-->[:arcore_client:] C:\Users\Aida\.gradle\caches\transforms-2\files-2.1\e9652d3ce7057dc8ebffea36f40a3827\arcore_client\AndroidManifest.xml:42:13-43
+86            android:theme="@android:style/Theme.Material.Light.Dialog.Alert" />
+86-->[:arcore_client:] C:\Users\Aida\.gradle\caches\transforms-2\files-2.1\e9652d3ce7057dc8ebffea36f40a3827\arcore_client\AndroidManifest.xml:43:13-77
+87
+88        <meta-data
+88-->[:google_ar_required:] C:\Users\Aida\.gradle\caches\transforms-2\files-2.1\b5720b91a02080e88a25f7fa521ec8ac\google_ar_required\AndroidManifest.xml:14:9-16:40
+89            android:name="com.google.ar.core"
+89-->[:google_ar_required:] C:\Users\Aida\.gradle\caches\transforms-2\files-2.1\b5720b91a02080e88a25f7fa521ec8ac\google_ar_required\AndroidManifest.xml:15:13-46
+90            android:value="required" />
+90-->[:google_ar_required:] C:\Users\Aida\.gradle\caches\transforms-2\files-2.1\b5720b91a02080e88a25f7fa521ec8ac\google_ar_required\AndroidManifest.xml:16:13-37
+91    </application>
+92
+93</manifest>

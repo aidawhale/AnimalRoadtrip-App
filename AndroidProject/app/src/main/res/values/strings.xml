@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">TFM ARcore</string>
+    <string name="game_view_content_description">Game view</string> <!--  Needed for UnityPlayActivity  -->
     <string name="title_activity_user_menu">User name</string>
     <string name="title_selectgame">Select game</string>
     <string name="title_dashboard">Dashboard</string>
