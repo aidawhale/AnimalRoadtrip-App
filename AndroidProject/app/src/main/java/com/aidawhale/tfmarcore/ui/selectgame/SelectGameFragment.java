@@ -28,7 +28,6 @@ import com.aidawhale.tfmarcore.room.Game;
 import com.aidawhale.tfmarcore.room.ViewModels.SelectGameFragmentViewModel;
 import com.aidawhale.tfmarcore.utils.DateConverter;
 import com.aidawhale.tfmarcore.utils.LanguageSettings;
-import com.unity3d.player.UnityPlayer;
 import com.unity3d.player.UnityPlayerActivity;
 
 import java.util.Date;
@@ -101,10 +100,9 @@ public class SelectGameFragment extends Fragment implements SensorEventListener 
                 sgViewModel.preGameSteps = sgViewModel.steps;
 
                 // Init game with corresponding UnityActivity
-                Intent unityIntent = new Intent(getContext(), UnityPlayerActivity.class);
-                UnityPlayer.UnitySendMessage("SceneLoader", "LoadScene", "1");
-                startActivity(unityIntent);
-//                startActivityForResult(unityIntent, COLLECT_PIECES_GAME);
+                Intent intent = new Intent(getContext(), UnityPlayerActivity.class);
+                intent.putExtra("SCENE", "1");
+                startActivityForResult(intent, COLLECT_PIECES_GAME);
             }
         });
 
@@ -116,10 +114,9 @@ public class SelectGameFragment extends Fragment implements SensorEventListener 
                 sgViewModel.preGameSteps = sgViewModel.steps;
 
                 // Init game with corresponding UnityActivity
-                Intent unityIntent = new Intent(getContext(), UnityPlayerActivity.class);
-                UnityPlayer.UnitySendMessage("SceneLoader", "LoadScene", "2");
-                startActivity(unityIntent);
-//                startActivityForResult(unityIntent, TREASURE_SEARCH_GAME);
+                Intent intent = new Intent(getContext(), UnityPlayerActivity.class);
+                intent.putExtra("SCENE", "2");
+                startActivityForResult(intent, TREASURE_SEARCH_GAME);
             }
         });
 

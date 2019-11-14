@@ -3,24 +3,24 @@
 3    package="com.unity3d.player.test" >
 4
 5    <uses-sdk
-5-->D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger7791969940995641805.xml:5:5-74
+5-->D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger2023743518871504852.xml:5:5-74
 6        android:minSdkVersion="26"
-6-->D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger7791969940995641805.xml:5:15-41
+6-->D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger2023743518871504852.xml:5:15-41
 7        android:targetSdkVersion="28" />
-7-->D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger7791969940995641805.xml:5:42-71
+7-->D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger2023743518871504852.xml:5:42-71
 8
 9    <instrumentation
-9-->D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger7791969940995641805.xml:11:5-15:73
+9-->D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger2023743518871504852.xml:11:5-15:73
 10        android:name="android.test.InstrumentationTestRunner"
-10-->D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger7791969940995641805.xml:11:22-75
+10-->D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger2023743518871504852.xml:11:22-75
 11        android:functionalTest="false"
-11-->D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger7791969940995641805.xml:14:22-52
+11-->D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger2023743518871504852.xml:14:22-52
 12        android:handleProfiling="false"
-12-->D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger7791969940995641805.xml:13:22-53
+12-->D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger2023743518871504852.xml:13:22-53
 13        android:label="Tests for com.unity3d.player.test"
-13-->D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger7791969940995641805.xml:15:22-71
+13-->D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger2023743518871504852.xml:15:22-71
 14        android:targetPackage="com.unity3d.player.test" />
-14-->D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger7791969940995641805.xml:12:22-69
+14-->D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger2023743518871504852.xml:12:22-69
 15
 16    <uses-feature android:glEsVersion="0x00030000" />
 16-->[__tested_artifact__::unityLibrary] D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:13:5-54
@@ -62,11 +62,11 @@
 33-->[:google_ar_required:] C:\Users\Aida\.gradle\caches\transforms-2\files-2.1\b5720b91a02080e88a25f7fa521ec8ac\google_ar_required\AndroidManifest.xml:11:9-32
 34
 35    <application android:debuggable="true" >
-35-->D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger7791969940995641805.xml:7:5-9:19
-35-->D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger7791969940995641805.xml:7:18-43
+35-->D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger2023743518871504852.xml:7:5-9:19
+35-->D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger2023743518871504852.xml:7:18-43
 36        <uses-library android:name="android.test.runner" />
-36-->D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger7791969940995641805.xml:8:9-60
-36-->D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger7791969940995641805.xml:8:23-57
+36-->D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger2023743518871504852.xml:8:9-60
+36-->D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger2023743518871504852.xml:8:23-57
 37
 38        <activity
 38-->[__tested_artifact__::unityLibrary] D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:30:9-49:20
@@ -141,7 +141,7 @@
 74-->[__tested_artifact__::unityLibrary] D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:66:9-68:68
 75            android:name="unity.build-id"
 75-->[__tested_artifact__::unityLibrary] D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:67:13-42
-76            android:value="d7256b79-d8cf-4480-be67-104c33de43d9" /> <!-- The minimal version code of ARCore APK required for an app using this SDK. -->
+76            android:value="81f1b40d-b5a0-4eef-88bc-04a13f347dea" /> <!-- The minimal version code of ARCore APK required for an app using this SDK. -->
 76-->[__tested_artifact__::unityLibrary] D:\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\build\intermediates\library_manifest\debug\AndroidManifest.xml:68:13-65
 77        <meta-data
 77-->[:arcore_client:] C:\Users\Aida\.gradle\caches\transforms-2\files-2.1\e9652d3ce7057dc8ebffea36f40a3827\arcore_client\AndroidManifest.xml:33:9-35:41
