@@ -52,7 +52,7 @@ namespace GoogleARCore.Examples.HelloAR {
         /// <summary>
         /// A prefab to place when a raycast from a user touch hits a vertical plane.
         /// </summary>
-        public GameObject[] Animals;
+        public List<GameObject> AnimalList;
 
         /// <summary>
         /// The rotation in degrees need to apply to prefab when it is placed.
@@ -149,8 +149,9 @@ namespace GoogleARCore.Examples.HelloAR {
                     if (hit.Trackable is DetectedPlane) {
                         DetectedPlane detectedPlane = hit.Trackable as DetectedPlane;
                         if (detectedPlane.PlaneType != DetectedPlaneType.Vertical) {
-                            GameObject prefab = Animals[UnityEngine.Random.Range(0, Animals.Length+1)];
-                            //currentAnimal.AddComponent<JungleAnimalBehaviour>;
+                            int animalNumber = UnityEngine.Random.Range(0, AnimalList.Count + 1);
+                            GameObject prefab = AnimalList[animalNumber];
+                            AnimalList.Remove(prefab);
 
                             // Instantiate prefab at the hit pose.
                             var gameObject = Instantiate(prefab, hit.Pose.position, hit.Pose.rotation);
