@@ -19,6 +19,7 @@
 //-----------------------------------------------------------------------
 
 namespace GoogleARCore.Examples.HelloAR {
+    using System;
     using System.Collections.Generic;
     using GoogleARCore;
     using GoogleARCore.Examples.Common;
@@ -30,10 +31,18 @@ namespace GoogleARCore.Examples.HelloAR {
     using Input = InstantPreviewInput;
 #endif
 
-    /// <summary>
+    /// <summary> 
     /// Controls the HelloAR example.
     /// </summary>
     public class JungleAdventureController : MonoBehaviour {
+
+        private bool hasToPlaceAnimal = false;
+        private float timer = 0.0f;
+        private int maxTime = 10;
+        private int maxWaitTime = 20;
+        private int minWaitTime = 10;
+        private GameObject currentAnimal;
+
         /// <summary>
         /// The first-person camera being used to render the passthrough camera image (i.e. AR
         /// background).
@@ -43,17 +52,7 @@ namespace GoogleARCore.Examples.HelloAR {
         /// <summary>
         /// A prefab to place when a raycast from a user touch hits a vertical plane.
         /// </summary>
-        public GameObject GameObjectVerticalPlanePrefab;
-
-        /// <summary>
-        /// A prefab to place when a raycast from a user touch hits a horizontal plane.
-        /// </summary>
-        public GameObject GameObjectHorizontalPlanePrefab;
-
-        /// <summary>
-        /// A prefab to place when a raycast from a user touch hits a feature point.
-        /// </summary>
-        public GameObject GameObjectPointPrefab;
+        public GameObject[] Animals;
 
         /// <summary>
         /// The rotation in degrees need to apply to prefab when it is placed.
@@ -75,11 +74,25 @@ namespace GoogleARCore.Examples.HelloAR {
             Application.targetFrameRate = 60;
         }
 
+        private void Start() {
+            currentAnimal = null;
+        }
+
         /// <summary>
         /// The Unity Update() method.
         /// </summary>
         public void Update() {
             _UpdateApplicationLifecycle();
+
+            if (hasToPlaceAnimal) {
+                placeAnimal();
+            }
+
+            // Check time from last animal was placed
+            timer += Time.deltaTime;
+            if (timer % 60 > maxTime) {
+                hasToPlaceAnimal = true;
+            }
 
             // If the player has not touched the screen, we are done with this update.
             Touch touch;
@@ -92,12 +105,38 @@ namespace GoogleARCore.Examples.HelloAR {
                 return;
             }
 
+            //Check if there is an animal on scene
+            if(currentAnimal == null) {
+                return;
+            }
+
             // Raycast against the location the player touched to search for planes.
+            RaycastHit hit = new RaycastHit();
+            Ray ray = FirstPersonCamera.ScreenPointToRay(touch.position);
+            if(Physics.Raycast(ray, out hit)) {
+                if (hit.transform.gameObject.GetComponent<AnimalController>() != null) {
+                    currentAnimal.SendMessage("OnTouchDetected");
+                    currentAnimal = null;
+                }
+            }
+
+
+        }
+
+        private void placeAnimal() {
+            // If there is an animal on the scene, dont place animal
+            if(currentAnimal != null) {
+                hasToPlaceAnimal = false;
+                timer = 0.0f;
+                return;
+            }
+
+            // Raycast from the location of the camara to search for planes.
             TrackableHit hit;
             TrackableHitFlags raycastFilter = TrackableHitFlags.PlaneWithinPolygon |
                 TrackableHitFlags.FeaturePointWithSurfaceNormal;
 
-            if (Frame.Raycast(touch.position.x, touch.position.y, raycastFilter, out hit)) {
+            if (Frame.Raycast(FirstPersonCamera.transform.position, FirstPersonCamera.transform.forward, out hit, 10.0f, raycastFilter)) {
                 // Use hit pose and camera pose to check if hittest is from the
                 // back of the plane, if it is, no need to create the anchor.
                 if ((hit.Trackable is DetectedPlane) &&
@@ -107,36 +146,33 @@ namespace GoogleARCore.Examples.HelloAR {
                 }
                 else {
                     // Choose the prefab based on the Trackable that got hit.
-                    GameObject prefab;
-                    if (hit.Trackable is FeaturePoint) {
-                        prefab = GameObjectPointPrefab;
-                    }
-                    else if (hit.Trackable is DetectedPlane) {
+                    if (hit.Trackable is DetectedPlane) {
                         DetectedPlane detectedPlane = hit.Trackable as DetectedPlane;
-                        if (detectedPlane.PlaneType == DetectedPlaneType.Vertical) {
-                            prefab = GameObjectVerticalPlanePrefab;
-                        }
-                        else {
-                            prefab = GameObjectHorizontalPlanePrefab;
+                        if (detectedPlane.PlaneType != DetectedPlaneType.Vertical) {
+                            GameObject prefab = Animals[UnityEngine.Random.Range(0, Animals.Length+1)];
+                            //currentAnimal.AddComponent<JungleAnimalBehaviour>;
+
+                            // Instantiate prefab at the hit pose.
+                            var gameObject = Instantiate(prefab, hit.Pose.position, hit.Pose.rotation);
+                            currentAnimal = gameObject;
+                            currentAnimal.AddComponent<AnimalController>();
+
+                            // Compensate for the hitPose rotation facing away from the raycast (i.e.
+                            // camera).
+                            gameObject.transform.Rotate(0, k_PrefabRotation, 0, Space.Self);
+
+                            // Create an anchor to allow ARCore to track the hitpoint as understanding of
+                            // the physical world evolves.
+                            var anchor = hit.Trackable.CreateAnchor(hit.Pose);
+
+                            // Make game object a child of the anchor.
+                            gameObject.transform.parent = anchor.transform;
+
+                            hasToPlaceAnimal = false;
+                            maxTime = UnityEngine.Random.Range(minWaitTime, maxWaitTime+1);
+                            timer = 0.0f;
                         }
                     }
-                    else {
-                        prefab = GameObjectHorizontalPlanePrefab;
-                    }
-
-                    // Instantiate prefab at the hit pose.
-                    var gameObject = Instantiate(prefab, hit.Pose.position, hit.Pose.rotation);
-
-                    // Compensate for the hitPose rotation facing away from the raycast (i.e.
-                    // camera).
-                    gameObject.transform.Rotate(0, k_PrefabRotation, 0, Space.Self);
-
-                    // Create an anchor to allow ARCore to track the hitpoint as understanding of
-                    // the physical world evolves.
-                    var anchor = hit.Trackable.CreateAnchor(hit.Pose);
-
-                    // Make game object a child of the anchor.
-                    gameObject.transform.parent = anchor.transform;
                 }
             }
         }

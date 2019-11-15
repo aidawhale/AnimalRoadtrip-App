@@ -4,14 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class AnimalController : MonoBehaviour {
-
-    private DetectedPlane detectedPlane;
-    private GameObject animalInstance;
-
-    private float timeSinceLastAnimal;
-    private readonly float maxTime = 10f;
-
-    public GameObject[] animalModels;
+    
     // Start is called before the first frame update
     void Start() {
 
@@ -20,5 +13,13 @@ public class AnimalController : MonoBehaviour {
     // Update is called once per frame
     void Update() {
 
+    }
+
+    public void OnTouchDetected() {
+        transform.Rotate(30, 30, 30);
+        for(int i = 0; i<500; i++) {
+
+        }
+        Destroy(this);
     }
 }
