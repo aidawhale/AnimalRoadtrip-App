@@ -36,11 +36,12 @@ namespace GoogleARCore.Examples.HelloAR {
     /// </summary>
     public class JungleAdventureController : MonoBehaviour {
 
+        public int maxWaitTime = 20;
+        public int minWaitTime = 10;
+
         private bool hasToPlaceAnimal = false;
         private float timer = 0.0f;
         private int maxTime = 10;
-        private int maxWaitTime = 20;
-        private int minWaitTime = 10;
         private GameObject currentAnimal;
 
         /// <summary>
@@ -85,7 +86,7 @@ namespace GoogleARCore.Examples.HelloAR {
             _UpdateApplicationLifecycle();
 
             if (hasToPlaceAnimal) {
-                placeAnimal();
+                PlaceAnimal();
             }
 
             // Check time from last animal was placed
@@ -123,9 +124,17 @@ namespace GoogleARCore.Examples.HelloAR {
 
         }
 
-        private void placeAnimal() {
+        private void PlaceAnimal() {
+
+            if (AnimalList.Count <= 0) {
+                hasToPlaceAnimal = false;
+                timer = 0.0f;
+                maxTime = 9999;
+                return;
+            }
+
             // If there is an animal on the scene, dont place animal
-            if(currentAnimal != null) {
+            if (currentAnimal != null) {
                 hasToPlaceAnimal = false;
                 timer = 0.0f;
                 return;
@@ -156,7 +165,7 @@ namespace GoogleARCore.Examples.HelloAR {
                             // Instantiate prefab at the hit pose.
                             var gameObject = Instantiate(prefab, hit.Pose.position, hit.Pose.rotation);
                             currentAnimal = gameObject;
-                            currentAnimal.AddComponent<AnimalController>();
+                            // currentAnimal.AddComponent<AnimalController>();
 
                             // Compensate for the hitPose rotation facing away from the raycast (i.e.
                             // camera).
