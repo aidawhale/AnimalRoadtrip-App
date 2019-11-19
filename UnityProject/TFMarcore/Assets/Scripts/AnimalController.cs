@@ -48,7 +48,7 @@ public class AnimalController : MonoBehaviour {
     }
 
     public void OnTouchDetected() {
-        transform.Rotate(30, 30, 30);
+        transform.Rotate(Random.Range(0,60) , 30, 30);
         
         if(image != null) {
             image.GetComponent<Image>().color = Color.white;
