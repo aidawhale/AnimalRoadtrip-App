@@ -217,7 +217,7 @@ GameObject:
   - component: {fileID: 5088708782803239075}
   m_Layer: 0
   m_Name: TerrainJungle
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -262,11 +262,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5088708782803239075}
     m_Modifications:
-    - target: {fileID: 5002684710010819248, guid: fd11683a4e3146043b305e52e45abac3,
-        type: 3}
-      propertyPath: m_Name
-      value: ElephantCube
-      objectReference: {fileID: 0}
     - target: {fileID: 3834775287925942254, guid: fd11683a4e3146043b305e52e45abac3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -337,6 +332,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.019646
       objectReference: {fileID: 0}
+    - target: {fileID: 5002684710010819248, guid: fd11683a4e3146043b305e52e45abac3,
+        type: 3}
+      propertyPath: m_Name
+      value: ElephantCube
+      objectReference: {fileID: 0}
     - target: {fileID: 1274434466500137875, guid: fd11683a4e3146043b305e52e45abac3,
         type: 3}
       propertyPath: m_Enabled
@@ -363,11 +363,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5088708782803239075}
     m_Modifications:
-    - target: {fileID: 5002684710010819248, guid: 72c4c143632484f4c8db29c3421b8c76,
-        type: 3}
-      propertyPath: m_Name
-      value: SlothCube
-      objectReference: {fileID: 0}
     - target: {fileID: 3834775287925942254, guid: 72c4c143632484f4c8db29c3421b8c76,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -438,6 +433,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.01
       objectReference: {fileID: 0}
+    - target: {fileID: 5002684710010819248, guid: 72c4c143632484f4c8db29c3421b8c76,
+        type: 3}
+      propertyPath: m_Name
+      value: SlothCube
+      objectReference: {fileID: 0}
     - target: {fileID: 1274434466500137875, guid: 72c4c143632484f4c8db29c3421b8c76,
         type: 3}
       propertyPath: m_Enabled
@@ -464,11 +464,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5088708782803239075}
     m_Modifications:
-    - target: {fileID: 5002684710010819248, guid: 9faca4c10dba6af41bf69e2c53d2420b,
-        type: 3}
-      propertyPath: m_Name
-      value: TucanCube
-      objectReference: {fileID: 0}
     - target: {fileID: 3834775287925942254, guid: 9faca4c10dba6af41bf69e2c53d2420b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -539,6 +534,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.01
       objectReference: {fileID: 0}
+    - target: {fileID: 5002684710010819248, guid: 9faca4c10dba6af41bf69e2c53d2420b,
+        type: 3}
+      propertyPath: m_Name
+      value: TucanCube
+      objectReference: {fileID: 0}
     - target: {fileID: 1274434466500137875, guid: 9faca4c10dba6af41bf69e2c53d2420b,
         type: 3}
       propertyPath: m_Enabled
@@ -565,11 +565,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5088708782803239075}
     m_Modifications:
-    - target: {fileID: 5002684710010819248, guid: c17747ebcc686db468e395a35d5007ef,
-        type: 3}
-      propertyPath: m_Name
-      value: TigerCube
-      objectReference: {fileID: 0}
     - target: {fileID: 3834775287925942254, guid: c17747ebcc686db468e395a35d5007ef,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -640,6 +635,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.018058
       objectReference: {fileID: 0}
+    - target: {fileID: 5002684710010819248, guid: c17747ebcc686db468e395a35d5007ef,
+        type: 3}
+      propertyPath: m_Name
+      value: TigerCube
+      objectReference: {fileID: 0}
     - target: {fileID: 1274434466500137875, guid: c17747ebcc686db468e395a35d5007ef,
         type: 3}
       propertyPath: m_Enabled
@@ -666,11 +666,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5088708782803239075}
     m_Modifications:
-    - target: {fileID: 5002684710010819248, guid: a41814e5ff8008140989e6a57b9826e6,
-        type: 3}
-      propertyPath: m_Name
-      value: GorillaCube
-      objectReference: {fileID: 0}
     - target: {fileID: 3834775287925942254, guid: a41814e5ff8008140989e6a57b9826e6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -740,6 +735,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.012165
+      objectReference: {fileID: 0}
+    - target: {fileID: 5002684710010819248, guid: a41814e5ff8008140989e6a57b9826e6,
+        type: 3}
+      propertyPath: m_Name
+      value: GorillaCube
       objectReference: {fileID: 0}
     - target: {fileID: 1274434466500137875, guid: a41814e5ff8008140989e6a57b9826e6,
         type: 3}

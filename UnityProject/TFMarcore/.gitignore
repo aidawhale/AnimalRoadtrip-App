@@ -10,6 +10,10 @@
 /[Ll]ogs/
 /[Mm]emoryCaptures/
 
+# Unity exports for Android files
+/androidBuild/unityLibrary/build/
+/androidBuild/launcher/build/
+
 # Never ignore Asset meta data
 !/[Aa]ssets/**/*.meta
 

@@ -8,6 +8,7 @@ import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.Window;
 import android.os.Process;
+import android.widget.Toast;
 
 public class UnityPlayerActivity extends Activity implements IUnityPlayerLifecycleEvents
 {
@@ -108,6 +109,14 @@ public class UnityPlayerActivity extends Activity implements IUnityPlayerLifecyc
     @Override public void onConfigurationChanged(Configuration newConfig)
     {
         super.onConfigurationChanged(newConfig);
+
+        // Checks the orientation of the screen
+        if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            UnityPlayer.UnitySendMessage("TreasureCanvas", "OnRotateScreen", "LANDSCAPE");
+        } else if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT){
+            UnityPlayer.UnitySendMessage("TreasureCanvas", "OnRotateScreen", "PORTRAIT");
+        }
+
         mUnityPlayer.configurationChanged(newConfig);
     }
 
