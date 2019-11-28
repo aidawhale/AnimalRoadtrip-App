@@ -11,6 +11,7 @@ public class TreasureButtonsController : MonoBehaviour {
     public GameObject rotatePanel;
 
     private GameObject map = null;
+    private float previousValue;
 
     public void OnMoveSelect() {
         moveButton.SetActive(false);
@@ -39,7 +40,12 @@ public class TreasureButtonsController : MonoBehaviour {
             map = GameObject.FindGameObjectWithTag("Map");
         }
 
-        map.transform.Rotate(Vector3.up, slider.value);
+        // How much has changed
+        float delta = slider.value - this.previousValue;
+        map.transform.Rotate(Vector3.up * delta * 180);
+
+        // Set our previous value for the next change
+        this.previousValue = slider.value;
     }
 
 }
