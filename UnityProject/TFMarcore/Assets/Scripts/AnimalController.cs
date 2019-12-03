@@ -16,6 +16,7 @@ public class AnimalController : MonoBehaviour {
 
     public Animals animals;
     private GameObject image = null;
+    private ParticleSystem confetti = null;
     
     // Start is called before the first frame update
     void Start() {
@@ -39,16 +40,19 @@ public class AnimalController : MonoBehaviour {
         }
 
         image = GameObject.Find(imageName);
+        confetti = transform.parent.GetComponentInChildren<ParticleSystem>();
         
     }
 
-    // Update is called once per frame
-    void Update() {
-
-    }
-
     public void OnTouchDetected() {
-        transform.Rotate(Random.Range(0,60) , 30, 30);
+        // transform.Rotate(Random.Range(0,60) , 30, 30);
+        if (confetti != null) {
+            if(confetti.isPlaying) {
+                confetti.Stop();
+                confetti.time = 0;
+            }
+            confetti.Play();
+        }
         
         if(image != null) {
             image.GetComponent<Image>().color = Color.white;

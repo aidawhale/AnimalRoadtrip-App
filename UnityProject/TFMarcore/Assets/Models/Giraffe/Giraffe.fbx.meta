@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9a941c9ee719ee44cb8f995c1ce88881
+guid: 0829f462295a50540bb18e7708ee1fd1
 ModelImporter:
   serializedVersion: 28
   internalIDToNameTable: []
@@ -7,18 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Giraffe crin
-    second: {fileID: 2100000, guid: 2fc6c63419141664e8f9256042a223f4, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
       name: Giraffe dots
-    second: {fileID: 2100000, guid: a94f999495fccd74582dc7ab24a2023e, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Giraffe solid
-    second: {fileID: 2100000, guid: 203f4020e0bddf04ca4f69266885ccaa, type: 2}
+    second: {fileID: 2100000, guid: 3ad5e8fbdb3c9e64f996534905c82ae5, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -49,7 +39,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.01
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1

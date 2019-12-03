@@ -227,16 +227,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1772147192650458, guid: c10877f7cd5764de18d46d7b777d1faa, type: 3}
-      propertyPath: m_Name
-      value: ARCore Device
-      objectReference: {fileID: 0}
-    - target: {fileID: 114451889682527732, guid: c10877f7cd5764de18d46d7b777d1faa,
-        type: 3}
-      propertyPath: SessionConfig
-      value: 
-      objectReference: {fileID: 11400000, guid: 9586a84d6c32f46b6ab7aeb6042f160d,
-        type: 2}
     - target: {fileID: 4442908887562770, guid: c10877f7cd5764de18d46d7b777d1faa, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -269,6 +259,16 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1772147192650458, guid: c10877f7cd5764de18d46d7b777d1faa, type: 3}
+      propertyPath: m_Name
+      value: ARCore Device
+      objectReference: {fileID: 0}
+    - target: {fileID: 114451889682527732, guid: c10877f7cd5764de18d46d7b777d1faa,
+        type: 3}
+      propertyPath: SessionConfig
+      value: 
+      objectReference: {fileID: 11400000, guid: 9586a84d6c32f46b6ab7aeb6042f160d,
+        type: 2}
     - target: {fileID: 114876698896786350, guid: c10877f7cd5764de18d46d7b777d1faa,
         type: 3}
       propertyPath: m_Enabled
@@ -524,11 +524,7 @@ MonoBehaviour:
   minWaitTime: 3
   FirstPersonCamera: {fileID: 97747991}
   AnimalList:
-  - {fileID: 5002684710010819248, guid: a41814e5ff8008140989e6a57b9826e6, type: 3}
-  - {fileID: 5002684710010819248, guid: fd11683a4e3146043b305e52e45abac3, type: 3}
-  - {fileID: 5002684710010819248, guid: 72c4c143632484f4c8db29c3421b8c76, type: 3}
-  - {fileID: 5002684710010819248, guid: c17747ebcc686db468e395a35d5007ef, type: 3}
-  - {fileID: 5002684710010819248, guid: 9faca4c10dba6af41bf69e2c53d2420b, type: 3}
+  - {fileID: 5571296389679997877, guid: 87309bc53b4103e4888e7d5908f09823, type: 3}
 --- !u!1001 &688001843
 PrefabInstance:
   m_ObjectHideFlags: 0
