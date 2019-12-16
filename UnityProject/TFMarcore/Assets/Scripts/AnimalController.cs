@@ -9,7 +9,7 @@ public class AnimalController : MonoBehaviour {
     public enum Animals {
         Elephant,
         Gorilla,
-        Tiger,
+        Jaguar,
         Sloth,
         Tucan
     };
@@ -28,8 +28,8 @@ public class AnimalController : MonoBehaviour {
             case Animals.Gorilla:
                 imageName = "GorillaImage";
                 break;
-            case Animals.Tiger:
-                imageName = "TigerImage";
+            case Animals.Jaguar:
+                imageName = "JaguarImage";
                 break;
             case Animals.Sloth:
                 imageName = "SlothImage";
