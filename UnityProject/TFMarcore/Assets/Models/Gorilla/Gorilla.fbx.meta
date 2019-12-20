@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8f333f96d4e75a7448748bec86a21000
+guid: 16f4664a7e8b3674297794e0fd6a48a1
 ModelImporter:
   serializedVersion: 28
   internalIDToNameTable: []
@@ -7,18 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Elephant skin
-    second: {fileID: 2100000, guid: 0d7a410f5412b644cbe919d16babcf53, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Elephant tusk
-    second: {fileID: 2100000, guid: 9ef17cd5942ee394593f8c4d61484c12, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Eye
-    second: {fileID: 2100000, guid: ec02220340e98d946b15e297ff68d31a, type: 2}
+      name: Material.001
+    second: {fileID: 2100000, guid: 5d53e11d5416d7f499772f48dd74f750, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -46,7 +36,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 1
+    isReadable: 0
   meshes:
     lODScreenPercentages: []
     globalScale: 1.2
