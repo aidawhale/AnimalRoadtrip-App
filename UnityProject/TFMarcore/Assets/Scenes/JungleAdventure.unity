@@ -279,7 +279,9 @@ MonoBehaviour:
   minWaitTime: 3
   FirstPersonCamera: {fileID: 97747991}
   AnimalList:
+  - {fileID: 7971777736207465141, guid: 8b4b27644ce943e4194ba7f6cfa4146d, type: 3}
   - {fileID: 5571296389679997877, guid: 87309bc53b4103e4888e7d5908f09823, type: 3}
+  - {fileID: 7613049695025000248, guid: 6ba5439ca0e5ddc4d87526c5c8f412af, type: 3}
   - {fileID: 8433491700367272976, guid: b2d9ea2b68e64df4b8e3958f92ee1bfb, type: 3}
   - {fileID: 3021739001422360457, guid: 0cf59d09a2fb5be4ebd1f929d3fe969a, type: 3}
 --- !u!1001 &688001843
@@ -599,6 +601,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2754815347923997679, guid: 08b22a9bbf1a97b4ea10c5d03c3ab23a,
+        type: 3}
+      propertyPath: m_Name
+      value: ChameleonImage
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08b22a9bbf1a97b4ea10c5d03c3ab23a, type: 3}

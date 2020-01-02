@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 4851100123633966595}
   - component: {fileID: 4470270557165806645}
   - component: {fileID: 7869228945437792460}
+  - component: {fileID: -5532859291391835099}
   - component: {fileID: 5236105586242434733}
   m_Layer: 0
-  m_Name: Jaguar
+  m_Name: JaguarJungle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 8433491700367272976}
   m_LocalRotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalScale: {x: 70, y: 70, z: 70}
   m_Children:
   - {fileID: 8972918667339312917}
   m_Father: {fileID: 0}
@@ -82,6 +83,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &-5532859291391835099
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8433491700367272976}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -462981019419857548, guid: fb72fe94ce96d9e439c18811acc0bf94, type: 3}
 --- !u!114 &5236105586242434733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,22 +135,22 @@ PrefabInstance:
     - target: {fileID: 9149238427201188314, guid: 80012611b7551f043b469c2f8152a155,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9149238427201188314, guid: 80012611b7551f043b469c2f8152a155,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -2.2204458e-16
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 9149238427201188314, guid: 80012611b7551f043b469c2f8152a155,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.10931487
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9149238427201188314, guid: 80012611b7551f043b469c2f8152a155,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9940072
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 9149238427201188314, guid: 80012611b7551f043b469c2f8152a155,
         type: 3}

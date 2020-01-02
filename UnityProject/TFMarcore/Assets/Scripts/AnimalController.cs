@@ -10,7 +10,7 @@ public class AnimalController : MonoBehaviour {
         Elephant,
         Gorilla,
         Jaguar,
-        Sloth,
+        Chameleon,
         Tucan
     };
 
@@ -31,8 +31,8 @@ public class AnimalController : MonoBehaviour {
             case Animals.Jaguar:
                 imageName = "JaguarImage";
                 break;
-            case Animals.Sloth:
-                imageName = "SlothImage";
+            case Animals.Chameleon:
+                imageName = "ChameleonImage";
                 break;
             case Animals.Tucan:
                 imageName = "TucanImage";
@@ -45,7 +45,6 @@ public class AnimalController : MonoBehaviour {
     }
 
     public void OnTouchDetected() {
-        // transform.Rotate(Random.Range(0,60) , 30, 30);
         if (confetti != null) {
             if(confetti.isPlaying) {
                 confetti.Stop();
