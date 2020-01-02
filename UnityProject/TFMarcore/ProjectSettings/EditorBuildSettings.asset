@@ -8,12 +8,15 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/MainMenu.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/JungleAdventure.unity
     guid: 7ae59eff8c89ef248b7fb85ac25ae3ba
   - enabled: 0
     path: Assets/Scenes/TreasureMap.unity
     guid: 9d220498b12c07d488feb5e0d5c0293a
+  - enabled: 1
+    path: Assets/Scenes/TreasureMapPingu.unity
+    guid: 53eec8ca6c3a588439050208f219c935
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 968d632e6c00ac6429de2a38fb716411,
       type: 2}
