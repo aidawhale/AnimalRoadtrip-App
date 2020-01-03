@@ -6,22 +6,27 @@ public class IglooController : MonoBehaviour {
 
     public GameObject Pingu;
     public Transform iglooIsland;
-    private ParticleSystem confetti = null;
+    public ParticleSystem confetti;
+    private GameObject map;
 
     private void Start() {
-        confetti = transform.GetComponentInChildren<ParticleSystem>();
+        map = GameObject.FindGameObjectWithTag("Map");
     }
 
     private void OnTriggerEnter(Collider collision) {
 
         if(collision.gameObject.name == "Pingu") {
-            if (confetti != null) {
-                if (confetti.isPlaying) {
-                    confetti.Stop();
-                    confetti.time = 0;
-                }
-                confetti.Play();
+            map.SendMessage("OnShapeCollision", 10);
+        }
+    }
+
+    public void OnPlayConfetti() {
+        if (confetti != null) {
+            if (confetti.isPlaying) {
+                confetti.Stop();
+                confetti.time = 0;
             }
+            confetti.Play();
         }
     }
 

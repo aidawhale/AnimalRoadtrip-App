@@ -23,6 +23,14 @@ public class PinguController : MonoBehaviour {
     //    }
     //}
 
+    public void OnChangeHatMaterial(Material mat) {
+        GameObject hat = GameObject.Find("WoolHat");
+        Renderer renderer = hat.GetComponent<Renderer>();
+        Material[] materials = renderer.materials;
+        materials[materials.Length-1] = mat;
+        renderer.materials = materials;
+    }
+
     public void OnMoveTowards(Vector3 position) {
         targetPosition = position;
         isMoving = true;
