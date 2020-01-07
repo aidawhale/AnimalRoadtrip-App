@@ -12,7 +12,7 @@ public class ChronoController : MonoBehaviour {
     // Start is called before the first frame update
     void Start() {
         t = this.GetComponent<Text>();
-        t.text = "test";
+        t.text = "";
     }
 
     // Update is called once per frame
@@ -24,6 +24,9 @@ public class ChronoController : MonoBehaviour {
     }
 
     public void OnInitChrono() {
+        if(t == null) {
+            t = this.GetComponent<Text>();
+        }
         t.text = "0";
         time = 0;
     }

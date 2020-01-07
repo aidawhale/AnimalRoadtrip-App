@@ -130,8 +130,6 @@ public class PinguMapController : MonoBehaviour {
     }
 
     private void RestartGame() {
-        Debug.Log("Game over :(");
-
         Handheld.Vibrate();
 
         // Reset counters

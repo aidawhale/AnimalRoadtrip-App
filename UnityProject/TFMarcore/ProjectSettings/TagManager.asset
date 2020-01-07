@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Map
   - Shape
+  - Animal
+  - Prop
   layers:
   - Default
   - TransparentFX
