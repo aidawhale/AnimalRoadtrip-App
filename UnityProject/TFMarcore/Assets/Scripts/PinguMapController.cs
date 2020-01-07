@@ -18,12 +18,15 @@ public class PinguMapController : MonoBehaviour {
     private int[] shapeOrder;
     private int pinguShapeNumber;
 
+    private GameObject chrono;
+
 
     // Start is called before the first frame update
     void Start() {
         shapeOrder = new int[] { 0, 0, 0, 0, 0 , 10};
         pinguShapeNumber = -1;
         fire = Campfire.GetComponentInChildren<ParticleSystem>();
+        chrono = GameObject.Find("ChronoText");
         SetScene();
     }
 
@@ -32,6 +35,9 @@ public class PinguMapController : MonoBehaviour {
         int fireplace = UnityEngine.Random.Range(0, 2); // Rand 0, 1
         int numPenguins = UnityEngine.Random.Range(1, 4); // Rand 1, 2, 3
         int hatColor = UnityEngine.Random.Range(0, 2); // Rand 0, 1
+
+        // Init chrono
+        chrono.SendMessage("OnInitChrono");
 
         shapeOrder[0] = numPenguins;
         if (numPenguins == 1) {
@@ -90,6 +96,9 @@ public class PinguMapController : MonoBehaviour {
                 shapeOrder[4] = 1;
             }
         }
+
+        chrono.SendMessage("OnStartChrono");
+
     }
 
     public void OnShapeCollision(int shape) {
@@ -105,6 +114,7 @@ public class PinguMapController : MonoBehaviour {
     private void Victory() {
         GameObject.Find("Igloo").SendMessage("OnPlayConfetti");
         GameObject.Find("HomePanel").SendMessage("OnShowBackgroundPanel");
+        chrono.SendMessage("OnStopChrono");
         StartCoroutine(VictoryVibrate());
     }
 

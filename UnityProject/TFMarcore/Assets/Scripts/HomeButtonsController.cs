@@ -8,14 +8,20 @@ public class HomeButtonsController : MonoBehaviour {
 
     public GameObject homeButton;
     public GameObject cancelButton;
+    public GameObject moveButton;
     public GameObject backgroundPanel;
+
+    public GameObject chronoText;
 
     private GameObject map;
 
     public void OnHomeSelect() {
         homeButton.SetActive(false);
         cancelButton.SetActive(true);
+        moveButton.SetActive(true);
         backgroundPanel.SetActive(true);
+
+        chronoText.SendMessage("OnStopChrono");
     }
 
     public void OnResetGameSelect() {
@@ -34,6 +40,10 @@ public class HomeButtonsController : MonoBehaviour {
     public void OnCancelSelect() {
         homeButton.SetActive(true);
         cancelButton.SetActive(false);
+        moveButton.SendMessage("OnDoneSelect");
+        moveButton.SetActive(false);
         backgroundPanel.SetActive(false);
+
+        chronoText.SendMessage("OnStartChrono");
     }
 }
