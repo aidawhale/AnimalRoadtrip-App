@@ -17,4 +17,8 @@
     <color name="colorYellow">#FFC107</color>
     <color name="colorOrange">#FF7A32</color>
     <color name="colorPurple">#724AB9</color>
+
+    <color name="colorRed">#B10404</color>
+    <color name="colorDarkGreen">#39A518</color>
+    <color name="colorDarkBlue">#1983D8</color>
 </resources>

@@ -171,14 +171,14 @@ public class DashboardFragment extends Fragment {
         // Steps pieChart
         legend = dailyStepsPieChart.getLegend();
         legend.setHorizontalAlignment(Legend.LegendHorizontalAlignment.CENTER);
-        dailyStepsPieChart.setEntryLabelColor(black);
-        dailyStepsPieChart.setEntryLabelTextSize(0f);
+        legend.setTextSize(12f);
+        dailyStepsPieChart.setDrawEntryLabels(false);
         dailyStepsPieChart.setHoleRadius(40f);
-        dailyStepsPieChart.setEntryLabelTextSize(16f);
 
         // Game combinedChart
         legend = gameCombinedChart.getLegend();
         legend.setHorizontalAlignment(Legend.LegendHorizontalAlignment.CENTER);
+        legend.setTextSize(12f);
         rightAxis = gameCombinedChart.getAxisRight();
         rightAxis.setDrawGridLines(false);
         rightAxis.setAxisMinimum(0f);
@@ -192,6 +192,7 @@ public class DashboardFragment extends Fragment {
         // Survey lineChart
         legend = surveyLineChart.getLegend();
         legend.setHorizontalAlignment(Legend.LegendHorizontalAlignment.CENTER);
+        legend.setTextSize(12f);
         rightAxis = surveyLineChart.getAxisRight();
         rightAxis.setGranularity(1f);
         rightAxis.setAxisMinimum(0f);
