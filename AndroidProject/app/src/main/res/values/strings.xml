@@ -62,6 +62,7 @@
     <string name="clue_northpole_hat_color">Which is the color of the wool hat?</string>
     <string name="clue_northpole_fire">Is the fire on or off?</string>
     <string name="northpole_clues_info_2">Remember: Pingu can only stay in each shape once!</string>
+    <string name="sabana_clues_info_2">These clues are showing you what prize each animal wants. Get the items to trade with them, in return they will give you what you need!</string>
 
     <string-array name="i8n_languages">
         <item>Choose language...</item>

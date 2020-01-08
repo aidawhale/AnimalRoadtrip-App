@@ -79,7 +79,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/view" />
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cardview_seal_1"
+                android:id="@+id/cardview_1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
@@ -102,7 +102,7 @@
                         android:layout_height="50dp"
                         android:layout_margin="8dp"
                         android:src="@drawable/ic_seal"
-                        android:tint="@color/colorGray" />
+                        android:tint="@color/coloDarkGray" />
 
                     <ImageView
                         android:layout_width="30dp"
@@ -125,7 +125,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cardview_seal_2"
+                android:id="@+id/cardview_2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
@@ -135,7 +135,7 @@
                 app:cardElevation="2dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cardview_seal_1">
+                app:layout_constraintTop_toBottomOf="@+id/cardview_1">
 
                 <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="wrap_content"
@@ -148,7 +148,7 @@
                         android:layout_height="50dp"
                         android:layout_margin="8dp"
                         android:src="@drawable/ic_seal2"
-                        android:tint="@color/colorGray" />
+                        android:tint="@color/coloDarkGray" />
 
                     <ImageView
                         android:layout_width="30dp"
@@ -171,7 +171,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cardview_seal_3"
+                android:id="@+id/cardview_3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
@@ -181,7 +181,7 @@
                 app:cardElevation="2dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cardview_seal_2">
+                app:layout_constraintTop_toBottomOf="@+id/cardview_2">
 
                 <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="wrap_content"
@@ -194,7 +194,7 @@
                         android:layout_height="50dp"
                         android:layout_margin="8dp"
                         android:src="@drawable/ic_seal3"
-                        android:tint="@color/colorGray" />
+                        android:tint="@color/coloDarkGray" />
 
                     <ImageView
                         android:layout_width="30dp"
@@ -226,7 +226,7 @@
                 android:background="@color/colorSuperLightGray"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cardview_seal_3"
+                app:layout_constraintTop_toBottomOf="@+id/cardview_3"
                 app:layout_constraintBottom_toTopOf="@id/clue_hat"/>
 
     <!--    CLUE 2: HAT COLOR    -->
@@ -266,7 +266,7 @@
                         android:layout_height="50dp"
                         android:layout_margin="8dp"
                         android:src="@drawable/ic_hat"
-                        android:tint="@color/colorGreen" />
+                        android:tint="@color/colorGreen"/>
 
                     <ImageView
                         android:layout_width="30dp"
@@ -411,7 +411,7 @@
                         android:layout_height="50dp"
                         android:layout_margin="8dp"
                         android:src="@drawable/ic_fireoff"
-                        android:tint="@color/colorGray" />
+                        android:tint="@color/coloDarkGray" />
 
                     <ImageView
                         android:layout_width="30dp"
@@ -473,7 +473,7 @@
                         android:layout_height="50dp"
                         android:layout_margin="8dp"
                         android:src="@drawable/ic_fireon"
-                        android:tint="@color/colorGray" />
+                        android:tint="@color/coloDarkGray" />
 
                     <ImageView
                         android:layout_width="30dp"
