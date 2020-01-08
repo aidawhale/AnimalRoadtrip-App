@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class HomeButtonsController : MonoBehaviour {
@@ -18,11 +19,16 @@ public class HomeButtonsController : MonoBehaviour {
     public void OnHomeSelect() {
         homeButton.SetActive(false);
         cancelButton.SetActive(true);
-        moveButton.SetActive(true);
+        if(moveButton != null) {
+            moveButton.SetActive(true);
+        }
         backgroundPanel.SetActive(true);
 
-        chronoText.SendMessage("OnStopChrono");
+        if(chronoText != null) {
+            chronoText.SendMessage("OnStopChrono");
+        }
     }
+        
 
     public void OnResetGameSelect() {
         if (map == null) {
@@ -37,13 +43,20 @@ public class HomeButtonsController : MonoBehaviour {
         backgroundPanel.SetActive(true);
     }
 
+    public void OnReloadScene() {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
     public void OnCancelSelect() {
         homeButton.SetActive(true);
         cancelButton.SetActive(false);
-        moveButton.SendMessage("OnDoneSelect");
-        moveButton.SetActive(false);
+        if (moveButton != null) {
+            moveButton.SendMessage("OnDoneSelect");
+            moveButton.SetActive(false);
+        }
         backgroundPanel.SetActive(false);
 
-        chronoText.SendMessage("OnStartChrono");
+        if (chronoText != null) {
+            chronoText.SendMessage("OnStartChrono");
+        }
     }
 }

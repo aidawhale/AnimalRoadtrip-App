@@ -56,5 +56,7 @@ public class AnimalController : MonoBehaviour {
         if(image != null) {
             image.GetComponent<Image>().color = Color.white;
         }
+
+        Handheld.Vibrate();
     }
 }
