@@ -55,4 +55,17 @@
     <string name="daily_steps">Pasos diarios</string>
     <string name="minutes">Minutos</string>
     <string name="steps">Pasos</string>
+    <string name="play_mode">Elixe modo de xogo</string>
+    <string name="play_mode_info">Recorda que necesitas que alguén xogue contigo. Un xogador será o explorador e outro o axudante.   Cal prefires?</string>
+    <string name="explorer">Explorador</string>
+    <string name="assistant">Axudante</string>
+    <string name="tab_sabana">Sabana</string>
+    <string name="tab_northpole">Polo Norte</string>
+    <string name="title_activity_map_assistant">Pistas</string>
+    <string name="sabana_clues_info">Usa estas pistas para guiar ó explorador polo mapa. Guepardo quere recuperar a súa cometa!</string>
+    <string name="northpole_clues_info">Usa estas pistas para guiar ó explorador polo mapa. Pingu necesita chegar á casa!</string>
+    <string name="clue_northpole_seals">Cantas focas hai?</string>
+    <string name="clue_northpole_hat_color">De que cor é o gorro?</string>
+    <string name="clue_northpole_fire">O lume está encendido ou apagado?</string>
+    <string name="northpole_clues_info_2">Remember: Pingu can only stay in each shape once!</string>
 </resources>

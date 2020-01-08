@@ -1,6 +1,7 @@
 package com.aidawhale.tfmarcore.ui.selectgame;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -15,12 +16,14 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.aidawhale.tfmarcore.MapAssistantActivity;
 import com.aidawhale.tfmarcore.MarcopoloActivity;
 import com.aidawhale.tfmarcore.R;
 import com.aidawhale.tfmarcore.UserMenuActivity;
@@ -31,6 +34,7 @@ import com.aidawhale.tfmarcore.utils.LanguageSettings;
 import com.unity3d.player.UnityPlayerActivity;
 
 import java.util.Date;
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 public class SelectGameFragment extends Fragment implements SensorEventListener {
@@ -113,10 +117,8 @@ public class SelectGameFragment extends Fragment implements SensorEventListener 
                 sgViewModel.preGameDate = new Date();
                 sgViewModel.preGameSteps = sgViewModel.steps;
 
-                // Init game with corresponding UnityActivity
-                Intent intent = new Intent(getContext(), UnityPlayerActivity.class);
-                intent.putExtra("SCENE", "2");
-                startActivityForResult(intent, TREASURE_SEARCH_GAME);
+                // Dialog. Ask to launch MAP or CLUES
+                showDialogMapClues();
             }
         });
 
@@ -128,6 +130,35 @@ public class SelectGameFragment extends Fragment implements SensorEventListener 
         } else {
             gridHeader.setText(R.string.select_game);
         }
+    }
+
+    private void showDialogMapClues() {// Show dialog with app info and a dropdown to switch language
+        AlertDialog.Builder dialog = new AlertDialog.Builder(getContext());
+
+
+        dialog.setTitle(R.string.play_mode);
+        dialog.setMessage(R.string.play_mode_info);
+        dialog.setPositiveButton(R.string.assistant, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                // Load assistant activity
+                Intent intent = new Intent(getContext(), MapAssistantActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        dialog.setNegativeButton(R.string.explorer, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                int randScene = new Random().nextInt(2)+2;
+                // Init game with corresponding UnityActivity
+                Intent intent = new Intent(getContext(), UnityPlayerActivity.class);
+                intent.putExtra("SCENE", String.valueOf(randScene));
+                startActivityForResult(intent, TREASURE_SEARCH_GAME);
+            }
+        });
+
+        dialog.show();
     }
 
     @Override
