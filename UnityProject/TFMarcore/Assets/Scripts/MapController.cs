@@ -15,7 +15,7 @@ public abstract class MapController : MonoBehaviour {
     }
 
     private IEnumerator VictoryVibrate() {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         Handheld.Vibrate();
         yield return new WaitForSeconds(0.5f);
         Handheld.Vibrate();
