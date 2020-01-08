@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PinguMapController : MonoBehaviour {
+public class PinguMapController : MapController {
 
     public GameObject Pingu;
     public GameObject InitIsland;
@@ -30,7 +30,7 @@ public class PinguMapController : MonoBehaviour {
         SetScene();
     }
 
-    private void SetScene() {
+    public override void SetScene() {
         // Random init values
         int fireplace = UnityEngine.Random.Range(0, 2); // Rand 0, 1
         int numPenguins = UnityEngine.Random.Range(1, 4); // Rand 1, 2, 3
@@ -104,32 +104,20 @@ public class PinguMapController : MonoBehaviour {
     public void OnShapeCollision(int shape) {
         if(CheckShapeOrder(shape)) {
             if(shape == 10) {
-                Victory();
+                BaseVictory();
             }
             return;
         }
         RestartGame();
     }
 
-    private void Victory() {
+    public override void MyVictory() {
         GameObject.Find("Igloo").SendMessage("OnPlayConfetti");
         GameObject.Find("HomePanel").SendMessage("OnShowBackgroundPanel");
         chrono.SendMessage("OnStopChrono");
-        StartCoroutine(VictoryVibrate());
     }
 
-    private IEnumerator VictoryVibrate() {
-        yield return new WaitForSeconds(0.5f);
-        Handheld.Vibrate();
-        yield return new WaitForSeconds(0.5f);
-        Handheld.Vibrate();
-        yield return new WaitForSeconds(0.5f);
-        Handheld.Vibrate();
-        Handheld.Vibrate();
-        Handheld.Vibrate();
-    }
-
-    private void RestartGame() {
+    public override void RestartGame() {
         Handheld.Vibrate();
 
         // Reset counters
@@ -147,4 +135,6 @@ public class PinguMapController : MonoBehaviour {
 
         return shapeOrder[pinguShapeNumber] == position;
     }
+
+    public override void OnUpdateItemPosition() { }
 }

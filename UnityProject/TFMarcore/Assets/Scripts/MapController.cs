@@ -12,6 +12,7 @@ public abstract class MapController : MonoBehaviour {
 
     public void BaseVictory() {
         StartCoroutine(VictoryVibrate());
+        MyVictory();
     }
 
     private IEnumerator VictoryVibrate() {
