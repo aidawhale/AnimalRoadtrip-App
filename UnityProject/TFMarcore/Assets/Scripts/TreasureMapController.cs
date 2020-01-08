@@ -127,6 +127,7 @@ namespace GoogleARCore.Examples.HelloAR {
                             mapInstance = Instantiate(map, hit.Pose.position, hit.Pose.rotation);
                         }
                         mapInstance.transform.position = hit.Pose.position;
+                        mapInstance.SendMessage("OnUpdateItemPosition");
                     }
                 }
             }

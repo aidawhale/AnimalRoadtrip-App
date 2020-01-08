@@ -20,7 +20,7 @@
     <string name="app_info_text">App info text</string>
     <string name="ok">OK!</string>
     <string name="select_language">Selecciona un idioma</string>
-    <string name="choose_language">Elixe idioma...</string>
+    <string name="choose_language">Elixe idioma…</string>
     <string name="easy">Fácil</string>
     <string name="medium">Medio</string>
     <string name="hard">Difícil</string>
@@ -67,5 +67,5 @@
     <string name="clue_northpole_seals">Cantas focas hai?</string>
     <string name="clue_northpole_hat_color">De que cor é o gorro?</string>
     <string name="clue_northpole_fire">O lume está encendido ou apagado?</string>
-    <string name="northpole_clues_info_2">Remember: Pingu can only stay in each shape once!</string>
+    <string name="northpole_clues_info_2">Recorda: Pingu só pode pasar unha vez por cada peza!</string>
 </resources>

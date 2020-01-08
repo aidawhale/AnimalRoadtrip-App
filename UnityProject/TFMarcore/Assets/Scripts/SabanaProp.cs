@@ -23,7 +23,7 @@ public class SabanaProp : MonoBehaviour {
     // Start is called before the first frame update
     void Start() {
         position = transform.position;
-        alpha = new Color(255, 255, 255, 105);
+        alpha = new Color(1f, 1f, 1f, 0.4117647f);
 
         string imageName = "";
         switch (prop) {
@@ -66,6 +66,13 @@ public class SabanaProp : MonoBehaviour {
     }
 
     public virtual void MyOnResetPosition() { }
+
+    public void OnUpdatePosition() {
+        position = transform.position;
+        MyOnUpdatePosition();
+    }
+
+    public virtual void MyOnUpdatePosition() { }
 
     public void OnTouchDetected() {
         if (image != null) {

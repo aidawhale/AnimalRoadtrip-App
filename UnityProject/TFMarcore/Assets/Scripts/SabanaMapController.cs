@@ -42,6 +42,10 @@ public class SabanaMapController : MapController {
 
     }
 
+    public override void OnUpdateItemPosition() {
+        BroadcastMessage("OnUpdatePosition");
+    }
+
     public void OnObjectCollision(int obj) {
         // Object can be animal or map interactable element
 
@@ -58,5 +62,4 @@ public class SabanaMapController : MapController {
 
         return false;
     }
-
 }

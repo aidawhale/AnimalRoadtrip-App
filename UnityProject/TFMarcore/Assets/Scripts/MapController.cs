@@ -8,6 +8,7 @@ public abstract class MapController : MonoBehaviour {
     public abstract void SetScene();
     public abstract void MyVictory();
     public abstract void RestartGame();
+    public abstract void OnUpdateItemPosition();
 
     public void BaseVictory() {
         StartCoroutine(VictoryVibrate());

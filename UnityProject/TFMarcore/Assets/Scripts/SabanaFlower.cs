@@ -17,4 +17,8 @@ public class SabanaFlower : SabanaProp {
         flowers.SetActive(true);
     }
 
+    public override void MyOnUpdatePosition() {
+        myPosition = transform.position;
+    }
+
 }

@@ -14,4 +14,8 @@ public class SabanaAnimal : MonoBehaviour {
         transform.position = position;
     }
 
+    public void OnUpdatePosition() {
+        position = transform.position;
+    }
+
 }

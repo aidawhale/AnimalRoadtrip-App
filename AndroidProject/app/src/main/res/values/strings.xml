@@ -20,11 +20,11 @@
     <string name="app_info_text">App info text</string>
     <string name="ok">OK!</string>
     <string name="select_language">Select language</string>
-    <string name="choose_language">Choose language...</string>
+    <string name="choose_language">Choose language…</string>
     <string name="easy">Easy</string>
     <string name="medium">Medium</string>
     <string name="hard">Hard</string>
-    <string name="title_selectdificulty">Select dificulty</string>
+    <string name="title_selectdificulty">Select difficulty</string>
     <string name="timer">Time</string>
     <string name="stop">Stop!</string>
     <string name="start">Start</string>
