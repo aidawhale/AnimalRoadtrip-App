@@ -21,4 +21,9 @@ public class SabanaFlower : SabanaProp {
         myPosition = transform.position;
     }
 
+    public override void MyOnTouchDetected() {
+        flowers.SetActive(false);
+        mainPlayer.SendMessage("OnFlowerClick");
+    }
+
 }

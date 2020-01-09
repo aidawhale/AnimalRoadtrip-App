@@ -16,6 +16,9 @@ public class SabanaProp : MonoBehaviour {
     };
 
     public Prop prop;
+    public GameObject mainPlayer;
+    public SabanaAnimal animalAttachedTo;
+
     private GameObject image = null;
     private Vector3 position;
     private Color alpha;
@@ -62,10 +65,14 @@ public class SabanaProp : MonoBehaviour {
     public void OnResetPosition() {
         transform.position = position;
         image.GetComponent<Image>().color = alpha;
+        if (gameObject.GetComponent<BoxCollider>() != null) {
+            gameObject.GetComponent<BoxCollider>().enabled = true;
+        }
         MyOnResetPosition();
     }
 
-    public virtual void MyOnResetPosition() { }
+    public virtual void MyOnResetPosition() {
+    }
 
     public void OnUpdatePosition() {
         position = transform.position;
@@ -75,8 +82,18 @@ public class SabanaProp : MonoBehaviour {
     public virtual void MyOnUpdatePosition() { }
 
     public void OnTouchDetected() {
-        if (image != null) {
-            image.GetComponent<Image>().color = Color.white;
+        // ...
+        //if (image != null) {
+        //    image.GetComponent<Image>().color = Color.white;
+        //}
+        MyOnTouchDetected();
+    }
+
+    public virtual void MyOnTouchDetected() {
+        if(animalAttachedTo.IsHappy()) {
+            mainPlayer.SendMessage("OnPropClick", this);
+        } else {
+            Handheld.Vibrate();
         }
     }
 }

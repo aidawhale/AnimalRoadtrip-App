@@ -90,7 +90,7 @@
     </content>
     <orderEntry type="jdk" jdkName="Android API 28 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Gradle: __local_aars__:D.\Github\TFMarcore\UnityProject\TFMarcore\androidBuild\unityLibrary\libs\unity-classes.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" name="Gradle: __local_aars__:D.\TFM\UnityProject\TFMarcore\androidBuild\unityLibrary\libs\unity-classes.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="Gradle: :arcore_client:@aar" level="project" />
     <orderEntry type="library" name="Gradle: :arcore_rendering_utils:@aar" level="project" />
     <orderEntry type="library" name="Gradle: :arcore_unity:@aar" level="project" />

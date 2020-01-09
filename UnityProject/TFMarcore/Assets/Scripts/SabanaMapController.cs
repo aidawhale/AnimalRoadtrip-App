@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SabanaMapController : MapController {
 
+    public ParticleSystem confetti;
+
     private GameObject chrono;
 
     // Start is called before the first frame update
@@ -16,16 +18,21 @@ public class SabanaMapController : MapController {
     public override void SetScene() {
         chrono.SendMessage("OnInitChrono");
 
-        // ...
+        BroadcastMessage("OnResetPosition");
 
         chrono.SendMessage("OnStartChrono");
     }
 
     public override void MyVictory() {
-        BaseVictory();
+        GameObject.Find("HomePanel").SendMessage("OnShowBackgroundPanel");
 
-        // Victory on map
-        // ...
+        if (confetti != null) {
+            if (confetti.isPlaying) {
+                confetti.Stop();
+                confetti.time = 0;
+            }
+            confetti.Play();
+        }
 
         chrono.SendMessage("OnStopChrono");
     }
@@ -33,13 +40,7 @@ public class SabanaMapController : MapController {
     public override void RestartGame() {
         Handheld.Vibrate();
 
-        // Reset map
-        // ...
-
-        BroadcastMessage("OnResetPosition");
-
         SetScene();
-
     }
 
     public override void OnUpdateItemPosition() {
