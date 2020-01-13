@@ -23,7 +23,7 @@ public class SabanaFlower : SabanaProp {
 
     public override void MyOnTouchDetected() {
         flowers.SetActive(false);
-        mainPlayer.SendMessage("OnFlowerClick");
+        mainPlayer.SendMessage("OnFlowerClick", this);
     }
 
 }

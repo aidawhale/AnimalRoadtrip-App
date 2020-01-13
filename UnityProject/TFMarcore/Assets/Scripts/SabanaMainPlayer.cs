@@ -11,13 +11,32 @@ public class SabanaMainPlayer : MonoBehaviour {
     public GameObject Flowers;
 
     private Vector3 position;
-    //private GameObject currentProp = null;
     private SabanaProp currentProp = null;
     private int flowerCount = 0;
+
+    private float speed = 5f;
+    private Vector3 targetPosition;
+    private bool isMoving = false;
 
     // Start is called before the first frame update
     void Start() {
         position = transform.position;
+    }
+
+    // Update is called once per frame
+    void Update() {
+        if (isMoving) {
+            // Move our position a step closer to the target.
+            float step = speed * Time.deltaTime / 10; // calculate distance to move
+            transform.position = Vector3.MoveTowards(transform.position, targetPosition, step);
+            transform.LookAt(targetPosition);
+
+            // Check if the position of the cube and sphere are approximately equal.
+            if (Vector3.Distance(transform.position, targetPosition) < 0.00001f) {
+                // Stop penguin
+                isMoving = false;
+            }
+        }
     }
 
     public void OnTouchDetected() {
@@ -26,7 +45,8 @@ public class SabanaMainPlayer : MonoBehaviour {
 
     public void OnAnimalClick(SabanaAnimal animal) {
         // Walk to that point
-        // ...
+        isMoving = true;
+        targetPosition = animal.CheetahPlace.transform.position;
 
         if(currentProp == null) {
             Handheld.Vibrate();
@@ -50,7 +70,12 @@ public class SabanaMainPlayer : MonoBehaviour {
         Handheld.Vibrate();
     }
 
-    public void OnFlowerClick() {
+    public void OnFlowerClick(SabanaFlower flower) {
+
+        // Walk to that point
+        isMoving = true;
+        targetPosition = flower.transform.position;
+
         flowerCount++;
         if(flowerCount == 3) {
             Flowers.SetActive(true);
@@ -59,6 +84,11 @@ public class SabanaMainPlayer : MonoBehaviour {
     }
 
     public void OnPropClick(SabanaProp prop) {
+
+        // Walk to that point
+        isMoving = true;
+        targetPosition = prop.CheetahPlace.transform.position;
+
         if (currentProp != null) {
             // Player is already carrying something
             Handheld.Vibrate();

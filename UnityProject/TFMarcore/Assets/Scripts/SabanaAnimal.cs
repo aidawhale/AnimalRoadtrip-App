@@ -15,6 +15,7 @@ public class SabanaAnimal : MonoBehaviour {
     public Animal animalType;
     public Prop desiredGift;
     public GameObject Head;
+    public GameObject CheetahPlace;
     public GameObject MainPlayer;
     public Material PinkLionMaterial;
     public Material NormalMaterial;

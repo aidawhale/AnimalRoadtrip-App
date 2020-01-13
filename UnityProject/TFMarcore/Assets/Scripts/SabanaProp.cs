@@ -18,6 +18,7 @@ public class SabanaProp : MonoBehaviour {
     public Prop prop;
     public GameObject mainPlayer;
     public SabanaAnimal animalAttachedTo;
+    public GameObject CheetahPlace;
 
     private GameObject image = null;
     private Vector3 position;
