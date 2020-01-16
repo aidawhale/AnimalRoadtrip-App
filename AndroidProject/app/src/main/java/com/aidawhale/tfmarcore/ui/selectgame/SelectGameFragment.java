@@ -49,7 +49,7 @@ public class SelectGameFragment extends Fragment implements SensorEventListener 
 
     private static final int MARCO_POLO_GAME = 1111;
     private static final int COLLECT_PIECES_GAME = 2222;
-    private static final int TREASURE_SEARCH_GAME = 3333;
+    private static final int EXPLORER_SEARCH_GAME = 3333;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -154,7 +154,7 @@ public class SelectGameFragment extends Fragment implements SensorEventListener 
                 // Init game with corresponding UnityActivity
                 Intent intent = new Intent(getContext(), UnityPlayerActivity.class);
                 intent.putExtra("SCENE", String.valueOf(randScene));
-                startActivityForResult(intent, TREASURE_SEARCH_GAME);
+                startActivityForResult(intent, EXPLORER_SEARCH_GAME);
             }
         });
 
@@ -186,7 +186,7 @@ public class SelectGameFragment extends Fragment implements SensorEventListener 
             case COLLECT_PIECES_GAME:
                 gameType = 2;
                 break;
-            case TREASURE_SEARCH_GAME:
+            case EXPLORER_SEARCH_GAME:
                 gameType = 3;
                 break;
         }

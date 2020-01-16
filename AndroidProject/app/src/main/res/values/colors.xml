@@ -6,6 +6,13 @@
     <color name="colorPrimaryLight">#fff263</color>
     <color name="colorAccent">#fbc02d</color>
 
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorDarkWhite">#D8D1C9</color>
+    <color name="colorMainButton">#EEE0B8</color>
+    <color name="colorIcon">#FCA205</color>
+    <color name="colorDarkIcon">#4E3800</color>
+    <color name="colorMainBackground">#FAF5EC</color>
+
     <color name="colorGray">#757575</color>
     <color name="coloDarkGray">#494949</color>
     <color name="colorLightGray">#a4a4a4</color>

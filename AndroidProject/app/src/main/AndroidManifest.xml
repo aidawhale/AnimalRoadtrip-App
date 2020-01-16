@@ -14,7 +14,7 @@
         <activity
             android:name=".MapAssistantActivity"
             android:label="@string/title_activity_map_assistant"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".MarcopoloActivity" />
         <activity
             android:name=".SurveyActivity"

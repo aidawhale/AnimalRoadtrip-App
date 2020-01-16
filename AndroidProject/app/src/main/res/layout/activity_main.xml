@@ -4,15 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/ic_background"
-    android:backgroundTint="#0DC49000"
+    android:background="@color/colorMainBackground"
     tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_launcher_foreground"
+        android:tint="@color/colorPrimaryDark"/>
 
     <ImageButton
         android:id="@+id/imageButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="#EEE0B8"
+        android:tint="@color/colorDarkIcon"
+        android:backgroundTint="@color/colorMainButton"
         android:contentDescription="@string/barcode_mockup"
         android:elevation="8dp"
         android:padding="16dp"
@@ -20,7 +31,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.40"
+        app:layout_constraintVertical_bias="0.55"
         app:srcCompat="@drawable/ic_barcode" />
 
     <Button
@@ -28,7 +39,8 @@
         android:layout_width="191dp"
         android:layout_height="69dp"
         android:layout_marginBottom="128dp"
-        android:backgroundTint="#EEE0B8"
+        android:textColor="@color/colorDarkIcon"
+        android:backgroundTint="@color/colorMainButton"
         android:elevation="8dp"
         android:text="@string/access_without_qr"
         app:layout_constraintBottom_toBottomOf="parent"

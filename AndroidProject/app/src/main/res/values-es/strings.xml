@@ -1,14 +1,14 @@
 <resources>
-    <string name="app_name">TFM ARcore</string>
+    <string name="app_name">Animal Road trip</string>
     <string name="game_view_content_description">Game view</string> <!--  Needed for UnityPlayActivity  -->
     <string name="title_activity_user_menu">Nombre de usuario</string>
     <string name="title_selectgame">Juegos</string>
     <string name="title_dashboard">Tablero</string>
-    <string name="third_game_name">Mapa del tesoro</string>
+    <string name="third_game_name">Explorar el mapa</string>
     <string name="second_game_name">Aventura en la selva</string>
     <string name="first_game_name">Marco Polo</string>
     <string name="barcode_mockup">BarCode mockup</string>
-    <string name="access_without_qr">Entrar sin QR</string>
+    <string name="access_without_qr">Entrar sin escanear</string>
     <string name="error_scanning_code">Error al escanear el código. Por favor, inténtelo de nuevo.</string>
     <string name="happiness">Felicidad</string>
     <string name="happiness_question">¿Cómo te encuentras?</string>
