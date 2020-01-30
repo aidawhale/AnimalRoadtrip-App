@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Animal Road trip</string>
+    <string name="app_name">Animal Roadtrip</string>
     <string name="game_view_content_description">Game view</string> <!--  Needed for UnityPlayActivity  -->
     <string name="title_activity_user_menu">Nombre de usuario</string>
     <string name="title_selectgame">Juegos</string>
