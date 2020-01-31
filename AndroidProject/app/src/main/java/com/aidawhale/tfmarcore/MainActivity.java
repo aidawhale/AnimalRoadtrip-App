@@ -24,6 +24,8 @@ import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.aidawhale.tfmarcore.client.OnUserPetitionResponse;
+import com.aidawhale.tfmarcore.client.RestService;
 import com.aidawhale.tfmarcore.room.AppRoomDatabase;
 import com.aidawhale.tfmarcore.room.Survey;
 import com.aidawhale.tfmarcore.room.SurveyDao;
@@ -180,6 +182,24 @@ public class MainActivity extends AppCompatActivity {
             SurveyDao surveyDao = db.surveyDao();
             UserDao userDao = db.userDao();
             User user = userDao.getDirectUserById(userid);
+
+            // Search USER on RemoteDB
+            // TODO check if internet available
+            RestService.getUserById("1234", new OnUserPetitionResponse() {
+                @Override
+                public void onUserPetitionResponse(User remoteUser) {
+
+                    // TODO finish
+
+                    Log.d("OnUserPetitionResponse:", "remoteUser " + remoteUser);
+
+                    if (remoteUser != null) {
+                        Toast.makeText(context, "Found user: " + remoteUser.userID + "!!!", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(context, "User not found.", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
 
             if(user == null) { // First login
                 // Load next activity: SurveyActivity

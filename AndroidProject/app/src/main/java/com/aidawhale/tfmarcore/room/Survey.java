@@ -6,6 +6,8 @@ import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.Index;
 
+import com.google.gson.annotations.SerializedName;
+
 @Entity(
     tableName = "survey",
     primaryKeys = {"date", "user"},
@@ -25,23 +27,28 @@ public class Survey {
     //PrimaryKey
     @NonNull
     @ColumnInfo(name = "date")
+    @SerializedName("survey_date")
     public String date;
 
     //PrimaryKey
     @NonNull
     @ColumnInfo(name = "user")
+    @SerializedName("survey_user")
     public String user;
 
     @NonNull
     @ColumnInfo(name = "happiness")
+    @SerializedName("survey_happiness")
     public int happiness;
 
     @NonNull
     @ColumnInfo(name = "food")
+    @SerializedName("survey_food")
     public int food;
 
     @NonNull
     @ColumnInfo(name = "pain")
+    @SerializedName("survey_pain")
     public int pain;
 
     // Constructor

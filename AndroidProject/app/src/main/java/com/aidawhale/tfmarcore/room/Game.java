@@ -7,6 +7,8 @@ import androidx.room.ForeignKey;
 import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
+import com.google.gson.annotations.SerializedName;
+
 @Entity(
     tableName = "game",
     foreignKeys = @ForeignKey(
@@ -25,26 +27,32 @@ public class Game {
     @PrimaryKey(autoGenerate = true)
     @NonNull
     @ColumnInfo(name = "id")
+    @SerializedName("game_id")
     public int id;
 
     @NonNull
     @ColumnInfo(name = "user")
+    @SerializedName("game_user_id")
     public String user;
 
     @NonNull
     @ColumnInfo(name = "game_type")
+    @SerializedName("game_type")
     public int game_type; // MarcoPolo = 1; Pieces = 2; Minesweeper = 3
 
     @NonNull
     @ColumnInfo(name = "time")
+    @SerializedName("game_time")
     public int time; // time spent playing this game in seconds
 
     @NonNull
     @ColumnInfo(name = "steps")
+    @SerializedName("game_steps")
     public int steps;
 
     @NonNull
     @ColumnInfo(name = "date")
+    @SerializedName("game_date")
     public String date;
 
     // Constructor

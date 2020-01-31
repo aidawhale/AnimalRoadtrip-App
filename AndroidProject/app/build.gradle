@@ -17,6 +17,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        // OkHttp 3.13+ requires Java 8+ or Android 5+
+        targetCompatibility = "8"
+        sourceCompatibility = "8"
+    }
 }
 
 dependencies {
@@ -46,4 +51,8 @@ dependencies {
     annotationProcessor "androidx.lifecycle:lifecycle-compiler:2.2.0-rc01"
 
     implementation "com.github.PhilJay:MPAndroidChart:v3.1.0"
+
+    implementation 'com.squareup.retrofit2:retrofit:2.7.1'
+    implementation 'com.squareup.retrofit2:converter-gson:2.7.1'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.3.1'
 }
