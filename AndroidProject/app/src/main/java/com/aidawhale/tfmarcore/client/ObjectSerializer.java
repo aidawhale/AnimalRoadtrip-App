@@ -48,16 +48,11 @@ public class ObjectSerializer implements JsonSerializer {
         JsonObject json = new JsonObject();
 
         json.addProperty("user_id", user.userID);
-        json.addProperty("user_storage_permission", user.storagePermission);
+        json.addProperty("storage_permission", user.storagePermission);
 
         // TODO FIX: this isn't the real date, it's the date when the user was added to remote DB...
-        json.addProperty("user_creation_date",
+        json.addProperty("creation_date",
                 DateConverter.complexDateToSimpleDate(new Date()));
-
-        // we don't have this info on app when creating a new user
-        json.addProperty("user_height", "null");
-        json.addProperty("user_difficulty_level", "null");
-        json.addProperty("user_age", "null");
 
         Log.d("ObjectSerializer:", "user was serialized with DATE = '" +
                 json.get("creation_date") + "'");

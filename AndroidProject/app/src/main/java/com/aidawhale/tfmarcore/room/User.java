@@ -20,15 +20,13 @@ public class User {
 
     @NonNull
     @ColumnInfo(name = "storage_permission")
-    @SerializedName("user_storage_permission")
+    @SerializedName("storage_permission")
     public boolean storagePermission;
 
     @ColumnInfo(name = "height")
-    @SerializedName("user_height")
     public int height; // patient height in cm
 
     @ColumnInfo(name = "difficulty_level")
-    @SerializedName("user_difficulty_level")
     public int difficultyLevel; // easy = 1; medium = 2; hard = 2;
 
     // Constructor

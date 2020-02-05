@@ -9,9 +9,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import com.aidawhale.tfmarcore.client.InternetCheck;
+import com.aidawhale.tfmarcore.client.RestService;
 import com.aidawhale.tfmarcore.room.AppRoomDatabase;
 import com.aidawhale.tfmarcore.room.Survey;
 import com.aidawhale.tfmarcore.room.User;
@@ -35,6 +38,8 @@ public class SurveyActivity extends AppCompatActivity {
     private SurveyActivityViewModel surveyViewModel;
 
     private String userID = null;
+    private boolean remoteUser;
+    private boolean remoteSurvey;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +60,10 @@ public class SurveyActivity extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             userID = extras.getString("USER_ID");
+            remoteUser = extras.getString("REMOTE_USER") != null &&
+                    extras.getString("REMOTE_USER").equals("true");
+            remoteSurvey = extras.getString("REMOTE_SURVEY") != null &&
+                    extras.getString("REMOTE_SURVEY").equals("true");
         }
 
         // Check database and get user info
@@ -62,9 +71,13 @@ public class SurveyActivity extends AppCompatActivity {
         UserDao userDao = db.userDao();
         User user = userDao.getDirectUserById(userID);
 
+        Log.d("SurveyActivity", "remoteUser " + remoteUser + ", user " + user);
+
         if(user == null) { // First login
             // Ask for permission to collect and save data usage
             showPrivacyDialog();
+        } else if (!remoteUser) {
+            addRemoteUser(user);
         }
 
         // FAB Button for sending survey data
@@ -163,5 +176,21 @@ public class SurveyActivity extends AppCompatActivity {
         newUser.storagePermission = permission;
 
         surveyViewModel.insert(newUser);
+
+        if (!remoteUser) {
+            addRemoteUser(newUser);
+        }
+    }
+
+    private void addRemoteUser(User user) {
+        // Check if internet available
+        new InternetCheck(internet -> {
+            if (internet) {
+                //  Send user to remote DB
+                Log.d("SurveyActivity addRemoteUser", "user " + user.userID + ", storage " + user.storagePermission);
+                RestService.sendNewUser(user);
+            }
+        });
+
     }
 }

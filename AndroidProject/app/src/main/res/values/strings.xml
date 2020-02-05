@@ -63,6 +63,8 @@
     <string name="clue_northpole_fire">Is the fire on or off?</string>
     <string name="northpole_clues_info_2">Remember: Pingu can only stay in each shape once!</string>
     <string name="sabana_clues_info_2">These clues are showing you what prize each animal wants. Get the items to trade with them, in return they will give you what you need!</string>
+    <string name="server_error_message">There was an error while connecting to the server, please try again later.</string>
+    <string name="no_internet_message">There is no Internet connection. If you\'d like to synchronise the data with the server, please check the device connection.</string>
 
     <string-array name="i8n_languages">
         <item>Choose language...</item>

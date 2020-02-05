@@ -17,18 +17,18 @@ public interface AnimalRoadtripService {
             @Path("userId") String userId
     );
 
-    @POST("api/user/new")
+    @POST("api/user/new/")
     Call<User> createUser(
             @Body User user
     );
 
-    @POST("api/user/{userId}/survey/new")
+    @POST("api/user/{userId}/survey/new/")
     Call<User> addSurvey(
             @Path("userId") String userId,
             @Body Survey survey
     );
 
-    @POST("api/user/{userId}/game/new")
+    @POST("api/user/{userId}/game/new/")
     Call<User> addGame(
             @Path("userId") String userId,
             @Body Game game

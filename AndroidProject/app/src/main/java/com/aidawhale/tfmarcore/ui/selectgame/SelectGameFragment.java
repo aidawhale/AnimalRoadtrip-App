@@ -177,8 +177,6 @@ public class SelectGameFragment extends Fragment implements SensorEventListener 
         long time= currentDate.getTime() - sgViewModel.preGameDate.getTime();
         int gameTime = (int) TimeUnit.MILLISECONDS.toSeconds(time);
 
-        Toast.makeText(getContext(), "Insert game: steps " + gameSteps + ", time " + gameTime, Toast.LENGTH_SHORT).show();
-
         switch (requestCode) {
             case MARCO_POLO_GAME:
                 gameType = 1;

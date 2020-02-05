@@ -5,6 +5,7 @@ import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
+import androidx.room.Update;
 
 import java.util.List;
 
@@ -25,5 +26,13 @@ public interface UserDao {
 
     @Query("SELECT * FROM user_info WHERE user_id LIKE :id")
     User getDirectUserById(String id);
+
+    @Query("UPDATE user_info SET " +
+            "storage_permission= :storagePermission, " +
+            "difficulty_level= :difficultyLevel, " +
+            "height= :height " +
+            "WHERE user_id LIKE :userid")
+    void updateUser(String userid, boolean storagePermission, int difficultyLevel, int height);
+
 
 }
