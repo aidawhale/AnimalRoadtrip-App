@@ -32,9 +32,8 @@ public interface AnimalRoadtripService {
             @Body Survey survey
     );
 
-    @POST("api/user/{userId}/game/new/")
-    Call<User> addGame(
-            @Path("userId") String userId,
+    @POST("api/game/new/")
+    Call<Game> createGame(
             @Body Game game
     );
 }

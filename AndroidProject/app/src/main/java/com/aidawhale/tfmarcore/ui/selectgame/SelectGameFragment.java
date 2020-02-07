@@ -27,6 +27,7 @@ import com.aidawhale.tfmarcore.MapAssistantActivity;
 import com.aidawhale.tfmarcore.MarcopoloActivity;
 import com.aidawhale.tfmarcore.R;
 import com.aidawhale.tfmarcore.UserMenuActivity;
+import com.aidawhale.tfmarcore.client.RestService;
 import com.aidawhale.tfmarcore.room.Game;
 import com.aidawhale.tfmarcore.room.ViewModels.SelectGameFragmentViewModel;
 import com.aidawhale.tfmarcore.utils.DateConverter;
@@ -83,43 +84,34 @@ public class SelectGameFragment extends Fragment implements SensorEventListener 
         CardView cv2 = getView().findViewById(R.id.second_game_cardview);
         CardView cv3 = getView().findViewById(R.id.third_game_cardview);
 
-        cv1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Get current step count and time
-                sgViewModel.preGameDate = new Date();
-                sgViewModel.preGameSteps = sgViewModel.steps;
+        cv1.setOnClickListener(v -> {
+            // Get current step count and time
+            sgViewModel.preGameDate = new Date();
+            sgViewModel.preGameSteps = sgViewModel.steps;
 
-                // Init game with corresponding MarcopoloActivity
-                Intent intent = new Intent(getContext(), MarcopoloActivity.class);
-                startActivityForResult(intent, MARCO_POLO_GAME);
-            }
+            // Init game with corresponding MarcopoloActivity
+            Intent intent = new Intent(getContext(), MarcopoloActivity.class);
+            startActivityForResult(intent, MARCO_POLO_GAME);
         });
 
-        cv2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Get current step count and time
-                sgViewModel.preGameDate = new Date();
-                sgViewModel.preGameSteps = sgViewModel.steps;
+        cv2.setOnClickListener(v -> {
+            // Get current step count and time
+            sgViewModel.preGameDate = new Date();
+            sgViewModel.preGameSteps = sgViewModel.steps;
 
-                // Init game with corresponding UnityActivity
-                Intent intent = new Intent(getContext(), UnityPlayerActivity.class);
-                intent.putExtra("SCENE", "1");
-                startActivityForResult(intent, COLLECT_PIECES_GAME);
-            }
+            // Init game with corresponding UnityActivity
+            Intent intent = new Intent(getContext(), UnityPlayerActivity.class);
+            intent.putExtra("SCENE", "1");
+            startActivityForResult(intent, COLLECT_PIECES_GAME);
         });
 
-        cv3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Get current step count and time
-                sgViewModel.preGameDate = new Date();
-                sgViewModel.preGameSteps = sgViewModel.steps;
+        cv3.setOnClickListener(v -> {
+            // Get current step count and time
+            sgViewModel.preGameDate = new Date();
+            sgViewModel.preGameSteps = sgViewModel.steps;
 
-                // Dialog. Ask to launch MAP or CLUES
-                showDialogMapClues();
-            }
+            // Dialog. Ask to launch MAP or CLUES
+            showDialogMapClues();
         });
 
         userID = UserMenuActivity.getUserID();
@@ -132,30 +124,25 @@ public class SelectGameFragment extends Fragment implements SensorEventListener 
         }
     }
 
-    private void showDialogMapClues() {// Show dialog with app info and a dropdown to switch language
-        AlertDialog.Builder dialog = new AlertDialog.Builder(getContext());
+    private void showDialogMapClues() {
+        // Show dialog with app info and a dropdown to switch language
 
+        AlertDialog.Builder dialog = new AlertDialog.Builder(getContext());
 
         dialog.setTitle(R.string.play_mode);
         dialog.setMessage(R.string.play_mode_info);
-        dialog.setPositiveButton(R.string.assistant, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                // Load assistant activity
-                Intent intent = new Intent(getContext(), MapAssistantActivity.class);
-                startActivity(intent);
-            }
+        dialog.setPositiveButton(R.string.assistant, (dialogInterface, i) -> {
+            // Load assistant activity
+            Intent intent = new Intent(getContext(), MapAssistantActivity.class);
+            startActivity(intent);
         });
 
-        dialog.setNegativeButton(R.string.explorer, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                int randScene = new Random().nextInt(2)+2;
-                // Init game with corresponding UnityActivity
-                Intent intent = new Intent(getContext(), UnityPlayerActivity.class);
-                intent.putExtra("SCENE", String.valueOf(randScene));
-                startActivityForResult(intent, EXPLORER_SEARCH_GAME);
-            }
+        dialog.setNegativeButton(R.string.explorer, (dialogInterface, i) -> {
+            int randScene = new Random().nextInt(2)+2;
+            // Init game with corresponding UnityActivity
+            Intent intent = new Intent(getContext(), UnityPlayerActivity.class);
+            intent.putExtra("SCENE", String.valueOf(randScene));
+            startActivityForResult(intent, EXPLORER_SEARCH_GAME);
         });
 
         dialog.show();
@@ -191,6 +178,9 @@ public class SelectGameFragment extends Fragment implements SensorEventListener 
 
         Game game = new Game(gameType, userID, gameTime, gameSteps, date);
         selectGameFragmentViewModel.insert(game);
+        if (UserMenuActivity.getInternet()) {
+            RestService.sendGame(game);
+        }
     }
 
     @Override

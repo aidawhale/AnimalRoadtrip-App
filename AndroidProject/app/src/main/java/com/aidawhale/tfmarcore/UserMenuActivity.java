@@ -1,7 +1,9 @@
 package com.aidawhale.tfmarcore;
 
 import android.os.Bundle;
+import android.util.Log;
 
+import com.aidawhale.tfmarcore.client.InternetCheck;
 import com.aidawhale.tfmarcore.utils.LanguageSettings;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -14,6 +16,7 @@ import androidx.navigation.ui.NavigationUI;
 public class UserMenuActivity extends AppCompatActivity {
 
     private static String userID = null;
+    private static boolean internet = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,9 +42,19 @@ public class UserMenuActivity extends AppCompatActivity {
         } else {
             userID = null;
         }
+
+        // Check if internet available
+        new InternetCheck(i -> {
+            internet = i;
+            Log.d("UserMenuActivity InternetCheck", "internet " + internet);
+        });
     }
 
     public static String getUserID() {
         return userID;
+    }
+
+    public static boolean getInternet() {
+        return internet;
     }
 }

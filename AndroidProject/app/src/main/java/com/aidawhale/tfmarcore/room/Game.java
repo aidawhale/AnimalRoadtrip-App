@@ -27,17 +27,16 @@ public class Game {
     @PrimaryKey(autoGenerate = true)
     @NonNull
     @ColumnInfo(name = "id")
-    @SerializedName("id")
     public int id;
 
     @NonNull
     @ColumnInfo(name = "user")
-    @SerializedName("user")
+    @SerializedName("user_str")
     public String user;
 
     @NonNull
     @ColumnInfo(name = "game_type")
-    @SerializedName("type")
+    @SerializedName("game_type")
     public int game_type; // MarcoPolo = 1; Pieces = 2; Minesweeper = 3
 
     @NonNull

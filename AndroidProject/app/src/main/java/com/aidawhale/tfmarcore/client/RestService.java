@@ -2,6 +2,7 @@ package com.aidawhale.tfmarcore.client;
 
 import android.util.Log;
 
+import com.aidawhale.tfmarcore.room.Game;
 import com.aidawhale.tfmarcore.room.Survey;
 import com.aidawhale.tfmarcore.room.User;
 
@@ -103,7 +104,7 @@ public class RestService {
     public static void sendNewUser(User user) {
         AnimalRoadtripService serviceSerializer = AnimalRoadtripClient.createServiceSerializer(AnimalRoadtripService.class);
 
-        Log.d("RestService.sendNewUser: SERIALIZE USER", " user " + user.userID + ", storage " + user.storagePermission);
+        Log.d("RestService.sendNewUser: ", " user " + user.userID + ", storage " + user.storagePermission);
         // Fetch user by userId
         Call<User> userCall = serviceSerializer.createUser(user);
 
@@ -124,7 +125,7 @@ public class RestService {
     public static void sendSurvey(User user, Survey survey) {
         AnimalRoadtripService serviceSerializer = AnimalRoadtripClient.createServiceSerializer(AnimalRoadtripService.class);
 
-        Log.d("RestService.sendSurvey: SERIALIZE SURVEY", " user " + survey.user + ", survey " + survey.date);
+        Log.d("RestService.sendSurvey: ", " user " + survey.user + ", survey " + survey.date);
 
         // Fetch user by userId
         Call<Survey> surveyCall = serviceSerializer.createSurvey(survey);
@@ -133,13 +134,36 @@ public class RestService {
         surveyCall.enqueue(new Callback<Survey>() {
             @Override
             public void onResponse(@NotNull Call<Survey> call, @NotNull Response<Survey> response) {
-                Log.d("RestService.sendNewUser: onResponse", "");
+                Log.d("RestService.sendSurvey: onResponse", "Response is successful" + response.isSuccessful());
             }
 
             @Override
             public void onFailure(@NotNull Call<Survey> call, @NotNull Throwable t) {
-                Log.d("RestService.sendNewUser: onFailure", t.toString());
+                Log.d("RestService.sendSurvey: onFailure", t.toString());
             }
         });
+    }
+
+    public static void sendGame(Game game) {
+        AnimalRoadtripService serviceSerializer = AnimalRoadtripClient.createServiceSerializer(AnimalRoadtripService.class);
+
+        Log.d("RestService.sendGame: ", " user " + game.user + ", date " + game.date);
+
+        // Fetch user by userId
+        Call<Game> gameCall = serviceSerializer.createGame(game);
+
+        // Execute the call asynchronously. Get a positive or negative callback.
+        gameCall.enqueue(new Callback<Game>() {
+            @Override
+            public void onResponse(@NotNull Call<Game> call, @NotNull Response<Game> response) {
+                Log.d("RestService.sendGame: onResponse", "Response is successful " + response.isSuccessful());
+            }
+
+            @Override
+            public void onFailure(@NotNull Call<Game> call, @NotNull Throwable t) {
+                Log.d("RestService.sendGame: onFailure ", t.toString());
+            }
+        });
+
     }
 }
