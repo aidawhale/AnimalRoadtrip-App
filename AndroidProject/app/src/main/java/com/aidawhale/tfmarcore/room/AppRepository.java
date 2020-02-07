@@ -2,6 +2,7 @@ package com.aidawhale.tfmarcore.room;
 
 import android.app.Application;
 import android.os.AsyncTask;
+import android.util.Log;
 
 import androidx.lifecycle.LiveData;
 
@@ -65,6 +66,11 @@ public class AppRepository {
         new InsertGameAsyncTask(gameDao).execute(game);
     }
 
+    // Updates
+    public void update (User user) {
+        new UpdateUserAsyncTask(userDao).execute(user);
+    }
+
     // Async tasks
     private static class InsertUserAsyncTask extends AsyncTask<User, Void, Void> {
         private UserDao asyncTaskDao;
@@ -104,6 +110,20 @@ public class AppRepository {
         @Override
         protected Void doInBackground(Game... params) {
             asyncTaskDao.insert(params[0]);
+            return null;
+        }
+    }
+
+    private static class UpdateUserAsyncTask extends AsyncTask<User, Void, Void> {
+        private UserDao asyncTaskDao;
+
+        UpdateUserAsyncTask(UserDao dao) {
+            asyncTaskDao = dao;
+        }
+
+        @Override
+        protected Void doInBackground(final User... params) {
+            asyncTaskDao.updateUser(params[0].userID, params[0].storagePermission, params[0].difficultyLevel, params[0].height);
             return null;
         }
     }

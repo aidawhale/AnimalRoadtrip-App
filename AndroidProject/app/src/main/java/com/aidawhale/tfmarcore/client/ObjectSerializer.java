@@ -19,6 +19,8 @@ public class ObjectSerializer implements JsonSerializer {
     @Override
     public JsonElement serialize(Object src, Type typeOfSrc, JsonSerializationContext context) {
 
+        Log.d("ObjectSerializer:", "Serializing  " +
+                src.getClass().toString() + " object!");
         if (User.class.equals(src.getClass())) {
             return serializeUser((User) src);
         }
@@ -42,7 +44,7 @@ public class ObjectSerializer implements JsonSerializer {
     //    difficulty_level (int) [1..3]
     //    age (int) [1990..2050]
     //    last_update (not needed)
-    //    creation_date (DateTimeField)
+    //    created_date (DateTimeField)
     private JsonElement serializeUser(User user) {
 
         JsonObject json = new JsonObject();
@@ -50,12 +52,11 @@ public class ObjectSerializer implements JsonSerializer {
         json.addProperty("user_id", user.userID);
         json.addProperty("storage_permission", user.storagePermission);
 
-        // TODO FIX: this isn't the real date, it's the date when the user was added to remote DB...
-        json.addProperty("creation_date",
+        json.addProperty("created_date",
                 DateConverter.complexDateToSimpleDate(new Date()));
 
         Log.d("ObjectSerializer:", "user was serialized with DATE = '" +
-                json.get("creation_date") + "'");
+                json.get("created_date") + "'");
 
         return json;
     }
@@ -71,11 +72,11 @@ public class ObjectSerializer implements JsonSerializer {
 
         JsonObject json = new JsonObject();
 
-        json.addProperty("game_user_id", game.user);
-        json.addProperty("game_type", game.game_type);
-        json.addProperty("game_time", game.time);
-        json.addProperty("game_steps", game.steps);
-        json.addProperty("game_date", game.date);
+        json.addProperty("user_id", game.user);
+        json.addProperty("type", game.game_type);
+        json.addProperty("time", game.time);
+        json.addProperty("steps", game.steps);
+        json.addProperty("date", game.date);
 
         Log.d("ObjectSerializer:", "game was serialized (user " + game.user + ")");
 
@@ -93,11 +94,11 @@ public class ObjectSerializer implements JsonSerializer {
 
         JsonObject json = new JsonObject();
 
-        json.addProperty("survey_date", survey.date);
-        json.addProperty("survey_user", survey.user);
-        json.addProperty("survey_happiness", survey.happiness);
-        json.addProperty("survey_food", survey.food);
-        json.addProperty("survey_pain", survey.pain);
+        json.addProperty("date", survey.date);
+        json.addProperty("user_serializer", survey.user);
+        json.addProperty("happiness", survey.happiness);
+        json.addProperty("food", survey.food);
+        json.addProperty("pain", survey.pain);
 
         Log.d("ObjectSerializer:", "survey was serialized (user " + survey.user + ")");
 

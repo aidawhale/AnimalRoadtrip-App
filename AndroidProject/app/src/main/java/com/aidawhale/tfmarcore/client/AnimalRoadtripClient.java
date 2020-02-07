@@ -57,9 +57,9 @@ public class AnimalRoadtripClient {
         if (!httpClient.interceptors().contains(logging)) {
             httpClient.addInterceptor(logging);
             builderSerializer.client(httpClient.build());
-            retrofit = builderSerializer.build();
+            retrofitSerializer = builderSerializer.build();
         }
-        return retrofit.create(serviceClass);
+        return retrofitSerializer.create(serviceClass);
     }
 
     public static <S> S createServiceDeserializer(Class<S> serviceClass) {
@@ -67,9 +67,9 @@ public class AnimalRoadtripClient {
         if (!httpClient.interceptors().contains(logging)) {
             httpClient.addInterceptor(logging);
             builderDeserializer.client(httpClient.build());
-            retrofit = builderDeserializer.build();
+            retrofitDeserializer = builderDeserializer.build();
         }
-        return retrofit.create(serviceClass);
+        return retrofitDeserializer.create(serviceClass);
     }
 
     public static <S> S createService(Class<S> serviceClass) {

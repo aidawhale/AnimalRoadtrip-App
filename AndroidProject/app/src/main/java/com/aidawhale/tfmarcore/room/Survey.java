@@ -27,28 +27,28 @@ public class Survey {
     //PrimaryKey
     @NonNull
     @ColumnInfo(name = "date")
-    @SerializedName("survey_date")
+    @SerializedName("date")
     public String date;
 
     //PrimaryKey
     @NonNull
     @ColumnInfo(name = "user")
-    @SerializedName("survey_user")
+    @SerializedName("user_str")
     public String user;
 
     @NonNull
     @ColumnInfo(name = "happiness")
-    @SerializedName("survey_happiness")
+    @SerializedName("happiness")
     public int happiness;
 
     @NonNull
     @ColumnInfo(name = "food")
-    @SerializedName("survey_food")
+    @SerializedName("food")
     public int food;
 
     @NonNull
     @ColumnInfo(name = "pain")
-    @SerializedName("survey_pain")
+    @SerializedName("pain")
     public int pain;
 
     // Constructor

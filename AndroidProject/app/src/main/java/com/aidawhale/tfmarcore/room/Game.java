@@ -27,32 +27,32 @@ public class Game {
     @PrimaryKey(autoGenerate = true)
     @NonNull
     @ColumnInfo(name = "id")
-    @SerializedName("game_id")
+    @SerializedName("id")
     public int id;
 
     @NonNull
     @ColumnInfo(name = "user")
-    @SerializedName("game_user_id")
+    @SerializedName("user")
     public String user;
 
     @NonNull
     @ColumnInfo(name = "game_type")
-    @SerializedName("game_type")
+    @SerializedName("type")
     public int game_type; // MarcoPolo = 1; Pieces = 2; Minesweeper = 3
 
     @NonNull
     @ColumnInfo(name = "time")
-    @SerializedName("game_time")
+    @SerializedName("time")
     public int time; // time spent playing this game in seconds
 
     @NonNull
     @ColumnInfo(name = "steps")
-    @SerializedName("game_steps")
+    @SerializedName("steps")
     public int steps;
 
     @NonNull
     @ColumnInfo(name = "date")
-    @SerializedName("game_date")
+    @SerializedName("date")
     public String date;
 
     // Constructor

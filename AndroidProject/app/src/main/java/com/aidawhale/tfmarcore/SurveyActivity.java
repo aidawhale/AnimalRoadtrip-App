@@ -37,9 +37,11 @@ public class SurveyActivity extends AppCompatActivity {
 
     private SurveyActivityViewModel surveyViewModel;
 
+    private User user;
     private String userID = null;
+    private boolean askForPermission;
+    private boolean internet;
     private boolean remoteUser;
-    private boolean remoteSurvey;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,70 +62,80 @@ public class SurveyActivity extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             userID = extras.getString("USER_ID");
+            askForPermission = extras.getString("ASK_FOR_PERMISSION") != null &&
+                    extras.getString("ASK_FOR_PERMISSION").equals("true");
+            internet = extras.getString("INTERNET") != null &&
+                    extras.getString("INTERNET").equals("true");
             remoteUser = extras.getString("REMOTE_USER") != null &&
                     extras.getString("REMOTE_USER").equals("true");
-            remoteSurvey = extras.getString("REMOTE_SURVEY") != null &&
-                    extras.getString("REMOTE_SURVEY").equals("true");
+
+            Log.d("SurveyActivity onCreate", "Extras: \nID " + userID +
+                    ", askForPermission " + askForPermission + ", internet " + internet +
+                    ", remoteUser " + remoteUser);
+        } else {
+            Log.d("SurveyActivity onCreate", "Extras is null... this should never happen");
         }
 
-        // Check database and get user info
-        AppRoomDatabase db = AppRoomDatabase.getDatabase(getApplicationContext());
-        UserDao userDao = db.userDao();
-        User user = userDao.getDirectUserById(userID);
-
-        Log.d("SurveyActivity", "remoteUser " + remoteUser + ", user " + user);
-
-        if(user == null) { // First login
+        if(askForPermission) { // First login
+            Log.d("SurveyActivity onCreate", "remoteUser " + remoteUser + ", first login on local");
             // Ask for permission to collect and save data usage
             showPrivacyDialog();
-        } else if (!remoteUser) {
-            addRemoteUser(user);
+            // NOTE: Now user exists on DB local and remote (if internet)
         }
+
+        Log.d("SurveyActivity onCreate", "Continue with survey...");
 
         // FAB Button for sending survey data
         FloatingActionButton fabBtn = findViewById(R.id.fab_send_survey);
-        fabBtn.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
+        fabBtn.setOnClickListener(view -> handleSurvey());
 
-                int happiness = 0, food = 0, pain = 0;
+    }
 
-                // Check if all answers are completed
-                for (Integer v : values.keySet()) {
-                    if (values.get(v) == null) {
-                        String s = getString(R.string.question_no_answer) + " " + getBaseContext().getString(v);
-                        Toast.makeText(SurveyActivity.this, s, Toast.LENGTH_SHORT).show();
-                        return;
-                    }
+    private void handleSurvey() {
+        Log.d("SurveyActivity handleSurvey", "remoteUser " + remoteUser + ", user " + userID);
 
-                    switch (v) {
-                        case R.string.happiness:
-                            happiness = Integer.parseInt(values.get(v));
-                            break;
-                        case R.string.food:
-                            food = Integer.parseInt(values.get(v));
-                            break;
-                        case R.string.pain:
-                            pain = Integer.parseInt(values.get(v));
-                            break;
-                        default:
-                            Toast.makeText(SurveyActivity.this, "There was a problem saving survey, please try again :(", Toast.LENGTH_SHORT).show();
-                    }
-                }
+        int happiness = 0, food = 0, pain = 0;
 
-                // Send info to DB
-                String date = DateConverter.complexDateToSimpleDate(new Date());
-                Survey survey = new Survey(date, userID, happiness, food, pain);
-                surveyViewModel.insert(survey);
-
-                // Load next activity
-                Intent intent = new Intent(getApplicationContext(), UserMenuActivity.class);
-                intent.putExtra("USER_ID", userID);
-                startActivity(intent);
-                finish();  // Don't add this activity to back stack
-
+        // Check if all answers are completed
+        for (Integer v : values.keySet()) {
+            if (values.get(v) == null) {
+                String s = getString(R.string.question_no_answer) + " " + getBaseContext().getString(v);
+                Toast.makeText(SurveyActivity.this, s, Toast.LENGTH_SHORT).show();
+                return;
             }
-        });
+
+            switch (v) {
+                case R.string.happiness:
+                    happiness = Integer.parseInt(values.get(v));
+                    break;
+                case R.string.food:
+                    food = Integer.parseInt(values.get(v));
+                    break;
+                case R.string.pain:
+                    pain = Integer.parseInt(values.get(v));
+                    break;
+                default:
+                    Toast.makeText(SurveyActivity.this, "There was a problem saving survey, please try again :(", Toast.LENGTH_SHORT).show();
+            }
+        }
+
+        // Send info to DB
+        Log.d("SurveyActivity handleSurvey", "Save survey on local DB");
+        String date = DateConverter.complexDateToSimpleDate(new Date());
+        Survey survey = new Survey(date, userID, happiness, food, pain);
+        surveyViewModel.insert(survey);
+        if(internet) {
+            Log.d("SurveyActivity handleSurvey", "Send survey to remote");
+            // Send survey to remote
+            RestService.sendSurvey(user, survey);
+        }
+
+        // Load next activity
+        Log.d("SurveyActivity handleSurvey", "Load UserMenuActivity");
+        Intent intent = new Intent(getApplicationContext(), UserMenuActivity.class);
+        intent.putExtra("USER_ID", userID);
+        startActivity(intent);
+        finish();  // Don't add this activity to back stack
     }
 
     private void loadQuestions() {
@@ -151,33 +163,30 @@ public class SurveyActivity extends AppCompatActivity {
         dialog.setTitle(R.string.privacy_title);
         dialog.setMessage(getResources().getString(R.string.privacy_info_text) +
                 "\n\n" + getResources().getString(R.string.privacy_question));
-        dialog.setPositiveButton(R.string.accept, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                addUser(true);
-            }
-        });
-        dialog.setNegativeButton(R.string.reject, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                addUser(false);
-                // Load next activity
-                Intent intent = new Intent(getApplicationContext(), UserMenuActivity.class);
-                startActivity(intent);
-                finish();  // Don't add this activity to back stack
-            }
+        dialog.setPositiveButton(R.string.accept, (dialogInterface, i) -> addUser(true));
+        dialog.setNegativeButton(R.string.reject, (dialogInterface, i) -> {
+
+            addUser(false);
+
+            // Load next activity
+            Log.d("SurveyActivity showPrivacyDialog", "Refused data collection. Load UserMenuActivity");
+            Intent intent = new Intent(getApplicationContext(), UserMenuActivity.class);
+            startActivity(intent);
+            finish();  // Don't add this activity to back stack
         });
         dialog.setCancelable(false);
         dialog.show();
     }
 
     private void addUser(boolean permission) {
+        Log.d("SurveyActivity addUser", "Save user on local DB");
+
         User newUser = new User(userID);
         newUser.storagePermission = permission;
 
         surveyViewModel.insert(newUser);
 
-        if (!remoteUser) {
+        if (askForPermission && internet) {
             addRemoteUser(newUser);
         }
     }
@@ -189,6 +198,9 @@ public class SurveyActivity extends AppCompatActivity {
                 //  Send user to remote DB
                 Log.d("SurveyActivity addRemoteUser", "user " + user.userID + ", storage " + user.storagePermission);
                 RestService.sendNewUser(user);
+            } else {
+                Log.d("SurveyActivity addRemoteUser", "Error sending user to remote: no internet connection");
+                Toast.makeText(this, R.string.no_internet_message, Toast.LENGTH_SHORT).show();
             }
         });
 
