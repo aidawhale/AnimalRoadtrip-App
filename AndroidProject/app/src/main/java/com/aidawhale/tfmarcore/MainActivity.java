@@ -161,7 +161,7 @@ public class MainActivity extends AppCompatActivity {
 
             // Load next activity: LoadingActivity sending userid
             Intent intent = new Intent(context, LoadingActivity.class);
-            intent.putExtra("USER_ID", userid);
+            intent.putExtra("USER_ID", userid.trim());
             startActivity(intent);
 
         } else {
