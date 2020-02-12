@@ -243,26 +243,27 @@ public class DashboardFragment extends Fragment {
         LineDataSet fDataSet = new LineDataSet(fEntries, getContext().getResources().getString(R.string.food));
         LineDataSet pDataSet = new LineDataSet(pEntries, getContext().getResources().getString(R.string.pain));
 
-        hDataSet.setColor(yellow);
-        fDataSet.setColor(green);
+        hDataSet.setColor(green);
+        hDataSet.enableDashedLine(10, 10, 0);
+        fDataSet.setColor(yellow);
         pDataSet.setColor(purple);
         hDataSet.setLineWidth(2.0f);
         fDataSet.setLineWidth(2.0f);
         pDataSet.setLineWidth(2.0f);
-        hDataSet.setCircleColor(yellow);
-        fDataSet.setCircleColor(green);
+        hDataSet.setCircleColor(green);
+        fDataSet.setCircleColor(yellow);
         pDataSet.setCircleColor(purple);
         hDataSet.setCircleRadius(5f);
         fDataSet.setCircleRadius(5f);
         pDataSet.setCircleRadius(5f);
-        hDataSet.setFillColor(yellow);
-        fDataSet.setFillColor(green);
+        hDataSet.setFillColor(green);
+        fDataSet.setFillColor(yellow);
         pDataSet.setFillColor(purple);
         hDataSet.setDrawValues(false);
         fDataSet.setDrawValues(false);
         pDataSet.setDrawValues(false);
-        hDataSet.setValueTextColor(yellow);
-        fDataSet.setValueTextColor(green);
+        hDataSet.setValueTextColor(green);
+        fDataSet.setValueTextColor(yellow);
         pDataSet.setValueTextColor(purple);
 
         List<ILineDataSet> dataSets = new ArrayList<>();

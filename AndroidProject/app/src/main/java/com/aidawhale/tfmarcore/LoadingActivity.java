@@ -249,15 +249,28 @@ public class LoadingActivity extends AppCompatActivity {
                 }
             }
 
-            @Override public void onPetitionError() { showErrorMessage(); }
-            @Override public void onPetitionWaiting() { showErrorMessage(); }
-            @Override public void onPetitionFailure() { showErrorMessage(); }
+            @Override public void onPetitionError() {
+                showErrorMessage();
+                // Continue with normal login
+                localLogin(user, userid);
+            }
+
+            @Override public void onPetitionWaiting() {
+                showErrorMessage();
+                // Continue with normal login
+                localLogin(user, userid);
+            }
+
+            @Override public void onPetitionFailure() {
+                showErrorMessage();
+                // Continue with normal login
+                localLogin(user, userid);
+            }
         });
     }
 
     private void showErrorMessage() {
         Toast.makeText(context, R.string.server_error_message, LENGTH_LONG).show();
-        finish(); // Don't add this activity to back stack
     }
 
     private void showNoInternetMessage() {
