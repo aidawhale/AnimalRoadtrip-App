@@ -2,9 +2,13 @@
 
 ![](https://github.com/aidawhale/tfmarcore/blob/master/GitHubImages/logo_name.png)
 
-This project developed a mobile application that serves to motivate pediatric patients and thus enhance the physical activity performed by Augmented Reality technologies. This application does not require any previous configuration by the user, as it uses surface detection technologies automatically.
+In this project, a mobile application has been developed. 
+This app can be used to motivate paediatric patients and thus enhance the physical activity performed by them using Augmented Reality technologies.
+This application does not require any previous configuration by the user, since it uses ARCore's automatic surface detection technology.
 
-In addition, this application is complemented by a system that allows the collection and visualization of patient usage data. This data will be of great interest to doctors, who will have a dynamic and indirect way of collecting data on the mobility and mood of their patients. The web tool through which you can consult and modify the data of each patient is simple and intuitive, since the data are shown in a visual way through graphics, so that they are comfortable and easy to understand.
+In addition, this application is complemented by a system that allows the collection and display of patient usage data.
+These data will be of great interest to doctors, who will have a dynamic and indirect way of collecting data on the mobility and mood of their patients.
+The web tool through which each patient's data can be consulted and modified is simple and intuitive, since the data is shown in a visual way through graphics, so that it is comfortable and easy to understand.
 
 __________________________________________
 
