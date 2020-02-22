@@ -20,6 +20,8 @@ The application includes three games:
 
 __________________________________________
 
+## Index
+
 Pictures of the different parts of the Android application are shown below:
 
  * [Login process](https://github.com/aidawhale/tfmarcore#login-process)
@@ -33,6 +35,10 @@ Pictures of the different parts of the Android application are shown below:
    * [Map assistant: clues](https://github.com/aidawhale/tfmarcore#assistant-clues)
    
 Furthermore, the [Installing APK](https://github.com/aidawhale/tfmarcore#installing-apk) section details how to download and install the application on an Android device.
+
+## Trailer
+
+[![Animal Roadtrip trailer](https://github.com/aidawhale/tfmarcore/blob/master/GitHubImages/youtube_video.png)](https://www.youtube.com/watch?v=H63qksikg7U)
 
 __________________________________________
 
