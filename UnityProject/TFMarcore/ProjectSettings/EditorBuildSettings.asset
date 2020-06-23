@@ -14,9 +14,12 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/TreasureMapSabana.unity
     guid: a04b3f7dca87f9e4cab9264e37d7e93b
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TreasureMapPingu.unity
     guid: 53eec8ca6c3a588439050208f219c935
+  - enabled: 1
+    path: Assets/Scenes/Guacamole.unity
+    guid: c668986e2fea79f46aa4aa733e7a8446
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 968d632e6c00ac6429de2a38fb716411,
       type: 2}
