@@ -541,6 +541,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2745085194338397475, guid: 63e189bf801e78e4a88b5d55c64b2ccf,
+        type: 3}
+      propertyPath: m_Name
+      value: HostScore_Panel
+      objectReference: {fileID: 0}
+    - target: {fileID: 7367026750137809938, guid: 63e189bf801e78e4a88b5d55c64b2ccf,
+        type: 3}
+      propertyPath: m_Name
+      value: LocalScore_Panel
+      objectReference: {fileID: 0}
+    - target: {fileID: 7367026750770520671, guid: 63e189bf801e78e4a88b5d55c64b2ccf,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -5.0000305
+      objectReference: {fileID: 0}
     - target: {fileID: 7367026751303306387, guid: 63e189bf801e78e4a88b5d55c64b2ccf,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -650,6 +665,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GuacamoleCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 7367026751512398824, guid: 63e189bf801e78e4a88b5d55c64b2ccf,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -5.0000305
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6598825050490931833, guid: 63e189bf801e78e4a88b5d55c64b2ccf, type: 3}
