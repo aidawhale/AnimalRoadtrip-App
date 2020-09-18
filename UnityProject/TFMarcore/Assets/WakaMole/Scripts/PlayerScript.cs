@@ -13,6 +13,8 @@ public class PlayerScript : NetworkBehaviour
 
     void Start()
     {
+        DontDestroyOnLoad(this.gameObject);
+
         if (isLocalPlayer)
         {
             Local = this;

@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class JoinLobbyMenu : MonoBehaviour
 {
-    [SerializeField] private NetworkManagerWakaMoleLobby networkManager = null;
+    [SerializeField] private NetworkManagerWakaMole networkManager = null;
 
     [Header("UI")]
     [SerializeField] private GameObject landingPagePanel = null;
@@ -17,14 +17,14 @@ public class JoinLobbyMenu : MonoBehaviour
 
     private void OnEnable()
     {
-        NetworkManagerWakaMoleLobby.OnClientConnected += HandleClientConnected;
-        NetworkManagerWakaMoleLobby.OnClientDisconnected += HandleClientDisconnected;
+        NetworkManagerWakaMole.OnClientConnected += HandleClientConnected;
+        NetworkManagerWakaMole.OnClientDisconnected += HandleClientDisconnected;
     }
 
     private void OnDisable()
     {
-        NetworkManagerWakaMoleLobby.OnClientConnected -= HandleClientConnected;
-        NetworkManagerWakaMoleLobby.OnClientDisconnected -= HandleClientDisconnected;
+        NetworkManagerWakaMole.OnClientConnected -= HandleClientConnected;
+        NetworkManagerWakaMole.OnClientDisconnected -= HandleClientDisconnected;
     }
 
     public void JoinLobby()

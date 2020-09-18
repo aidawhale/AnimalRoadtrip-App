@@ -452,22 +452,21 @@ MonoBehaviour:
   startOnHeadless: 1
   showDebugMessages: 0
   serverTickRate: 30
-  offlineScene: 
-  onlineScene: 
+  offlineScene: Assets/WakaMole/Scenes/WakaMoleMenu.unity
+  onlineScene: Assets/WakaMole/Scenes/WakaMoleMenu.unity
   transport: {fileID: 1844879465}
   networkAddress: localhost
   maxConnections: 2
   disconnectInactiveConnections: 0
   disconnectInactiveTimeout: 60
   authenticator: {fileID: 0}
-  playerPrefab: {fileID: 5804646933423856024, guid: 94de7164c6e438c498dd6123094ef26e,
+  playerPrefab: {fileID: 265853927867411046, guid: 7e4ec55d0b37bff48bd89cd98c50383f,
     type: 3}
   autoCreatePlayer: 1
-  playerSpawnMethod: 0
-  spawnPrefabs: []
+  playerSpawnMethod: 1
+  spawnPrefabs:
+  - {fileID: 3376476652272906430, guid: e7af5ff482c12a44ea5faacc5502baab, type: 3}
   menuScene: Assets/WakaMole/Scenes/WakaMoleMenu.unity
-  roomPlayerPrefab: {fileID: 2800893085966664608, guid: 94de7164c6e438c498dd6123094ef26e,
-    type: 3}
   textWaitingPlayer: {fileID: 1012573302}
   startGameButton: {fileID: 840129057}
 --- !u!4 &1844879467

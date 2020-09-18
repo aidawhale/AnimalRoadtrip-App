@@ -9,12 +9,9 @@ using Mirror;
 
 // https://github.com/DapperDino/Mirror-Multiplayer-Tutorials/blob/628b062b138fb48967c03ce6a146c52de979b74e/Assets/Tutorials/Lobby/Scripts/NetworkManagerLobby.cs
 
-public class NetworkManagerWakaMoleLobby : NetworkManager
+public class NetworkManagerWakaMole : NetworkManager
 {
     [Scene] [SerializeField] private string menuScene = string.Empty;
-
-    [Header("Room")]
-    [SerializeField] private NetworkRoomPlayerLobby roomPlayerPrefab = null;
 
     [Header("UI Panel")]
     [SerializeField] private GameObject textWaitingPlayer = null;
@@ -22,6 +19,9 @@ public class NetworkManagerWakaMoleLobby : NetworkManager
 
     public static event Action OnClientConnected;
     public static event Action OnClientDisconnected;
+
+    public List<GameObject> GamePlayers { get; } = new List<GameObject>();
+
 
     public override void OnStartServer() => spawnPrefabs = Resources.LoadAll<GameObject>("SpawnablePrefabs").ToList();
 
@@ -68,10 +68,13 @@ public class NetworkManagerWakaMoleLobby : NetworkManager
     {
         if (SceneManager.GetActiveScene().path == menuScene)
         {
-            NetworkRoomPlayerLobby roomPlayerInstance = Instantiate(roomPlayerPrefab);
+            // Instantiate player
+            GameObject player = Instantiate(playerPrefab);
+            GamePlayers.Add(player);
+            NetworkServer.AddPlayerForConnection(conn, player);
 
-            NetworkServer.AddPlayerForConnection(conn, roomPlayerInstance.gameObject);
 
+            // Check if the second player has connected
             if (NetworkServer.connections.Count > 1)
             {
                 // Show START button
@@ -84,5 +87,6 @@ public class NetworkManagerWakaMoleLobby : NetworkManager
     public void StartGame()
     {
         // Load WakaMole scene
+        ServerChangeScene("WakaMole");
     }
 }

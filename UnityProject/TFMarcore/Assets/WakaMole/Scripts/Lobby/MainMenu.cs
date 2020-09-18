@@ -10,7 +10,7 @@ using TMPro;
 
 public class MainMenu : MonoBehaviour
 {
-    [SerializeField] private NetworkManagerWakaMoleLobby networkManager = null;
+    [SerializeField] private NetworkManagerWakaMole networkManager = null;
 
     [Header("UI")]
     [SerializeField] private GameObject landingPagePanel = null;
