@@ -18,8 +18,11 @@ EditorBuildSettings:
     path: Assets/Scenes/TreasureMapPingu.unity
     guid: 53eec8ca6c3a588439050208f219c935
   - enabled: 1
-    path: Assets/Scenes/Guacamole.unity
-    guid: c668986e2fea79f46aa4aa733e7a8446
+    path: Assets/WakaMole/Scenes/WakaMoleMenu.unity
+    guid: a22162e05d7939a48ad77a880ed844f6
+  - enabled: 1
+    path: Assets/WakaMole/Scenes/WakaMole.unity
+    guid: 57a5dc931edc4c94480bf3ea193548b7
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 968d632e6c00ac6429de2a38fb716411,
       type: 2}

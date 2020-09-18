@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44295958, g: 0.49214357, b: 0.5718799, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -541,21 +541,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2745085194338397475, guid: 63e189bf801e78e4a88b5d55c64b2ccf,
-        type: 3}
-      propertyPath: m_Name
-      value: HostScore_Panel
-      objectReference: {fileID: 0}
-    - target: {fileID: 7367026750137809938, guid: 63e189bf801e78e4a88b5d55c64b2ccf,
-        type: 3}
-      propertyPath: m_Name
-      value: LocalScore_Panel
-      objectReference: {fileID: 0}
-    - target: {fileID: 7367026750770520671, guid: 63e189bf801e78e4a88b5d55c64b2ccf,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -5.0000305
-      objectReference: {fileID: 0}
     - target: {fileID: 7367026751303306387, guid: 63e189bf801e78e4a88b5d55c64b2ccf,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -666,12 +651,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GuacamoleCanvas
       objectReference: {fileID: 0}
-    - target: {fileID: 7367026751512398824, guid: 63e189bf801e78e4a88b5d55c64b2ccf,
+    - target: {fileID: 7367026751303306391, guid: 63e189bf801e78e4a88b5d55c64b2ccf,
         type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -5.0000305
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 6598825050490931833, guid: 63e189bf801e78e4a88b5d55c64b2ccf, type: 3}
-    - {fileID: 7367026750137809936, guid: 63e189bf801e78e4a88b5d55c64b2ccf, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63e189bf801e78e4a88b5d55c64b2ccf, type: 3}

@@ -21,6 +21,16 @@ UnityPlayerActivity.java.NEW
 # Never ignore Asset meta data
 !/[Aa]ssets/**/*.meta
 
+# TMPro
+/Assets/TextMesh Pro
+/Assets/TextMesh Pro*
+
+# Mirror
+/Assets/Mirror
+/Assets/Mirror*
+/Assets/ScriptTemplates
+/Assets/ScriptTemplates*
+
 # Uncomment this line if you wish to ignore the asset store tools plugin
 # /[Aa]ssets/AssetStoreTools*
 
