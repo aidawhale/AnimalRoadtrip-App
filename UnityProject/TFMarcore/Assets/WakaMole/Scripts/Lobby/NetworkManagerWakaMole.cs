@@ -80,6 +80,9 @@ public class NetworkManagerWakaMole : NetworkManager
                 // Show START button
                 textWaitingPlayer.SetActive(false);
                 startGameButton.SetActive(true);
+            } else
+            {
+                player.GetComponent<PlayerScript>().isHost = true;
             }
         }
     }
@@ -87,6 +90,6 @@ public class NetworkManagerWakaMole : NetworkManager
     public void StartGame()
     {
         // Load WakaMole scene
-        ServerChangeScene("WakaMole");
+        ServerChangeScene("WakaMoleAR");
     }
 }

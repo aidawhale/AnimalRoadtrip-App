@@ -11,6 +11,8 @@ public class PlayerScript : NetworkBehaviour
     [SyncVar]
     public int currentScore = 0;
 
+    public bool isHost = false;
+
     void Start()
     {
         DontDestroyOnLoad(this.gameObject);
@@ -30,5 +32,15 @@ public class PlayerScript : NetworkBehaviour
     public void CmdScore()
     {
         currentScore++;
+    }
+
+    public override void OnStartClient()
+    {
+        NetworkManagerWakaMole networkManager = GameObject.Find("NetworkManager_WakaMole").GetComponent<NetworkManagerWakaMole>();
+
+        if (networkManager != null)
+        {
+            networkManager.GamePlayers.Add(this.gameObject);
+        }
     }
 }
