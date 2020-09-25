@@ -6,13 +6,13 @@ using UnityEngine;
 public class MoleSpawner : NetworkBehaviour
 {
     [SerializeField]
-    private GameObject enemyPrefab;
+    private GameObject enemyPrefab = null;
 
     [SerializeField]
     private float spawnInterval = 1.0f;
 
     [SerializeField]
-    private float enemySpeed = 1.0f;
+    //private float enemySpeed = 1.0f;
 
     void SpawnMole()
     {

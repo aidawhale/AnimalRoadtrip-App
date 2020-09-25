@@ -70,7 +70,6 @@ public class NetworkManagerWakaMole : NetworkManager
         {
             // Instantiate player
             GameObject player = Instantiate(playerPrefab);
-            GamePlayers.Add(player);
             NetworkServer.AddPlayerForConnection(conn, player);
 
 
