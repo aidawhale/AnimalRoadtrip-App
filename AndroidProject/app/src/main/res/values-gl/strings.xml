@@ -71,4 +71,5 @@
     <string name="sabana_clues_info_2">Estas pistas estanche amosando que premio quere cada animal. Consigue os obxectos para intercambialos con eles, a cambio daranche o que necesitas!</string>
     <string name="server_error_message">Houbo un erro intentando conectarse ó servidor. Por favor, inténteo máis tarde.</string>
     <string name="no_internet_message">Non hai conexión a internet. Se quere sincronizar os datos co servidor comprobe a conexión.</string>
+    <string name="fourth_game_name">WakaMole</string>
 </resources>

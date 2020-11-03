@@ -449,7 +449,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dontDestroyOnLoad: 1
   runInBackground: 1
-  startOnHeadless: 1
+  autoStartServerBuild: 1
   showDebugMessages: 0
   serverTickRate: 30
   offlineScene: Assets/WakaMole/Scenes/WakaMoleMenu.unity
@@ -495,7 +495,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1844879464}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6442dc8070ceb41f094e44de0bf87274, type: 3}
   m_Name: 
@@ -510,6 +510,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 420714760075996753, guid: 135a5ee5a999a1644a97c68c7f95d9dc,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 14.999878
+      objectReference: {fileID: 0}
+    - target: {fileID: 4133769826878359340, guid: 135a5ee5a999a1644a97c68c7f95d9dc,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 14.999878
+      objectReference: {fileID: 0}
     - target: {fileID: 4133769827142989752, guid: 135a5ee5a999a1644a97c68c7f95d9dc,
         type: 3}
       propertyPath: networkManager
@@ -580,5 +590,10 @@ PrefabInstance:
       propertyPath: networkManager
       value: 
       objectReference: {fileID: 1844879466}
+    - target: {fileID: 4827626124788238317, guid: 135a5ee5a999a1644a97c68c7f95d9dc,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 14.999878
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 135a5ee5a999a1644a97c68c7f95d9dc, type: 3}

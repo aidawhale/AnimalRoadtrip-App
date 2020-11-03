@@ -27,7 +27,7 @@ android {
     }
 
     aaptOptions {
-        noCompress = ['.unity3d', '.ress', '.resource', '.obb']
+        noCompress = ['.unity3d', '.ress', '.resource', '.obb', 'performancetestresults.json', 'testresults.xml']
         ignoreAssetsPattern = "!.svn:!.git:!.ds_store:!*.scc:.*:!CVS:!thumbs.db:!picasa.ini:!*~"
     }
 
@@ -40,6 +40,7 @@ android {
             minifyEnabled false
             useProguard false
             proguardFiles getDefaultProguardFile('proguard-android.txt')
+            signingConfig signingConfigs.debug
             jniDebuggable true
         }
         release {

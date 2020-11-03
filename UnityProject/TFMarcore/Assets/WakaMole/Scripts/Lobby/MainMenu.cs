@@ -23,6 +23,15 @@ public class MainMenu : MonoBehaviour
         networkManager = NetworkManagerWakaMole.singleton as NetworkManagerWakaMole;
     }
 
+    private void Update()
+    {
+        // Exit the app when the 'back' button is pressed.
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+    }
+
     public void HostLobby()
     {
         networkManager.StartHost();
@@ -52,4 +61,6 @@ public class MainMenu : MonoBehaviour
             .AddressList
             .LastOrDefault(ip => ip.AddressFamily == AddressFamily.InterNetwork);
     }
+
+    
 }

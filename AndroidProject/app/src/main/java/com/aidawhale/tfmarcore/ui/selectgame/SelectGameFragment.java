@@ -51,6 +51,7 @@ public class SelectGameFragment extends Fragment implements SensorEventListener 
     private static final int MARCO_POLO_GAME = 1111;
     private static final int COLLECT_PIECES_GAME = 2222;
     private static final int EXPLORER_SEARCH_GAME = 3333;
+    private static final int WAKAMOLE_GAME = 4444;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -83,6 +84,7 @@ public class SelectGameFragment extends Fragment implements SensorEventListener 
         CardView cv1 = getView().findViewById(R.id.first_game_cardview);
         CardView cv2 = getView().findViewById(R.id.second_game_cardview);
         CardView cv3 = getView().findViewById(R.id.third_game_cardview);
+        CardView cv4 = getView().findViewById(R.id.fourth_game_cardview);
 
         cv1.setOnClickListener(v -> {
             // Get current step count and time
@@ -112,6 +114,17 @@ public class SelectGameFragment extends Fragment implements SensorEventListener 
 
             // Dialog. Ask to launch MAP or CLUES
             showDialogMapClues();
+        });
+
+        cv4.setOnClickListener(v -> {
+            // Get current step count and time
+            sgViewModel.preGameDate = new Date();
+            sgViewModel.preGameSteps = sgViewModel.steps;
+
+            // Init game with corresponding UnityActivity
+            Intent intent = new Intent(getContext(), UnityPlayerActivity.class);
+            intent.putExtra("SCENE", "4");
+            startActivityForResult(intent, WAKAMOLE_GAME);
         });
 
         userID = UserMenuActivity.getUserID();
@@ -173,6 +186,9 @@ public class SelectGameFragment extends Fragment implements SensorEventListener 
                 break;
             case EXPLORER_SEARCH_GAME:
                 gameType = 3;
+                break;
+            case WAKAMOLE_GAME:
+                gameType = 4;
                 break;
         }
 
