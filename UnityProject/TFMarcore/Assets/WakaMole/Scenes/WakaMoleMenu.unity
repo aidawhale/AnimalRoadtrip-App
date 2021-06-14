@@ -463,7 +463,7 @@ MonoBehaviour:
   playerPrefab: {fileID: 265853927867411046, guid: 7e4ec55d0b37bff48bd89cd98c50383f,
     type: 3}
   autoCreatePlayer: 1
-  playerSpawnMethod: 1
+  playerSpawnMethod: 0
   spawnPrefabs:
   - {fileID: 3376476652272906430, guid: e7af5ff482c12a44ea5faacc5502baab, type: 3}
   - {fileID: 2771115983918871606, guid: f8aa90b064eef92408c3163d9952fa40, type: 3}
@@ -513,12 +513,12 @@ PrefabInstance:
     - target: {fileID: 420714760075996753, guid: 135a5ee5a999a1644a97c68c7f95d9dc,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 14.999878
+      value: 14.999817
       objectReference: {fileID: 0}
     - target: {fileID: 4133769826878359340, guid: 135a5ee5a999a1644a97c68c7f95d9dc,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 14.999878
+      value: 14.999817
       objectReference: {fileID: 0}
     - target: {fileID: 4133769827142989752, guid: 135a5ee5a999a1644a97c68c7f95d9dc,
         type: 3}
@@ -593,7 +593,7 @@ PrefabInstance:
     - target: {fileID: 4827626124788238317, guid: 135a5ee5a999a1644a97c68c7f95d9dc,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 14.999878
+      value: 14.999817
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 135a5ee5a999a1644a97c68c7f95d9dc, type: 3}
